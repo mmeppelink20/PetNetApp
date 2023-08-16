@@ -1,0 +1,154 @@
+﻿@using System.Collections.Generic
+@using Microsoft.AspNet.Identity
+@using Microsoft.AspNet.Identity.Owin
+@using DataObjects
+
+@{
+    ViewBag.Title = "Index";
+
+}
+
+
+@if (Request.IsAuthenticated)
+{
+    ApplicationUserManager userManager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
+    var user = userManager.FindById(User.Identity.GetUserId());
+
+    <div class="container">
+        <div class="row mb-4">
+            <div class="col-md-3">
+                <!-- Profile picture -->
+                <img src="https://www.example.com/profile-pic.jpg" alt="Profile picture" class="img-fluid">
+            </div>
+            <div class="col-md-4">
+                <!-- User information -->
+                <div class="card ">
+                    <div class="card-header">
+                        User Information
+                    </div>
+                    <div class="card-body">
+                        <!-- User information content -->
+                        <div>
+                            <div>
+                                <h4>Name</h4>
+                            </div>
+                            <div>
+                                <p class="card-text"> @user.GivenName @user.FamilyName</p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div>
+                                <h4>UserID</h4>
+                            </div>
+                            <div>
+                                <p class="card-text"> @user.UsersId</p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div>
+                                <h4>UserName</h4>
+                            </div>
+                            <div>
+                                <p class="card-text">@user.Email</p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div>
+                                <h4>Email</h4>
+                            </div>
+                            <div>
+                                <p class="card-text">@user.Email</p>
+                            </div>
+                        </div>
+
+                        @*<div>
+                            <div>
+                                <h4>Address</h4>
+                            </div>
+                            <div>
+                                <p class="card-text">@user.Address</p>
+                            </div>
+                        </div>*@
+                        <div>
+                            <div>
+                                <h4>Your Shelter</h4>
+                            </div>
+                            <div>
+                                <p class="card-text">@ViewBag.NoShelter</p>
+                                <p class="card-text">@ViewBag.UserShelterName</p>
+                            </div>
+                        </div>
+
+
+                        @if (user.AddressTwo != null)
+                        {
+                            <div>
+                                <div>
+                                    <h4>Adress two</h4>
+                                </div>
+                                <div>
+                                    <p class="card-text">@user.AddressTwo</p>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div>
+                    @Html.ActionLink("Manage Account", "UserDetails", "Manage", "", new { @class = "btn btn-primary btn-block m-3" })
+                </div>
+                <div>
+                    @*<btn class="btn btn-primary btn-block m-3">Test</btn>*@
+                    @Html.ActionLink("Change Your Shelter", "SelectShelter", "Shelters", "", new { @class = "btn btn-primary btn-block m-3" })
+                </div>
+                <div>
+                    @*<btn class="btn btn-primary btn-block m-3">Test</btn>*@
+                    @Html.ActionLink("View Your Donations", "Index", "UserDonations", "", new { @class = "btn btn-primary btn-block m-3" })
+                </div>
+
+            </div>
+        </div>
+        <div class="row">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link" id="application-tab" data-toggle="tab" href="#applications" role="tab" aria-controls="home"
+                       aria-selected="false">My Applications</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
+                       aria-selected="false">Bookmarks</a>
+                </li>
+                @*<li class="nav-item">
+                    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
+                       aria-selected="false">User Information</a>
+                </li>*@
+            </ul>
+            <div class="tab-content container" id="myTabContent">
+                <div class="tab-pane fade" id="applications" role="tabpanel" aria-labelledby="application-tab">
+                    @Html.Action("AdoptionApplicationsPartial", "UserProfile", new { userId = user.UsersId })
+
+                </div>
+                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                    @Html.Action("ViewAllBookmarks", "UserProfile", new { userID = user.UsersId })
+                </div>
+                @*<div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                    Etsy mixtape
+                    wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack
+                    lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard
+                    locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify
+                    squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie
+                    etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog
+                    stumptown. Pitchfork sustainable tofu synth chambray yr.
+                </div>*@
+            </div>
+        </div>
+    </div>
+
+
+
+  }
+

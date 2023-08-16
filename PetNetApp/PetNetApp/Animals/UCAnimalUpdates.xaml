@@ -1,0 +1,18 @@
+﻿<UserControl x:Class="WpfPresentation.Animals.UCAnimalUpdates"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfPresentation.Animals"
+             mc:Ignorable="d" d:DesignWidth="400">
+    <Grid Background="#9EC1B0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" x:Name="lblDateUpdate" Content="Animal Update Date" HorizontalAlignment="Right"/>
+        <TextBlock x:Name="tbAnimalUpdate" Grid.Row="1" TextWrapping="Wrap"
+                   MinHeight="80" Height="Auto" Margin="10" Foreground="#1C6758" Padding="10" FontSize="18"
+                   Background="#D6CDA4"></TextBlock>
+    </Grid>
+</UserControl>

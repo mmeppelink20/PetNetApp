@@ -1,0 +1,86 @@
+﻿<UserControl x:Class="WpfPresentation.UserControls.ViewEventsFundraisingEventUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfPresentation.UserControls"
+             mc:Ignorable="d" x:Name="_this" DataContext="{Binding ElementName=_this}"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Style>
+        <Style TargetType="UserControl">
+            <Setter Property="Foreground" Value="#1C6758"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding UseAlternateColors}" Value="true">
+                    <Setter Property="Foreground" Value="#EEF2E6"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Style>
+    <Grid>
+        <Border x:Name="container" CornerRadius="10" Height="40" HorizontalAlignment="Stretch" BorderThickness="0">
+            <Border.Style>
+                <Style TargetType="Border">
+                    <Setter Property="Background" Value="#D6CDA4"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding UseAlternateColors}" Value="true">
+                            <Setter Property="Background" Value="#3D8361"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Border.Style>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="50"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Orientation="Horizontal" Margin="20 0" VerticalAlignment="Center" Grid.Column="0">
+                    <Label Content="{Binding FundraisingEvent.Title}" Foreground="{Binding Foreground}" MinWidth="{Binding TitleSectionWidth}"/>
+                    <Label Content=" | "/>
+                    <Label Content="{Binding FundraisingEvent.StartTime}" Foreground="{Binding Foreground}" MinWidth="{Binding StartDateSectionWidth}"/>
+                    <!--<Label Content=" Time: "/>
+                    <Label Content="{Binding FundraisingEvent.StartTime.TimeOfDay}" Foreground="{Binding Foreground}" MinWidth="{Binding StartTimeSectionWidth}"/>-->
+                </StackPanel>
+                <Button Grid.Column="1" Name="btnMenu" Click="btnMenu_Click" Width="40" Height="40">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Background="{TemplateBinding Background}">
+                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Setter Property="Background">
+                                <Setter.Value>
+                                    <ImageBrush ImageSource="/WpfPresentation;component/Images/menudark.png"/>
+                                </Setter.Value>
+                            </Setter>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background">
+                                        <Setter.Value>
+                                            <ImageBrush ImageSource="/WpfPresentation;component/Images/menulight.png" />
+                                        </Setter.Value>
+                                    </Setter>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                    <Button.ContextMenu>
+                        <ContextMenu>
+                            <MenuItem Name="menuView" Click="menuView_Click" Header="View"/>
+                            <MenuItem Name="menuVolunteer" Header="Volunteer" Click="menuVolunteer_Click" />
+                            <MenuItem Name="menuEdit" Click="menuEdit_Click" Header="Edit"/>
+                            <MenuItem Name="menuUpdate" Click="menuUpdate_Click" Header="Update"/>
+                            <MenuItem Name="menuDelete" Click="menuDelete_Click" Header="Delete"/>
+                            <MenuItem Name="menuAddDonation"  Header="Add Donation" Click="menuAddDonation_Click" />
+                            <MenuItem Name="menuAddPledge"  Header="Add Pledger" Click="menuAddPledge_Click"/>
+                        </ContextMenu>
+                    </Button.ContextMenu>
+                </Button>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

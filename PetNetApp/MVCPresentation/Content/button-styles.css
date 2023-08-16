@@ -1,0 +1,43 @@
+﻿.default-button {
+    border: 1px solid var(--color-dark-green);
+    border-radius: 10px;
+    background-color: var(--color-green);
+    color: var(--background-color);
+}
+
+
+.default-button:hover {
+    border-color: var(--control-mouse-over-border-color);
+    background-color: var(--control-mouse-over-background-color);
+}
+
+.default-button:active {
+    border-color: var(--control-pressed-border-color);
+    background-color: var(--control-pressed-background-color);
+}
+
+.alternate-default-button {
+    border: 1px solid var(--control-border-color);
+    border-radius: 10px;
+    background-color: var(--control-background-color);
+    color: var(--control-foreground-color);
+}
+
+.alternate-default-button:hover {
+    border-color: var(--control-mouse-over-border-color);
+    background-color: var(--control-mouse-over-background-color);
+}
+
+.alternate-default-button:active {
+    border-color: var(--control-pressed-border-color);
+    background-color: var(--control-pressed-background-color);
+}
+
+.warning-button {
+}
+
+.warning-button:hover {
+}
+
+.warning-button:active {
+}

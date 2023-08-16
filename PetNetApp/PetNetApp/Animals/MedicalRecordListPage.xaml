@@ -1,0 +1,113 @@
+﻿<Page x:Class="WpfPresentation.Animals.MedicalRecordListPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfPresentation.Animals"
+      mc:Ignorable="d" 
+      d:DesignHeight="800" d:DesignWidth="800"
+      Title="MedicalRecordListPage" Loaded="Page_Loaded">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="35"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Label x:Name="lblMedRecord" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontWeight="DemiBold">Medical Record List</Label>
+
+        <DataGrid x:Name="datMedRecords" Grid.Row="2" Grid.Column="0" IsReadOnly="True" Margin="10, 0, 10, 0" BorderBrush="Transparent" AutoGenerateColumns="False" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Visible"  VerticalAlignment="Top" SelectionChanged="datMedRecords_SelectionChanged" GridLinesVisibility="Horizontal" SelectionMode="Single">
+            <DataGrid.LayoutTransform>
+                <TransformGroup>
+                    <RotateTransform Angle="90"/>
+                    <MatrixTransform Matrix="-1,0,0,1,0,0"/>
+                </TransformGroup>
+            </DataGrid.LayoutTransform>
+            <DataGrid.ColumnHeaderStyle>
+                <Style TargetType="{x:Type DataGridColumnHeader}" BasedOn="{StaticResource {x:Type DataGridColumnHeader}}">
+                    <Setter Property="LayoutTransform">
+                        <Setter.Value>
+                            <TransformGroup>
+                                <RotateTransform Angle="-90"/>
+                                <ScaleTransform ScaleX="1" ScaleY="-1" />
+                            </TransformGroup>
+                        </Setter.Value>
+                    </Setter>
+                    <Setter Property="Width" Value="150"></Setter>
+                </Style>
+            </DataGrid.ColumnHeaderStyle>
+            <DataGrid.CellStyle>
+                <Style  TargetType="DataGridCell">
+                    <Setter Property="LayoutTransform">
+                        <Setter.Value>
+                            <TransformGroup>
+                                <RotateTransform Angle="-90"/>
+                                <ScaleTransform ScaleX="1" ScaleY="-1" />
+                            </TransformGroup>
+                        </Setter.Value>
+                    </Setter>
+                    <Setter Property="Width" Value="150"></Setter>
+                </Style>
+            </DataGrid.CellStyle>
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Date, StringFormat=d}" Header="Date" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding MedicalNotes}" Header="Notes" Width="*">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style>
+                            <Setter Property="TextBlock.TextWrapping" Value="Wrap" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding IsProcedure, Converter={StaticResource BoolStringConverter}}" Header="Procedure" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding IsTest, Converter={StaticResource BoolStringConverter}}" Header="Test" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding IsVaccination, Converter={StaticResource BoolStringConverter}}" Header="Vaccination" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding IsPrescription, Converter={StaticResource BoolStringConverter}}" Header="Prescription" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Images, Converter={StaticResource BoolStringConverter}}" Header="Images" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding QuarantineStatus, Converter={StaticResource BoolStringConverter}}" Header="Quarantine" Width="*"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Diagnosis}" Header="Diagnosis" Width="*">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style>
+                            <Setter Property="TextBlock.TextWrapping" Value="Wrap" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label x:Name="lblNoMedRecords" Grid.Row="1" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center">No Medical Records Available</Label>
+        <Grid x:Name="grdMedRecordDetail" Grid.Row="2" Grid.Column="1" Margin="0, 0, 10, 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"></RowDefinition>
+                <RowDefinition Height="100"></RowDefinition>
+                <RowDefinition Height="30"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="30"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition Height="30"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Label Grid.Column="0" Margin="5, 0">Procedure</Label>
+            <TextBox x:Name="txtProc" Grid.Column="0" Grid.Row="1" Margin="5, 0, 5, 5" MaxHeight="75" MaxWidth="200" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" IsEnabled="False"></TextBox>
+            <Label Grid.Column="1" Margin="5, 0">Test</Label>
+            <TextBox x:Name="txtTest" Grid.Column="1" Grid.Row="1" Margin="5, 0, 5, 5" MaxHeight="75" MaxWidth="200" TextWrapping="Wrap" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" IsEnabled="False"></TextBox>
+            <Label Grid.Column="0" Grid.Row="2" Margin="5, 0">Vaccination</Label>
+            <TextBox x:Name="txtVaccination" Grid.Column="0" Grid.Row="3" Margin="5, 0, 5, 5" MaxHeight="32" MaxWidth="200" IsEnabled="False"></TextBox>
+            <Label Grid.Column="1" Grid.Row="2" Margin="5, 0">Prescription(s)</Label>
+            <TextBox x:Name="txtPrescription" Grid.Column="1" Grid.Row="3" Margin="5, 0, 5, 5" MaxHeight="32" MaxWidth="200" IsEnabled="False"></TextBox>
+            <Label Grid.Column="0" Grid.Row="4" Margin="5, 0">Notes</Label>
+            <TextBox x:Name="txtNotes" Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2" Grid.RowSpan="2" Margin="5, 0, 5, 5" VerticalScrollBarVisibility="Visible" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" IsEnabled="False"></TextBox>
+            <Button x:Name="btnImages" Grid.Column="0" Grid.Row="7" Grid.ColumnSpan="2" Margin="20, 5, 20, 5" Click="btnImages_Click">Go To Images</Button>
+        </Grid>
+    </Grid>
+</Page>

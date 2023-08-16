@@ -1,0 +1,72 @@
+﻿<Page x:Class="WpfPresentation.Animals.MedicalNavigationPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfPresentation.Animals"
+      mc:Ignorable="d" 
+      d:DesignHeight="410" d:DesignWidth="800"
+      Title="MedicalPage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="190" />
+            <ColumnDefinition />
+            <ColumnDefinition Width="50" />
+        </Grid.ColumnDefinitions>
+        <StackPanel Orientation="Vertical" Grid.Column="0" Background="#9EC1B0" >
+            <Label x:Name="lblMedProfileAnimal" Margin="0 10" Content="&lt; animal name >" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center"/>
+            <Button Margin="0 5" Padding="10 5" MinWidth="100" Height="35" Style="{StaticResource ResourceKey=rsrcUnselectedButton}" HorizontalAlignment="Left" x:Name="btnMedProfile" Click="btnMedProfile_Click" >
+                <StackPanel Orientation="Horizontal" Width="190">
+                    <!--Using StackPanel to include image and text in button from bensiu on stackoverflow, https://stackoverflow.com/questions/2726986/button-template-with-image-and-text-in-wpf-->
+                    <Image Source="../Images/clipboard_dark.png" Margin="5 0 2 0"/>
+                    <Label Padding="0" VerticalAlignment="Center">Medical Profile</Label>
+                </StackPanel>
+            </Button>
+            <Button Margin="0 5" Padding="10 5" MinWidth="100" Height="35" Style="{StaticResource ResourceKey=rsrcUnselectedButton}" HorizontalAlignment="Left" x:Name="btnVaccinations" Click="btnVaccinations_Click" >
+                <StackPanel Orientation="Horizontal" Width="190">
+                    <Image Source="../Images/needle_dark.png" Margin="5 0 2 0"/>
+                    <Label Padding="0" VerticalAlignment="Center">Vaccinations</Label>
+                </StackPanel>
+            </Button>
+            <Button Margin="0 5" Padding="10 5" MinWidth="100" Height="35" Style="{StaticResource ResourceKey=rsrcUnselectedButton}" HorizontalAlignment="Left" x:Name="btnTreatment" Click="btnTreatment_Click" >
+                <StackPanel Orientation="Horizontal" Width="190">
+                    <Image Source="../Images/pharmacy_dark.png" Margin="5 0 2 0"/>
+                    <Label Padding="0" VerticalAlignment="Center">Treatment</Label>
+                </StackPanel>
+            </Button>
+            <Button Margin="0 5" Padding="10 5" MinWidth="100" Height="35" Style="{StaticResource ResourceKey=rsrcUnselectedButton}" HorizontalAlignment="Left" x:Name="btnTests" Click="btnTests_Click" >
+                <StackPanel Orientation="Horizontal" Width="190">
+                    <Image Source="../Images/beaker_dark.png" Margin="5 0 2 0" />
+                    <Label Padding="0" VerticalAlignment="Center">Tests</Label>
+                </StackPanel>
+            </Button>
+            <Button Margin="0 5" Padding="10 5" MinWidth="100" Height="35" Style="{StaticResource ResourceKey=rsrcUnselectedButton}" HorizontalAlignment="Left" x:Name="btnMedNotes" Click="btnMedNotes_Click" >
+                <StackPanel Orientation="Horizontal" Width="190">
+                    <Image Source="../Images/notes_dark.png" Margin="5 0 2 0" />
+                    <Label Padding="0" VerticalAlignment="Center">Notes/Files</Label>
+                </StackPanel>
+            </Button>
+            <Button Margin="0 5" Padding="10 5" MinWidth="100" Height="35" Style="{StaticResource ResourceKey=rsrcUnselectedButton}" HorizontalAlignment="Left" x:Name="btnMedProcedures" Click="btnMedProcedures_Click" >
+                <StackPanel Orientation="Horizontal" Width="190">
+                    <Image Source="../Images/ambulance_dark.png" Margin="5 0 2 0" />
+                    <Label Padding="0" VerticalAlignment="Center">Procedures</Label>
+                </StackPanel>
+            </Button>
+            <Button Margin="0 5" Padding="10 5" MinWidth="100" Height="35" Style="{StaticResource ResourceKey=rsrcUnselectedButton}" HorizontalAlignment="Left" x:Name="btnMedRecordList" Click="btnMedRecordList_Click" >
+                <StackPanel Orientation="Horizontal" Width="190">
+                    <Image Source="../Images/format_line_dark.png" Margin="5 0 2 0" />
+                    <Label Padding="0" VerticalAlignment="Center">Medical Record List</Label>
+                </StackPanel>
+            </Button>
+            <Button Margin="0 5" Padding="10 5" MinWidth="100" Height="35" Style="{StaticResource ResourceKey=rsrcUnselectedButton}" HorizontalAlignment="Left" x:Name="btnMedBack" Click="btnMedBack_Click"  >
+                <StackPanel Orientation="Horizontal" Width="190">
+                    <Image Source="../Images/arrow_left3_dark.png" Margin="5 0 2 0" />
+                    <Label Padding="0" VerticalAlignment="Center">Back</Label>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+        <Frame x:Name="frameMedical" Grid.Column="1" ></Frame>
+        <Rectangle Fill="#9EC1B0" Grid.Column="2"></Rectangle>
+    </Grid>
+</Page>

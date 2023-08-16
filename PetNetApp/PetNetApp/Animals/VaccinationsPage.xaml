@@ -1,0 +1,78 @@
+﻿<Page x:Class="WpfPresentation.Animals.VaccinationsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfPresentation.Animals"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="VaccinationsPage" Loaded="Page_Loaded">
+
+    <Grid ScrollViewer.VerticalScrollBarVisibility="Auto">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <!--(Row: 0)Animal ID #-->
+            <RowDefinition Height="40"/>
+            <!--(Row: 1)"View Vaccinations" Caption-->
+            <RowDefinition Height="30"/>
+            <!--(Row: 2)"Vaccinations" Heading-->
+            <RowDefinition />
+            <!--(Row: 3)Data Grid for Vaccinations-->
+            <RowDefinition Height="40"/>
+            <!--(Row: 4)Add Vaccination button-->
+            <RowDefinition Height="30"/>
+            <!--(Row: 5)Spacer-->
+            <RowDefinition Height="30"/>
+            <!--(Row: 6) Scrap-->
+            <RowDefinition Height="10"/>
+            <!--(Row: 7)Spacer-->
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="120"/>
+            <!--(Column: 0)Add Button Column-->
+            <ColumnDefinition/>
+            <!--(Column: 1)Filler-->
+            <ColumnDefinition Width="100"/>
+            <!--(Column: 2)Save Button Column-->
+            <ColumnDefinition Width="100"/>
+            <!--(Column: 3)Cancel Button Column-->
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="100"/>
+
+
+
+        </Grid.ColumnDefinitions>
+        <!--Grid Row 0-->
+        <Label x:Name="lblAnimalID" Content="Animal ID #"
+               Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="2" HorizontalAlignment="Right"
+               FontSize="12"/>
+        <!--Grid Row 1-->
+        <Label x:Name="lblViewVaccinations" Content="View Vaccinations"
+               Grid.Row="1" Grid.ColumnSpan="6" HorizontalAlignment="Center"
+               FontSize="24" FontWeight="Bold"/>
+        <!--Grid Row 2-->
+        <Label x:Name="lblVaccinations" Content="Vaccinations"
+               Grid.Row="2" Grid.ColumnSpan="6" HorizontalAlignment="Center"
+               FontSize="12" FontWeight="Bold"/>
+        <!--Grid Row 3-->
+        <DataGrid x:Name="datVaccinations" IsReadOnly="True"
+                  FontSize="12" Margin="10" Padding="3" Grid.Row="3" Grid.ColumnSpan="6" MouseDoubleClick="datVaccinations_MouseDoubleClick" HorizontalScrollBarVisibility="Disabled" AutoGenerateColumns="False" CanUserReorderColumns="False" CanUserResizeColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Vaccine Name" Binding="{Binding VaccineName}" Width="3*"/>
+                <DataGridTextColumn Header="Date Administered" Binding="{Binding VaccineAdminsterDate, StringFormat=\{0:MM/dd/yyyy\}}" Width="1*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <!--Grid Row 4-->
+        <Button x:Name="btnAddVaccine" Background="Transparent" BorderBrush="Transparent" Grid.Row="4" Grid.Column="0" Margin="10 0 0 0" HorizontalAlignment="Left" Click="btnAddVaccine_Click">
+            <Image Source="../images/libraryplus_dark.png" />
+        </Button>
+        <!--Grid Row 5-->
+
+        <!--Grid Row 6-->
+
+
+
+        <!--Grid Row 7-->
+
+    </Grid>
+</Page>

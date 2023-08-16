@@ -1,0 +1,255 @@
+﻿.adoptableAnimal-main-grid {
+    background-color: #EEEFE1;
+    display: grid;
+    width: 80%;
+    grid-template-columns: minmax(300px, 2fr) minmax(200, 1fr);
+    grid-template-rows: repeat(2, min-content);
+    margin: 0 auto;
+}
+
+.adoptableAnimal-main-grid h3,h4,h5,p,h2,h1,span
+{
+    color: var(--control-foreground-color);
+}
+
+.adoptableAnimal-image-and-button-grid {
+    grid-row: 1;
+    grid-column: 1;
+    display: grid;
+    grid-template-columns: 70px minmax(300px, 1fr) 70px;
+}
+
+.previous-image-button {
+    grid-column: 1;
+    width: 55px;
+    height: 120px;
+    background-image: url("../../Images/LeftArrow.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: auto;
+    cursor: pointer;
+}
+
+.previous-image-button:hover {
+    background-image: url("../../Images/LeftArrow_Hover.png");
+}
+
+.next-image-button {
+    grid-column: 3;
+    width: 55px;
+    height: 120px;
+    background-image: url("../../Images/RightArrow.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: auto;
+    cursor: pointer;
+}
+
+.next-image-button:hover {
+    background-image: url("../../Images/RightArrow_Hover.png");
+}
+
+.image-container {
+    grid-column: 2;
+    max-width: 420px;
+    max-height: 350px;
+    position: relative;
+    margin: auto;
+}
+
+
+image {
+    border: 2px solid #3D8361;
+}
+
+.adoptableAnimal-animal-infomation-grid {
+    grid-column: 2;
+    display: grid;
+    grid-template-rows: 70px 50px 50px 150px 60px 75px;
+}
+
+.animal-name {
+    grid-row: 1;
+    margin: 0 auto;
+}
+
+.animal-breed {
+    grid-row: 2;
+    margin: 0 auto;
+}
+
+.animal-shelter {
+    grid-row: 3;
+    margin: 0 auto;
+}
+
+.animal-description {
+    grid-row: 4;
+    border: 2px solid #3D8361;
+    margin: 5px 10px;
+    padding: 5px;
+    width: auto;
+    display: block;
+}
+
+.btn {
+    background: #3D8361;
+    clear: both;
+    height: 50px;
+    width: 70%;
+    margin-top: 5px;
+    margin-left: 10px;
+}
+
+.btn p {
+    margin: auto;
+}
+
+span.fill-application-icon {
+    background: url(../../Images/application_light.png) no-repeat;
+    float: left;
+    width: 40px;
+    height: 40px;
+    background-size: contain;
+    margin-left: 10px;
+}
+
+span.download-application-icon {
+    background: url(../../Images/download_light.png) no-repeat;
+    float: left;
+    width: 40px;
+    height: 40px;
+    background-size: contain;
+    margin-left: 10px;
+}
+
+button.btn:hover {
+    background: #9EC1B0;
+}
+
+.adoptableAnimal-comment-grid {
+    grid-row: 2;
+    grid-column-start: 1;
+    grid-column-end: span 2;
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    margin: 10px auto;
+    border-top: 5px solid #3D8361;
+    width: 90%;
+}
+
+.no-border {
+    border: 0px;
+}
+
+.user-icon {
+    grid-column: 1;
+    background: url(../../Images/usericondark.png) no-repeat;
+    display: inline;
+    background-size: contain;
+    height: 90px;
+    width: 90px;
+}
+
+.adoptable-animal-note {
+    grid-column: 2;
+    border: 2px solid #3D8361;
+    background-color: #D6CDA4;
+    padding: 5px;
+    margin-top: 15px;
+    margin-right: 15px;
+    height: 100px;
+}
+
+.hide {
+    display: block;
+}
+
+/*.mySlides {
+    display: none;
+}*/
+
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@media only screen and (max-width: 1300px) {
+    span {
+        font-size: 12px;
+    }
+    .btn {
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 1100px) {
+    .adoptableAnimal-main-grid {
+        background-color: #EEEFE1;
+        display: grid;
+        width: 80%;
+        grid-template-rows: repeat(3, min-content);
+        grid-template-columns: 1fr;
+        margin: 0 auto;
+    }
+
+    .adoptableAnimal-image-and-button-grid {
+        grid-row: 1;
+        display: grid;
+        grid-template-columns: 70px minmax(100px, 1fr) 70px;
+    }
+
+    .adoptableAnimal-animal-infomation-grid {
+        grid-row: 2;
+        grid-column: 1; 
+        display: grid;
+        grid-template-rows: 70px 50px 50px 150px 60px 75px;
+    }
+
+    .adoptableAnimal-comment-grid {
+        grid-row: 3;
+        display: grid;
+        grid-template-columns: 100px 1fr;
+        margin: 10px auto;
+        border-top: 5px solid #3D8361;
+        width: 90%;
+    }
+
+    .btn {
+        min-width: 100px;
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    .hide {
+        display: none;
+    }
+
+    span.fill-application-icon {
+        margin-left: 42px;
+    }
+
+    span.download-application-icon {
+        margin-left: 42px;
+    }
+
+    .user-icon {
+        height: 50px;
+        width: 50px;
+    }
+
+    .adoptableAnimal-comment-grid {
+        grid-template-columns: min-content 1fr;
+    }
+}

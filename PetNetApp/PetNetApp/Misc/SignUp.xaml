@@ -1,0 +1,83 @@
+﻿<Page x:Class="WpfPresentation.Misc.SignUp"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfPresentation.Misc"
+      mc:Ignorable="d"  
+      d:DesignHeight="550"
+      d:DesignWidth="800"
+      Title="SignUp" Loaded="Page_Loaded">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/> 
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="35" />
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="35" />
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition />
+            <RowDefinition Height="25"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition />
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+
+        <Rectangle Grid.ColumnSpan="5" Fill="#FF6A9F83"/>
+
+        <Label Content="Create Account" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" FontFamily="Segoe UI Emoji" FontWeight="Black" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center" />
+        <Rectangle Fill="#FFD6CDA4" Height="3" Width="250"  Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Center" />
+
+        <!-- Text Prompts -->
+        <Label HorizontalAlignment="Center" Width="250" Grid.Row="2" Grid.Column="1" Content="Email" FontFamily="Segoe UI Emoji" FontWeight="Bold" FontSize="16"  Foreground="#FF3D8361" VerticalAlignment="Bottom"/>
+        <TextBox Grid.Row="3" Grid.Column="1" x:Name="txtEmail" Width="250"  Background="#FFF6F7F3"/>
+        <Label HorizontalAlignment="Center" Width="250" Grid.Row="4" Grid.Column="1" Content="First Name" FontFamily="Segoe UI Emoji" FontWeight="Bold" FontSize="16" Foreground="#FF3D8361" VerticalAlignment="Bottom"/>
+        <TextBox Grid.Row="5" Grid.Column="1" x:Name="txtGivenName" Width="250" Height="45" Background="#FFF6F7F3" />
+        <Label HorizontalAlignment="Center" Width="250" Grid.Row="6" Grid.Column="1" Content="Last Name" FontFamily="Segoe UI Emoji" FontWeight="Bold" FontSize="16" Foreground="#FF3D8361" VerticalAlignment="Bottom" />
+        <TextBox Grid.Row="7" Grid.Column="1" x:Name="txtFamilyName" Width="250" Height="46" Background="#FFF6F7F3" />
+        <Label HorizontalAlignment="Center" Grid.Column="1" Width="250" Grid.Row="8" Content="Phone" FontFamily="Segoe UI Emoji" FontWeight="Bold" FontSize="16" Foreground="#FF3D8361" VerticalAlignment="Bottom"/>
+        <TextBox Grid.Row="9" Grid.Column="1" x:Name="txtPhone" Width="250" Height="45" Background="#FFF6F7F3" />
+        <Label HorizontalAlignment="Center" Grid.Column="1" Width="250" Grid.Row="10" Content="Zipcode" FontFamily="Segoe UI Emoji" FontWeight="Bold" FontSize="16" Foreground="#FF3D8361" VerticalAlignment="Bottom" />
+        <TextBox Grid.Row="11" Grid.Column="1" x:Name="txtZipCode" Width="250" Height="45" Background="#FFF6F7F3" />
+
+
+        <Label HorizontalAlignment="Center" Width="250" Grid.Row="2" Grid.Column="3" Content="Password" FontFamily="Segoe UI Emoji" FontWeight="Bold" FontSize="16" Foreground="#FF3D8361" VerticalAlignment="Bottom"/>
+        <PasswordBox Grid.Row="3" Grid.Column="3" x:Name="txtPassword" Width="250" Height="45" />
+
+        <Label HorizontalAlignment="Center" Width="250" Grid.Row="4" Grid.Column="3" Content="Confirm Password" FontFamily="Segoe UI Emoji" FontWeight="Bold" FontSize="16" Foreground="#FF3D8361" VerticalAlignment="Bottom"/>
+        <PasswordBox Grid.Row="5" Grid.Column="3" x:Name="txtPasswordConfirm" Width="250" Height="45" />
+
+        <Label HorizontalAlignment="Center" Width="250" Grid.Row="6" Grid.Column="3" Content="Gender" FontFamily="Segoe UI Emoji" FontWeight="Bold" FontSize="16" Foreground="#FF3D8361" VerticalAlignment="Bottom" />
+        <ComboBox Grid.Row="7" Grid.Column="3" x:Name="genderSelection" Width="250" Height="46">
+        </ComboBox>
+
+        <Label HorizontalAlignment="Center" Width="250" Grid.Row="8" Grid.Column="3" Content="Pronouns" FontFamily="Segoe UI Emoji" FontWeight="Bold" FontSize="16" Foreground="#FF3D8361" VerticalAlignment="Bottom" />
+        <ComboBox Grid.Row="9" Grid.Column="3" x:Name="pronounSelection" Width="250" Height="45">
+        </ComboBox>
+
+        <StackPanel Grid.Row="12" Orientation="Horizontal" Grid.ColumnSpan="3" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,15,0,15">
+            <Button x:Name="btnSignUp" Content="Sign Up" Width="140" Height="50" FontSize="20" FontWeight="Bold" Margin="0,0,10,0" Click="btnSignUp_Click" HorizontalAlignment="Left"   />
+            <Button x:Name="btnCancel" Content="Cancel"  Width="140" Height="50" FontSize="20" FontWeight="Bold" Margin="10,0,0,0" Click="btnSignUpCancel_Click" HorizontalAlignment="Right"   />
+        </StackPanel>
+
+        <Rectangle Grid.RowSpan="14" Fill="#FF9EC1B0" Panel.ZIndex="-1"/>
+        <Rectangle Grid.Column="4" Grid.RowSpan="14" Fill="#FF9EC1B0" Panel.ZIndex="-1"/>
+
+
+        <Rectangle Grid.Row="14" Grid.ColumnSpan="5" Fill="#FF6A9F83"/>
+
+    </Grid>
+</Page>

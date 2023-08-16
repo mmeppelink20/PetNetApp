@@ -1,0 +1,13 @@
+﻿@model DataObjects.Images
+
+@section Style{
+    <link href="~/Content/Animal/adoptableAnimal-desktop.css" rel="stylesheet" />
+}
+
+<div class="mySlides">
+    @{
+        string imagePath = "/Images/Animal/" + Model.ImageId + ".png";
+        <img src="@imagePath" style="width:100%" />
+    }
+</div>
+

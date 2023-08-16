@@ -1,0 +1,47 @@
+﻿<UserControl x:Class="WpfPresentation.UserControls.ViewFundraisingEventPledgersControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfPresentation.UserControls"
+             mc:Ignorable="d" x:Name="_this" DataContext="{Binding ElementName=_this}"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Style>
+        <Style TargetType="UserControl">
+            <Setter Property="Foreground" Value="#1C6758"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding UseAlternateColors}" Value="true">
+                    <Setter Property="Foreground" Value="#EEF2E6"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Style>
+    <Grid>
+        <Border x:Name="container" CornerRadius="10" Height="40" HorizontalAlignment="Stretch" BorderThickness="0">
+            <Border.Style>
+                <Style TargetType="Border">
+                    <Setter Property="Background" Value="#D6CDA4"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding UseAlternateColors}" Value="true">
+                            <Setter Property="Background" Value="#3D8361"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Border.Style>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="100"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Orientation="Horizontal" Margin="20 0" VerticalAlignment="Center" Grid.Column="0" >
+                    <Label Content="{Binding PledgeVM.GivenName}" Foreground="{Binding Foreground}" MinWidth="{Binding GivenNameWidth}" ></Label>
+                    <Label Content="{Binding PledgeVM.FamilyName}" Foreground="{Binding Foreground}" MinWidth="{Binding FamilyNameWidth}" ></Label>
+                    <Label Content="{Binding PledgeVM.Amount}" ContentStringFormat="C" Foreground="{Binding Foreground}" MinWidth="{Binding AmountWidth}" ></Label>
+                    <Label Content="{Binding PledgeVM.DonationAmount}" ContentStringFormat="C" Foreground="{Binding Foreground}" MinWidth="{Binding DonationAmountWidth}"></Label>
+                    <Label Content="{Binding PledgeVM.Date}" Foreground="{Binding Foreground}" MinWidth="{Binding DateWidth}"></Label>
+                </StackPanel>
+                <Button x:Name="btnView"  Grid.Column="1" Margin="3" Style="{StaticResource ResourceKey=rsrcSafeButton}" Click="btnView_Click" >View</Button>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

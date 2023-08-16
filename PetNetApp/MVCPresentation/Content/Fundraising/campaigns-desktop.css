@@ -1,0 +1,106 @@
+﻿.campaigns-main-grid {
+    color: #1C6758;
+    display: grid;
+    height: 100%;
+    grid-template-rows: 150px minmax(100px, 1fr) 100px;
+}
+
+.campaigns-title-and-filter-grid {
+    grid-row: 1;
+    display: grid;
+    grid-template-columns: calc(100% * 3/5 - 1px) calc(100% * 2/5 - 1px);
+}
+
+
+.campaign-inputs {
+    grid-column: 2;
+    grid-row: 1;
+    display: grid;
+    grid-template-rows: repeat(2, 50%);
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.search-group {
+    vertical-align: middle;
+    align-self: center;
+    grid-column: 1;
+    grid-row: 1;
+    grid-column-end: 3;
+}
+
+.sort-group {
+    vertical-align: middle;
+    align-self: center;
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.filter-group {
+    vertical-align: middle;
+    align-self: center;
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.shelter-group {
+    vertical-align: middle;
+    align-self: center;
+    grid-column: 3;
+    grid-row: 2;
+}
+
+.search-button-group {
+    vertical-align: middle;
+    align-self: center;
+    align-content: center;
+    align-items: center;
+    grid-column: 3;
+    grid-row: 1;
+}
+
+.search-input {
+    max-width: initial;
+    width: calc(100% - var(--campaign-input-x-margin) * 2);
+    height: 50px;
+    margin: 0 var(--campaign-input-x-margin);
+}
+
+.sort-input {
+    width: calc(100% - var(--campaign-input-x-margin) * 2);
+    height: 50px;
+    margin: 0 var(--campaign-input-x-margin);
+}
+
+.filter-input {
+    width: calc(100% - var(--campaign-input-x-margin) * 2);
+    height: 50px;
+    margin: 0 var(--campaign-input-x-margin);
+}
+
+.shelter-input {
+    width: calc(100% - var(--campaign-input-x-margin) * 2);
+    height: 50px;
+    margin: 0 var(--campaign-input-x-margin);
+}
+
+.search-button {
+    align-self: center;
+    vertical-align: middle;
+    height: 50px;
+    width: calc(100% - var(--campaign-input-x-margin) * 2);
+    margin: 0 var(--campaign-input-x-margin);
+    text-align: center;
+}
+
+.no-campaigns-group {
+    width: 300px;
+    height: 150px;
+}
+
+@media only screen and (max-width: 960px) {
+    .campaigns-title-and-filter-grid {
+        grid-row: 1;
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+    }
+}

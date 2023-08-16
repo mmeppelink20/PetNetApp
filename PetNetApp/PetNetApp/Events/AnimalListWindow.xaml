@@ -1,0 +1,52 @@
+﻿<Window x:Class="WpfPresentation.Events.AnimalListWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfPresentation.Events"
+        mc:Ignorable="d"
+        Title="AnimalListWindow" Height="450" Width="600" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" Content="Add Animal To Event" FontSize="25" HorizontalAlignment="Center" FontWeight="Bold"/>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBox x:Name="txtSearchAnimal" Grid.Row="0" Height="40" Margin="0 5 10 0" Width="180" HorizontalAlignment="Right" TextChanged="txtSearchAnimal_TextChanged"/>
+            <TextBlock IsHitTestVisible="False" Text="Search Animal Name" VerticalAlignment="Center" Width="170" HorizontalAlignment="Right" Margin="10,5,0,0" Foreground="DarkGray" Grid.Row="2">
+                <TextBlock.Style>
+                    <Style TargetType="{x:Type TextBlock}">
+                        <Setter Property="Visibility" Value="Collapsed"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Text, ElementName=txtSearchAnimal}" Value="">
+                                <Setter Property="Visibility" Value="Visible"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
+
+        </Grid>
+
+        <Grid Grid.Row="2" Width="450" Margin="0 5">
+            <Border Grid.Row="2" BorderBrush="#3D8361" BorderThickness="2" CornerRadius="5">
+                <ScrollViewer  VerticalScrollBarVisibility="Auto" MinHeight="200" MaxHeight="300">
+                    <StackPanel x:Name="stpAnimalList">
+
+                    </StackPanel>
+                </ScrollViewer>
+            </Border>
+        </Grid>
+
+        <Button x:Name="btnCanle" Content="Cancel" Grid.Row="3" Height="40" Margin="5 5 20 5" Width="120" HorizontalAlignment="Right" Click="btnCanle_Click"></Button>
+    </Grid>
+</Window>

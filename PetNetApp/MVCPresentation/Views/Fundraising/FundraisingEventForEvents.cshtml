@@ -1,0 +1,18 @@
+﻿@model MVCPresentation.Models.FundraisingEventForEventsModel
+
+
+<div class="@(!Model.AlternateColor ? "event-control-primary event-control " : "event-control-alternate event-control")">
+    <div class="event-control-text-container ">
+        <p class="event-control-text text-truncate">@Model.FundraisingEvent.Title | @(Model.FundraisingEvent.StartTime != null ? Model.FundraisingEvent.StartTime.Value.ToString("MMMM d, yyyy") : "None")</p>
+    </div>
+    @using (Html.BeginForm("Create", "Pledge", FormMethod.Get, new { @class = "event-control-button-group2" }))
+    {
+        @Html.Hidden("fundrasingEventId", Model.FundraisingEvent.FundraisingEventId);
+        <input type="submit" value="Pledge" data-title="@Model.FundraisingEvent.Title" data-id="@Model.FundraisingEvent.FundraisingEventId" class="@("pledge-link " + (!Model.AlternateColor ? "event-link-primary" : "event-link-alternate"))" />
+    }
+    @using (Html.BeginForm("Event", "Fundraising", FormMethod.Get, new { @class = "event-control-button-group" }))
+    {
+        @Html.Hidden("event", Model.FundraisingEvent.FundraisingEventId);
+        <input type="submit" value="View" data-title="@Model.FundraisingEvent.Title" data-id="@Model.FundraisingEvent.FundraisingEventId" class="@("event-link " + (!Model.AlternateColor ? "event-link-primary" : "event-link-alternate"))" />
+    }
+</div>

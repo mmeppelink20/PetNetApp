@@ -1,0 +1,72 @@
+﻿<Page x:Class="WpfPresentation.Misc.LandingPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfPresentation.Misc"
+        mc:Ignorable="d"
+        Title="LandingPage" MinHeight="600" MinWidth="800" >
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="35"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="35"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <!-- Banner Text -->
+        <Label x:Name="lblWelcome" Content="Welcome to Pet.Net!" FontSize="36" FontWeight="Bold" Foreground="#FFEEF2E6" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="5" Panel.ZIndex="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Label.Effect>
+                <DropShadowEffect BlurRadius="0" Color="#FF1C6758"/>
+            </Label.Effect>
+        </Label>
+        <Label x:Name="lblSlogan" Content="Your one stop shop to everything pets!" FontWeight="Bold" Foreground="#FFEEF2E6" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="5" Panel.ZIndex="1" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,55,0,0"/>
+
+        <!-- Banner -->
+        <Canvas x:Name="canvasBanner" Grid.ColumnSpan="5" Grid.Column="1" Grid.Row="1" MouseDown="canvasBanner_MouseDown" MouseLeave="canvasBanner_MouseLeave" MouseMove="canvasBanner_MouseMove" MouseEnter="canvasBanner_MouseEnter" >
+
+            <!-- Banner Arrows & Gradients -->
+            <Image x:Name="imgLeftArrow" Source="/WpfPresentation;component/Images/arrowleftDark.png" Width="35" Height="35" Visibility="Hidden" Canvas.Left="15" Panel.ZIndex="1"/>
+            <Rectangle x:Name="rectLeftArrow" Visibility="Hidden" Canvas.Left="0">
+                <Rectangle.Fill>
+                    <LinearGradientBrush StartPoint="1,0" EndPoint="0,0">
+                        <GradientStop Offset="0"/>
+                        <GradientStop Color="#7FCDA483" Offset="1"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Image x:Name="imgRightArrow" Source="/WpfPresentation;component/Images/arrowRightDark.png" Width="35" Height="35" Visibility="Hidden" Canvas.Right="15" Panel.ZIndex="1"/>
+            <Rectangle x:Name="rectRightArrow" Visibility="Hidden" Canvas.Right="0">
+                <Rectangle.Fill>
+                    <LinearGradientBrush StartPoint="1,0" EndPoint="0,0">
+                        <GradientStop Offset="1"/>
+                        <GradientStop Color="#7FCDA483" Offset="0"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+
+            <!-- Canvas Background -->
+            <Canvas.Background>
+                <ImageBrush ImageSource="/WpfPresentation;component/Images/Placeholder/bannerImage_1.jpg" Stretch="UniformToFill"/>
+            </Canvas.Background>
+        </Canvas>
+
+        <!-- Page Border -->
+        <Rectangle Fill="#6a9f83" Grid.ColumnSpan="7"/>
+        <Rectangle Fill="#6a9f83" Grid.ColumnSpan="7" Grid.Row="2"/>
+        <Rectangle Fill="#6a9f83" Grid.RowSpan="10"/>
+        <Rectangle Fill="#6a9f83" Grid.Column="6" Grid.RowSpan="10"/>
+
+        <Frame x:Name="frameLandingPage" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="5" Loaded="frameLandingPage_Loaded"/>
+
+    </Grid>
+</Page>

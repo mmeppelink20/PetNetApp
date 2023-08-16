@@ -1,0 +1,240 @@
+﻿:root {
+    --campaign-input-x-margin: 5px;
+    --campaign-input-y-margin: 0px;
+    --header-height: 220px;
+}
+
+#campaignModal > .modal-dialog
+{
+    max-width: 80vw;
+}
+
+.modal-content
+{
+    background-color: var(--background-color);
+    border-radius: 10px;
+}
+
+.modal-close-button
+{
+    height: 40px;
+    width: 80px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+
+@media only screen and (max-width: 1680px) {
+    :root {
+        --header-height: 220px;
+    }
+}
+
+@media only screen and (max-width: 950px) {
+    :root {
+        --header-height: 260px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    :root {
+        --header-height: 315px;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    :root {
+        --header-height: 480px;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    height: var(--header-height);
+}
+
+body {
+    height: 100vh;
+}
+
+
+.body-content {
+    overflow: auto;
+}
+
+html {
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.body-content {
+    height: calc(95vh - var(--header-height));
+}
+.campaign-control {
+    height: 40px;
+    border-radius: 10px;
+    display: grid;
+    width: calc(100% - 10px);
+    grid-template-columns: calc(100% - 60px) 60px;
+    margin: 0 5px;
+}
+
+.campaign-control-text
+{
+    vertical-align: middle;
+    padding: 0px 10px;
+    grid-column: 1;
+    display: table-cell;
+}
+
+.campaign-control-text-container {
+    display: table;
+}
+
+.campaign-control-button-group {
+    grid-column: 2;
+    padding: 0px 10px;
+    display: grid;
+    margin:auto;
+    
+}
+
+.campaign-link {
+    display: table-cell;
+    float: none;
+    vertical-align: middle;
+    background: transparent;
+    border: none;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+}
+
+
+.campaign-link-primary {
+    color: var(--background-color);
+}
+
+.campaign-link-primary:hover {
+    color: var(--color-light-green);
+}
+
+.campaign-link-alternate {
+    color: var(--control-foreground-color);
+}
+
+.campaign-link-alternate:hover {
+    color: var(--color-green);
+}
+
+.campaign-control-primary {
+    background-color: #3D8361;
+    color: #EEF2E6;
+}
+
+.campaign-control-alternate {
+    background-color: #D6CDA4;
+    color: #1C6758;
+}
+
+input, select
+{
+    max-width: initial;
+}
+
+.petnet-input {
+    border-radius: 10px;
+    border-top: 1px solid #D6CDA4;
+    border-left: 1px solid #D6CDA4;
+    border-right: 1px solid #D6CDA4;
+    border-bottom: 1px solid #D6CDA4;
+    background-color: var(--control-background-color);
+    color: var(--control-foreground-color);
+}
+
+
+    .petnet-input:hover {
+        border-radius: 10px;
+        border-top: 1px solid #3D8361;
+        border-left: 1px solid #3D8361;
+        border-right: 1px solid #3D8361;
+        border-bottom: 1px solid #3D8361;
+    }
+
+
+    .petnet-input:focus {
+        outline: none;
+        border-radius: 10px;
+        border-top: 1px solid #1C6758;
+        border-left: 1px solid #1C6758;
+        border-right: 1px solid #1C6758;
+        border-bottom: 1px solid #1C6758;
+    }
+
+.nav-buttons {
+    text-align: center;
+    align-self: center;
+    vertical-align: middle;
+    grid-row: 3;
+    grid-column: 1;
+    height:100%;
+    display:table;
+}
+
+.nav-buttons-center {
+    display:table-cell;
+    vertical-align: middle;
+}
+
+.campaigns-list {
+    overflow: auto;
+    max-height: 100%;
+    grid-row: 2;
+}
+
+
+.campaigns-title-group {
+    grid-column: 1;
+    vertical-align: bottom;
+    padding-left: 10px;
+}
+
+.campaigns-list-empty {
+    display: grid;
+}
+
+
+.no-campaigns-group {
+    vertical-align: middle;
+    text-align: center;
+    border-radius: 10px;
+    border: 3px solid green;
+    margin: auto;
+    display: table;
+    background-color: var(--control-background-color);
+}
+
+.no-campaigns-text {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+
+@media only screen and (max-width: 720px) {
+    #campaignModal > .modal-dialog {
+        max-width: 95vw;
+        margin: auto;
+    }
+}

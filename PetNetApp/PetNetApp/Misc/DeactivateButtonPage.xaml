@@ -1,0 +1,63 @@
+﻿<Page x:Class="WpfPresentation.Misc.DeactivateButtonPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfPresentation.Misc"
+      mc:Ignorable="d" 
+      d:DesignHeight="550" d:DesignWidth="800"
+      Title="DeactivateButtonPage" Loaded="Page_Loaded">
+
+    <Grid x:Name="gridSettings">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="6*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="0"/> <!-- Toggle Foster Header -->
+            <RowDefinition Height="0"/> <!-- Toggle Foster Text -->
+            <RowDefinition Height="0"/> <!-- Toggle Foster Button -->
+            <RowDefinition Height="0"/>
+            <RowDefinition Height="50"/>
+            <!-- Deactivate Account Header -->
+            <RowDefinition Height="150"/>
+            <!-- Deactivate Account Body -->
+            <RowDefinition Height="75"/>
+            <!-- Deactivate Account Button -->
+            <RowDefinition/>
+            <RowDefinition Height="25"/>
+        </Grid.RowDefinitions>
+
+        <!-- Toggle Foster Header -->
+        <Label x:Name="lblToggleFosterHeader" Content="Fostering Availability" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1"  Grid.ColumnSpan="3" Visibility="Hidden"/>
+        <Rectangle x:Name="rectDecor" Fill="#FF9EC1B0" Height="3" Width="425" VerticalAlignment="Bottom" Grid.Row="1"  Grid.ColumnSpan="3" Visibility="Hidden"/>
+
+        <!-- Toggle Foster Text -->
+        <Label x:Name="lblToggleFosterText1" Visibility="Hidden" Content="You've reached your fostering limit." Grid.Row="2" Grid.Column="1" FontSize="16" Foreground="#FF1C6758" HorizontalAlignment="Center" VerticalAlignment="Top" />
+        <Label x:Name="lblToggleFosterText2" Visibility="Hidden" Content="Please contact a shelter near you for assisstance." Grid.Row="2" Grid.Column="1" FontSize="16" Foreground="#FF1C6758" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        <Rectangle x:Name="rectDecor2" Visibility="Hidden" Fill="#FF9EC1B0" Height="2" Width="425" VerticalAlignment="Bottom" Grid.Row="2"  Grid.ColumnSpan="3"/>
+
+
+        <!-- Toggle Foster Body -->
+        <Button x:Name="btnToggleFoster" Visibility="Hidden" Grid.Row="3" Grid.Column="1" Content="Available" Width="125" Height="50" HorizontalAlignment="Left" Margin="25,0,0,0" Click="btnToggleFoster_Click" />
+        <Label x:Name="lblNoOfAnimals" Visibility="Hidden" Content="#ofAnimals / #AllowedAnimals" FontSize="16" HorizontalAlignment="Left" Grid.Row="3" Grid.Column="1" Margin="200,0,0,0" VerticalAlignment="Center"/>
+        <Rectangle x:Name="rectDecor1" Visibility="Hidden" Fill="#FF9EC1B0" Height="50" Width="3" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" Margin="175,0,0,0" />
+        
+        <!-- Deactivate Header -->
+        <Label Content="Deactivate Account" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="5"  Grid.ColumnSpan="3"/>
+        <Rectangle Fill="#FF9EC1B0" Height="3" Width="425" VerticalAlignment="Bottom" Grid.Row="5"  Grid.ColumnSpan="3"/>
+
+        <!-- Deactivate Body Text -->
+        <TextBlock x:Name="txtblkDeactivateWarning" Grid.Row="6" Grid.Column="1" Text="Test" FontSize="16" Foreground="#FF1C6758" HorizontalAlignment="Center" ScrollViewer.VerticalScrollBarVisibility="Disabled" IsEnabled="False" Margin="0,10" TextWrapping="Wrap" TextAlignment="Center" />
+        <Rectangle Fill="#FF9EC1B0" Height="3" Width="425" VerticalAlignment="Bottom" Grid.Row="6"  Grid.ColumnSpan="3"/>
+
+
+        <!-- Deactivate Button -->
+        <Button Content="Deactivate Account" Style="{StaticResource ResourceKey=rsrcWarningButton}" Height="50" Width="250" Grid.ColumnSpan="3" Grid.Row="7" Click="DeactivateButton_Click"/>
+
+        <Rectangle Fill="#eceee0" Grid.RowSpan="16" Panel.ZIndex="-1" />
+        <Rectangle Fill="#eceee0" Grid.RowSpan="16" Panel.ZIndex="-1" Grid.Column="2" />
+    </Grid>
+</Page>

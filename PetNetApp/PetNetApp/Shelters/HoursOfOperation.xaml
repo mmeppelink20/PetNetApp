@@ -1,0 +1,65 @@
+﻿<Window x:Class="WpfPresentation.Shelters.HoursOfOperation"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfPresentation.Shelters"
+        mc:Ignorable="d"
+        SizeToContent="Height"
+        WindowStartupLocation="CenterScreen"  WindowStyle="None" Background="Transparent" AllowsTransparency="True"
+        Title="HoursOfOperation" Width="700" Foreground="#00000000">
+    <Border BorderThickness="5" Background="#FF3D8361" BorderBrush="#FF1C6758" CornerRadius="20">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="60"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="42*"/>
+                <ColumnDefinition Width="123.2"/>
+                <ColumnDefinition Width="123.2"/>
+                <ColumnDefinition Width="123.2"/>
+                <ColumnDefinition Width="123.2"/>
+                <ColumnDefinition Width="123.2"/>
+                <ColumnDefinition Width="42*"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="0" FontSize="36" x:Name="lblEditHours" Content="Shelter Hours of Operation" HorizontalAlignment="Center"  VerticalAlignment="Center" Background="#FF3D8361" Foreground="#FFEEF2E6" Height="58" Width="436" Grid.ColumnSpan="5" Grid.Column="1" Margin="79,1"/>
+            <Rectangle  Grid.Row="0" x:Name="rectHeader" Fill="{DynamicResource DataGridColumnHeader.Background}" Height="4" Width="474" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.ColumnSpan="5" Grid.Column="1"/>
+            <Border x:Name="boarderDaySelection" BorderThickness="5" Background="#FFD6CDA4" BorderBrush="#FF1C6758" CornerRadius="10" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="646" Height="45" Grid.ColumnSpan="7">
+                <Grid HorizontalAlignment="Center" Width="646">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="btnSunday" Content="Sunday" HorizontalAlignment="Center" VerticalAlignment="Center" Width="78" FontSize="14" Click="btnSunday_Click"/>
+                    <Button x:Name="btnMonday" Content="Monday" HorizontalAlignment="Center" VerticalAlignment="Center" Width="78" Grid.Column="1" FontSize="14" Click="btnMonday_Click"/>
+                    <Button x:Name="btnTuesday" Content="Tuesday" HorizontalAlignment="Center" VerticalAlignment="Center" Width="78" Grid.Column="2" FontSize="14" Click="btnTuesday_Click"/>
+                    <Button x:Name="btnWednesday" Content="Wednesday" HorizontalAlignment="Center" VerticalAlignment="Center" Width="87" Grid.Column="3" FontSize="14" Click="btnWednesday_Click"/>
+                    <Button x:Name="btnThursday" Content="Thursday" HorizontalAlignment="Center" VerticalAlignment="Center" Width="78" Grid.Column="4" FontSize="14" Click="btnThursday_Click"/>
+                    <Button x:Name="btnFriday" Content="Friday" HorizontalAlignment="Center" VerticalAlignment="Center" Width="78" Grid.Column="5" FontSize="14" Click="btnFriday_Click"/>
+                    <Button x:Name="btnSaturday" Content="Saturday" HorizontalAlignment="Center" VerticalAlignment="Center" Width="78" Grid.Column="6" FontSize="14" Click="btnSaturday_Click"/>
+                </Grid>
+
+            </Border>
+            <Button x:Name="btnSaveChanges" Content="Save Changes" Grid.Column="2" HorizontalAlignment="Left" Grid.Row="4" Style="{StaticResource ResourceKey=rsrcSafeButton}" VerticalAlignment="Top" Width="170" Grid.ColumnSpan="2" Height="50" Click="btnSaveChanges_Click"/>
+            <Button x:Name="btnCancel" Content="Exit" Grid.Column="3" HorizontalAlignment="Right" Grid.Row="4" Style="{StaticResource ResourceKey=rsrcWarningButton}" VerticalAlignment="Top" Width="170" Grid.ColumnSpan="2" Height="50" Margin="76,0,0,0" Click="btnCancel_Click"/>
+            <TextBox x:Name="txtOpenHour" Grid.Column="1" HorizontalAlignment="Left" Height="53" Margin="0,37,0,0" Grid.Row="3" TextWrapping="Wrap" Text="00:00" VerticalAlignment="Top" Width="247" Grid.ColumnSpan="2" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" KeyDown="txtOpenHour_KeyDown" TextChanged="txtOpenHour_TextChanged" CommandManager.PreviewCanExecute="txtOpenHour_PreviewCanExecute" LostFocus="txtOpenHour_LostFocus"/>
+            <TextBox x:Name="txtCloseHour" Grid.Column="4" HorizontalAlignment="Left" Height="53" Margin="0,37,0,0" Grid.Row="3" TextWrapping="Wrap" Text="00:00" VerticalAlignment="Top" Width="246" Grid.ColumnSpan="2" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" KeyDown="txtCloseHour_KeyDown" TextChanged="txtCloseHour_TextChanged" CommandManager.PreviewCanExecute="txtCloseHour_PreviewCanExecute" LostFocus="txtCloseHour_LostFocus"/>
+            <Rectangle  Grid.Row="3" x:Name="rectHeader_Copy" Fill="{DynamicResource DataGridColumnHeader.Background}" Height="4" Width="94" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="3" Margin="0,62,0,34"/>
+            <Label x:Name="lblOpenHour" Content="Opening Hour:" Grid.Column="1" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Top" Grid.ColumnSpan="2" Foreground="White" Margin="37,0,94,0" Width="116"/>
+            <Label x:Name="lblCloseHour" Content="Closing Hour:" Grid.Column="4" HorizontalAlignment="Center" Grid.Row="3" VerticalAlignment="Top" Grid.ColumnSpan="2" Foreground="White" Margin="39,0,102,0"/>
+            <Label Grid.Row="2" FontSize="22" x:Name="lblDayToEdit" Content="Hours of Operation for:" HorizontalAlignment="Center"  VerticalAlignment="Center" Background="#FF3D8361" Foreground="#FFEEF2E6" Grid.ColumnSpan="3" Grid.Column="2" />
+            <Rectangle  Grid.Row="2" x:Name="rectDayDivider" Fill="{DynamicResource DataGridColumnHeader.Background}" Height="4" Width="474" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.ColumnSpan="5" Grid.Column="1" Margin="71,0,71,10"/>
+            <Button x:Name="btnOpenHourAMPM" Content="(AM)" Grid.Column="2" HorizontalAlignment="Left" Margin="29,3,0,0" Grid.Row="3" VerticalAlignment="Top" Width="56" Click="btnOpenHourAMPM_Click"/>
+            <Button x:Name="btnCloseHourAMPM" Content="(PM)" Grid.Column="5" HorizontalAlignment="Left" Margin="26,3,0,0" Grid.Row="3" VerticalAlignment="Top" Width="56" Click="btnCloseHourAMPM_Click"/>
+        </Grid>
+    </Border>
+</Window>

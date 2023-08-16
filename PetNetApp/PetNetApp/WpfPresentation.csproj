@@ -1,0 +1,1506 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{78640225-77F2-41C1-BB8D-A5B581979AA2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>WpfPresentation</RootNamespace>
+    <AssemblyName>WpfPresentation</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework.Aero2" />
+    <Reference Include="ScottPlot, Version=4.1.63.0, Culture=neutral, PublicKeyToken=86698dc10387c39e, processorArchitecture=MSIL">
+      <HintPath>..\packages\ScottPlot.4.1.63\lib\net462\ScottPlot.dll</HintPath>
+    </Reference>
+    <Reference Include="ScottPlot.WPF, Version=4.1.63.0, Culture=neutral, PublicKeyToken=e53b06131e34a3aa, processorArchitecture=MSIL">
+      <HintPath>..\packages\ScottPlot.WPF.4.1.63\lib\net472\ScottPlot.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Common, Version=4.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Drawing.Common.4.7.2\lib\net461\System.Drawing.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Xceed.Wpf.AvalonDock, Version=4.5.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.5.0\lib\net40\Xceed.Wpf.AvalonDock.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Aero, Version=4.5.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.5.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Aero.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Metro, Version=4.5.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.5.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.VS2010, Version=4.5.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.5.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.VS2010.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.Toolkit, Version=4.5.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.5.0\lib\net40\Xceed.Wpf.Toolkit.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Animals\AddEditReportOnAdopter.xaml.cs">
+      <DependentUpon>AddEditReportOnAdopter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Animals\AddEditReportOnFoster.xaml.cs">
+      <DependentUpon>AddEditReportOnFoster.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Animals\AddEditVaccinationsPage.xaml.cs">
+      <DependentUpon>AddEditVaccinationsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Animals\AddTestPage.xaml.cs">
+      <DependentUpon>AddTestPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Animals\AdoptionApplicationResponse.xaml.cs">
+      <DependentUpon>AdoptionApplicationResponse.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Animals\AddPrescription.xaml.cs">
+      <DependentUpon>AddPrescription.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Animals\AnimalMedicalProfile.xaml.cs">
+      <DependentUpon>AnimalMedicalProfile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Animals\AnimalMedicalTestsPage.xaml.cs">
+      <DependentUpon>AnimalMedicalTestsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Animals\AdoptionApplicantsWindow.xaml.cs">
+      <DependentUpon>AdoptionApplicantsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Animals\ApplicationResponseWindow.xaml.cs">
+      <DependentUpon>ApplicationResponseWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Animals\SurrenderFormsPage.xaml.cs">
+      <DependentUpon>SurrenderFormsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Animals\ViewApplication.xaml.cs">
+      <DependentUpon>ViewApplication.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Animals\AnimalUpdatesWindow.xaml.cs">
+      <DependentUpon>AnimalUpdatesWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Animals\UCAnimalUpdates.xaml.cs">
+      <DependentUpon>UCAnimalUpdates.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Community\CustomerRecordsPage.xaml.cs">
+      <DependentUpon>CustomerRecordsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Community\RoleManagementPopup.xaml.cs">
+      <DependentUpon>RoleManagementPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Fundraising\AddEditViewUpdateFundraisingEventPage.xaml.cs">
+      <DependentUpon>AddEditViewUpdateFundraisingEventPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Fundraising\ViewFundraisingEventsPage.xaml.cs">
+      <DependentUpon>ViewFundraisingEventsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Management\Inventory\CheckInCheckOutPage.xaml.cs">
+      <DependentUpon>CheckInCheckOutPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Management\Inventory\EditInventoryQuantityPage.xaml.cs">
+      <DependentUpon>EditInventoryQuantityPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Management\Inventory\Library\RequestNewLibraryItem.xaml.cs">
+      <DependentUpon>RequestNewLibraryItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Events\ViewEventGraphsPage.xaml.cs">
+      <DependentUpon>ViewEventGraphsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Events\AddVolunteerToEvent.xaml.cs">
+      <DependentUpon>AddVolunteerToEvent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ApplicantUC.xaml.cs">
+      <DependentUpon>ApplicantUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Community\ViewNearbyResourcesMap.xaml.cs">
+      <DependentUpon>ViewNearbyResourcesMap.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Animals\ViewAllAdoptableAnimalsPage.xaml.cs">
+      <DependentUpon>ViewAllAdoptableAnimalsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Events\EditEventPage.xaml.cs">
+      <DependentUpon>EditEventPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Fundraising\ViewDonationReceiptWindow.xaml.cs">
+      <DependentUpon>ViewDonationReceiptWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Management\Inventory\Library\AddCategoryTagPage.xaml.cs">
+      <DependentUpon>AddCategoryTagPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Fundraising\AddEditInstitutionalEntity.xaml.cs">
+      <DependentUpon>AddEditInstitutionalEntity.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Fundraising\EnterDonation.xaml.cs">
+      <DependentUpon>EnterDonation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Management\Inventory\ViewNewItemRequestsPage.xaml.cs">
+      <DependentUpon>ViewNewItemRequestsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Fundraising\CreateNewPledge.xaml.cs">
+      <DependentUpon>CreateNewPledge.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Fundraising\ViewFundraisingEventPledgers.xaml.cs">
+      <DependentUpon>ViewFundraisingEventPledgers.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Fundraising\ViewSpecificPledger.xaml.cs">
+      <DependentUpon>ViewSpecificPledger.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Fundraising\UpdateFundraisingCampaign.xaml.cs">
+      <DependentUpon>UpdateFundraisingCampaign.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Fundraising\DonorInfoPage.xaml.cs">
+      <DependentUpon>DonorInfoPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Fundraising\ViewFundraisingEventContacts.xaml.cs">
+      <DependentUpon>ViewFundraisingEventContacts.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Events\EventsPage.xaml.cs">
+      <DependentUpon>EventsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Events\ViewEvents.xaml.cs">
+      <DependentUpon>ViewEvents.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Events\VolunteerListPage.xaml.cs">
+      <DependentUpon>VolunteerListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\InstitutionalEntityCompanyNameUserControl.xaml.cs">
+      <DependentUpon>InstitutionalEntityCompanyNameUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\VolunteerListUserControl.xaml.cs">
+      <DependentUpon>VolunteerListUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Fundraising\ViewEvents.xaml.cs">
+      <DependentUpon>ViewEvents.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Fundraising\ViewEventsWin.xaml.cs">
+      <DependentUpon>ViewEventsWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Fundraising\AddFundraisingEventHostWindow.xaml.cs">
+      <DependentUpon>AddFundraisingEventHostWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Fundraising\ViewFundraisingEventSponsors.xaml.cs">
+      <DependentUpon>ViewFundraisingEventSponsors.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Management\Inventory\AddRequestLinePage.xaml.cs">
+      <DependentUpon>AddRequestLinePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Management\Inventory\CreateShelterRequestPage.xaml.cs">
+      <DependentUpon>CreateShelterRequestPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Management\Inventory\Library\AddResourceItemPage.xaml.cs">
+      <DependentUpon>AddResourceItemPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Management\Inventory\InventoryNavigationPage.xaml.cs">
+      <DependentUpon>InventoryNavigationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Management\Inventory\Library\LibraryUI.xaml.cs">
+      <DependentUpon>LibraryUI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Management\Inventory\RequestInProgress.xaml.cs">
+      <DependentUpon>RequestInProgress.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Management\Inventory\SelectShelterForRequestPage.xaml.cs">
+      <DependentUpon>SelectShelterForRequestPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Management\Inventory\ViewEditCartPage.xaml.cs">
+      <DependentUpon>ViewEditCartPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Management\Inventory\ViewEditShelterInventoryItem.xaml.cs">
+      <DependentUpon>ViewEditShelterInventoryItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Management\Inventory\ViewShelterInventoryPage.xaml.cs">
+      <DependentUpon>ViewShelterInventoryPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Management\ViewTicketPage.xaml.cs">
+      <DependentUpon>ViewTicketPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AdoptableAnimalListUserControl.xaml.cs">
+      <DependentUpon>AdoptableAnimalListUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Shelters\HoursOfOperation.xaml.cs">
+      <DependentUpon>HoursOfOperation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\InKindDonationUserControl.xaml.cs">
+      <DependentUpon>InKindDonationUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\NewItemRequestUserControl.xaml.cs">
+      <DependentUpon>NewItemRequestUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\FundraisingEventPledgerHeaderControl.xaml.cs">
+      <DependentUpon>FundraisingEventPledgerHeaderControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ViewEventsFundraisingEventUserControl.xaml.cs">
+      <DependentUpon>ViewEventsFundraisingEventUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ViewFundraisingEventPledgersControl.xaml.cs">
+      <DependentUpon>ViewFundraisingEventPledgersControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ViewFundraisingInstitutionalEntityControl.xaml.cs">
+      <DependentUpon>ViewFundraisingInstitutionalEntityControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ViewSpecificPledgerControl.xaml.cs">
+      <DependentUpon>ViewSpecificPledgerControl.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Animals\AddEditAnimalDeath.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="Animals\QurantinePage.xaml.cs">
+      <DependentUpon>QurantinePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Animals\MedicalRecordListPage.xaml.cs">
+      <DependentUpon>MedicalRecordListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Animals\UploadAdditionalImageWindow.xaml.cs">
+      <DependentUpon>UploadAdditionalImageWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Animals\Edit_Medical_Notes.xaml.cs">
+      <DependentUpon>Edit_Medical_Notes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Animals\Medical_Notes.xaml.cs">
+      <DependentUpon>Medical_Notes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Animals\ViewPrescriptions.xaml.cs">
+      <DependentUpon>ViewPrescriptions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Community\SuspendUserPopup.xaml.cs">
+      <DependentUpon>SuspendUserPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Animals\UploadAdditionalFileWindow.xaml.cs">
+      <DependentUpon>UploadAdditionalFileWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Animals\AddAnimalPage.xaml.cs">
+      <DependentUpon>AddAnimalPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Animals\EditDetailAnimalProfile.xaml.cs">
+      <DependentUpon>EditDetailAnimalProfile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Animals\EditTreatment.xaml.cs">
+      <DependentUpon>EditTreatment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Animals\MedicalFilesPage.xaml.cs">
+      <DependentUpon>MedicalFilesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Animals\MedicalPage.xaml.cs">
+      <DependentUpon>MedicalPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Animals\EditProcedurePage.xaml.cs">
+      <DependentUpon>EditProcedurePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Animals\MedProcedurePage.xaml.cs">
+      <DependentUpon>MedProcedurePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Animals\VaccinationsPage.xaml.cs">
+      <DependentUpon>VaccinationsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Events\AddFundraisingEvent.xaml.cs">
+      <DependentUpon>AddFundraisingEvent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Events\AddFundraisingEvent2.xaml.cs">
+      <DependentUpon>AddFundraisingEvent2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Events\AnimalListWindow.xaml.cs">
+      <DependentUpon>AnimalListWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Events\ContactListWindow.xaml.cs">
+      <DependentUpon>ContactListWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Events\EditFundraisingEvent.xaml.cs">
+      <DependentUpon>EditFundraisingEvent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Events\EditFundraisingEvent2.xaml.cs">
+      <DependentUpon>EditFundraisingEvent2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Events\SponsorListWindow.xaml.cs">
+      <DependentUpon>SponsorListWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Events\UCAnimalCanTakeToEvent.xaml.cs">
+      <DependentUpon>UCAnimalCanTakeToEvent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Events\UCAnimalTakeToEvent.xaml.cs">
+      <DependentUpon>UCAnimalTakeToEvent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Events\UCContact.xaml.cs">
+      <DependentUpon>UCContact.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Events\UCEventContact.xaml.cs">
+      <DependentUpon>UCEventContact.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Events\UCEventSponsor.xaml.cs">
+      <DependentUpon>UCEventSponsor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Events\UCSponsor.xaml.cs">
+      <DependentUpon>UCSponsor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Events\UploadEventImageWindow.xaml.cs">
+      <DependentUpon>UploadEventImageWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Fundraising\AddEditViewFundraisingCampaignPage.xaml.cs">
+      <DependentUpon>AddEditViewFundraisingCampaignPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Community\UCAdoptedAnimal.xaml.cs">
+      <DependentUpon>UCAdoptedAnimal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Community\ViewUpdateFromFosterProfile.xaml.cs">
+      <DependentUpon>ViewUpdateFromFosterProfile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Fundraising\ViewCampaignsPage.xaml.cs">
+      <DependentUpon>ViewCampaignsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Fundraising\ViewSpecificDonationPage.xaml.cs">
+      <DependentUpon>ViewSpecificDonationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Management\Inventory\ViewInventoryChangesPage.xaml.cs">
+      <DependentUpon>ViewInventoryChangesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Fundraising\ViewDonationsPage.xaml.cs">
+      <DependentUpon>ViewDonationsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Management\Inventory\SpecificRequestPage.xaml.cs">
+      <DependentUpon>SpecificRequestPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Management\Inventory\ViewRequestListPage.xaml.cs">
+      <DependentUpon>ViewRequestListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Shelters\ContactPage.xaml.cs">
+      <DependentUpon>ContactPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Shelters\ShelterNetworkPage.xaml.cs">
+      <DependentUpon>ShelterNetworkPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Fundraising\AddFundraisingCampaignSponsorsWindow.xaml.cs">
+      <DependentUpon>AddFundraisingCampaignSponsorsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DonationUserControl.xaml.cs">
+      <DependentUpon>DonationUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\InstitutionalEntityUserControl.xaml.cs">
+      <DependentUpon>InstitutionalEntityUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Management\CreateNewTicket.xaml.cs">
+      <DependentUpon>CreateNewTicket.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\InKindUserControl.xaml.cs">
+      <DependentUpon>InKindUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Fundraising\ViewFundraisingEventHosts.xaml.cs">
+      <DependentUpon>ViewFundraisingEventHosts.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ViewCampaignsFundraisingCampaignUserControl.xaml.cs">
+      <DependentUpon>ViewCampaignsFundraisingCampaignUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Fundraising\FundraisingPage.xaml.cs">
+      <DependentUpon>FundraisingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Management\KenOccupancyUpdate-333.xaml.cs">
+      <DependentUpon>KenOccupancyUpdate-333.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Management\VolunteerInfoPage.xaml.cs">
+      <DependentUpon>VolunteerInfoPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Misc\UserDetailsPage.xaml.cs">
+      <DependentUpon>UserDetailsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Shelters\AlterShelter.xaml.cs">
+      <DependentUpon>AlterShelter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Shelters\ShelterPage.xaml.cs">
+      <DependentUpon>ShelterPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Shelters\ShelterVMListUI.xaml.cs">
+      <DependentUpon>ShelterVMListUI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\PlaceholderTextBox.cs" />
+    <Compile Include="Animals\ViewAdoptableAnimalProfile.xaml.cs">
+      <DependentUpon>ViewAdoptableAnimalProfile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Management\SchedulePage.xaml.cs">
+      <DependentUpon>SchedulePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Animals\MedicalTreatmentPage.xaml.cs">
+      <DependentUpon>MedicalTreatmentPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Management\ViewTicketList.xaml.cs">
+      <DependentUpon>ViewTicketList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Management\AssignAnimalToKennel.xaml.cs">
+      <DependentUpon>AssignAnimalToKennel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Management\ViewAnimalsForKennel.xaml.cs">
+      <DependentUpon>ViewAnimalsForKennel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Management\AddKennelPage.xaml.cs">
+      <DependentUpon>AddKennelPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Management\ViewKennelPage.xaml.cs">
+      <DependentUpon>ViewKennelPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Misc\AccountSettingsPage.xaml.cs">
+      <DependentUpon>AccountSettingsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Misc\DeactivateButtonPage.xaml.cs">
+      <DependentUpon>DeactivateButtonPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Misc\LandingPage.xaml.cs">
+      <DependentUpon>LandingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Misc\AccountInfoPage.xaml.cs">
+      <DependentUpon>AccountInfoPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Misc\LandingBodyLoggedInPage.xaml.cs">
+      <DependentUpon>LandingBodyLoggedInPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Misc\LogInPage.xaml.cs">
+      <DependentUpon>LogInPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Misc\SignUp.xaml.cs">
+      <DependentUpon>SignUp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Misc\UserProfilePage.xaml.cs">
+      <DependentUpon>UserProfilePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\KennelUserControl.xaml.cs">
+      <DependentUpon>KennelUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AnimalListUserControl.xaml.cs">
+      <DependentUpon>AnimalListUserControl.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Animals\AddEditReportOnAdopter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Animals\AddEditReportOnFoster.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Animals\AddEditVaccinationsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="Management\AddEditSchedule.xaml.cs">
+      <DependentUpon>AddEditSchedule.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Animals\AdoptionApplicationResponse.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Animals\AdoptionApplicantsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Animals\ApplicationResponseWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Animals\SurrenderFormsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Animals\ViewApplication.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Animals\AnimalUpdatesWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Animals\UCAnimalUpdates.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Community\CustomerRecordsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Fundraising\AddEditViewUpdateFundraisingEventPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Fundraising\ViewFundraisingEventsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Management\Inventory\CheckInCheckOutPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Management\Inventory\EditInventoryQuantityPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Management\Inventory\Library\RequestNewLibraryItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Events\ViewEventGraphsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Events\AddVolunteerToEvent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\ApplicantUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Community\ViewNearbyResourcesMap.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Animals\ViewAllAdoptableAnimalsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Events\EditEventPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Management\Inventory\Library\AddCategoryTagPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Fundraising\AddEditInstitutionalEntity.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Fundraising\ViewDonationReceiptWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Fundraising\EnterDonation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Management\Inventory\ViewNewItemRequestsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Fundraising\CreateNewPledge.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Fundraising\ViewFundraisingEventPledgers.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Fundraising\ViewSpecificPledger.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Fundraising\UpdateFundraisingCampaign.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Management\AddEditSchedule.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Animals\AddTestPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Animals\QurantinePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Fundraising\DonorInfoPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Fundraising\ViewFundraisingEventContacts.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Animals\MedicalRecordListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Animals\Edit_Medical_Notes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Animals\Medical_Notes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Events\EventsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Events\ViewEvents.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Events\VolunteerListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\InstitutionalEntityCompanyNameUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\VolunteerListUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Fundraising\AddFundraisingEventHostWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Fundraising\ViewEvents.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Fundraising\ViewEventsWin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Fundraising\ViewFundraisingEventSponsors.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Events\AddFundraisingEvent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Events\AddFundraisingEvent2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Events\AnimalListWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Events\ContactListWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Events\EditFundraisingEvent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Events\EditFundraisingEvent2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Events\SponsorListWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Events\UCAnimalCanTakeToEvent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Events\UCAnimalTakeToEvent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Events\UCContact.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Events\UCEventContact.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Events\UCEventSponsor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Events\UCSponsor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Events\UploadEventImageWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Animals\AddPrescription.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Animals\ViewPrescriptions.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Animals\UploadAdditionalImageWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Community\UCAdoptedAnimal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Community\ViewUpdateFromFosterProfile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Community\RoleManagementPopup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Community\SuspendUserPopup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Animals\UploadAdditionalFileWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Fundraising\ViewSpecificDonationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Fundraising\AddEditViewFundraisingCampaignPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Management\CreateNewTicket.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Animals\AnimalMedicalTestsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Fundraising\AddFundraisingCampaignSponsorsWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Fundraising\ViewCampaignsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Fundraising\ViewDonationsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Management\Inventory\AddRequestLinePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Management\Inventory\CreateShelterRequestPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Management\Inventory\Library\AddResourceItemPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Management\Inventory\InventoryNavigationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Management\Inventory\RequestInProgress.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Management\Inventory\SelectShelterForRequestPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Management\Inventory\SpecificRequestPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Management\Inventory\ViewEditCartPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Management\Inventory\ViewRequestListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Management\Inventory\Library\LibraryUI.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Management\Inventory\ViewEditShelterInventoryItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Management\Inventory\ViewInventoryChangesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Management\Inventory\ViewShelterInventoryPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Management\ViewTicketPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Fundraising\ViewFundraisingEventHosts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Misc\AccountInfoPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Misc\DeactivateButtonPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Misc\LandingBodyLoggedInPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Misc\SignUp.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Animals\AnimalMedicalProfile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Animals\AnimalsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Animals\AddAnimalPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Animals\EditDetailAnimalProfile.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Animals\EditTreatment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Animals\MedicalFilesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Animals\MedicalPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Animals\MedicalTreatmentPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Animals\VaccinationsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Shelters\ContactPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Shelters\HoursOfOperation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Shelters\ShelterNetworkPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\AdoptableAnimalListUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\DonationUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\InKindDonationUserControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\FundraisingEventPledgerHeaderControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\InstitutionalEntityUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\InKindUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\NewItemRequestUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\ViewCampaignsFundraisingCampaignUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Fundraising\FundraisingPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Management\KenOccupancyUpdate-333.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Management\VolunteerInfoPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Misc\UserDetailsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Shelters\AlterShelter.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Shelters\ShelterPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Shelters\ShelterVMListUI.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\PlaceholderTextBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Management\ViewTicketList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\ButtonStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\CalendarStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Community\CommunityPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Community\UserManagementPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Community\UsersControl\UCPreviewUser.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Animals\AnimalListPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Animals\MedicalNavigationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Animals\EditProcedurePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Animals\MedProcedurePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Animals\ViewAdoptableAnimalProfile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Management\AssignAnimalToKennel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Management\ViewAnimalsForKennel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Management\SchedulePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Management\VolunteerManagment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Misc\AccountSettingsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Misc\LandingPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Misc\LogInPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Management\AddKennelPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Misc\UserProfilePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PromptWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="Animals\AddEditAnimalDeath.xaml.cs">
+      <DependentUpon>AddEditAnimalDeath.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Animals\AnimalsPage.xaml.cs">
+      <DependentUpon>AnimalsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Community\CommunityPage.xaml.cs">
+      <DependentUpon>CommunityPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Community\UserManagementPage.xaml.cs">
+      <DependentUpon>UserManagementPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Community\UsersControl\UCPreviewUser.xaml.cs">
+      <DependentUpon>UCPreviewUser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Animals\AnimalListPage.xaml.cs">
+      <DependentUpon>AnimalListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Animals\MedicalNavigationPage.xaml.cs">
+      <DependentUpon>MedicalNavigationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Management\VolunteerManagment.xaml.cs">
+      <DependentUpon>VolunteerManagment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PromptWindow.xaml.cs">
+      <DependentUpon>PromptWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Management\ManagementPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Management\ViewKennelPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\CheckBoxStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\Colors.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\ComboBoxStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\ContextMenuStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\Converters.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\DataGridStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\DatePickerStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\LabelStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\PasswordBoxStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\RadioButtonStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\ScrollBarStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Styles\TextBoxStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\KennelUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\AnimalListUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\ViewEventsFundraisingEventUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\ViewFundraisingEventPledgersControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\ViewFundraisingInstitutionalEntityControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\ViewSpecificPledgerControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Management\ManagementPage.xaml.cs">
+      <DependentUpon>ManagementPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataAccessLayerFakes\DataAccessLayerFakes.csproj">
+      <Project>{AAF61954-B82A-46AE-BB1D-6419A8860ECC}</Project>
+      <Name>DataAccessLayerFakes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccessLayerInterfaces\DataAccessLayerInterfaces.csproj">
+      <Project>{79554C47-8412-4F9B-82E8-345D5919A186}</Project>
+      <Name>DataAccessLayerInterfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataObjects\DataObjects.csproj">
+      <Project>{5f873a2c-b117-4b22-88c8-bc29b3acba2e}</Project>
+      <Name>DataObjects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LogicLayerInterfaces\LogicLayerInterfaces.csproj">
+      <Project>{3f5e4460-f710-4b9a-85a4-cc30109ad376}</Project>
+      <Name>LogicLayerInterfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LogicLayer\LogicLayer.csproj">
+      <Project>{bbe0fac3-fcec-449c-b337-6c81a6225159}</Project>
+      <Name>LogicLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\menulight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\petnetLogo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\abstract-user-flat-4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\menuIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\bell.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\bell_hover.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\menuIcon_hover.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\user_hover.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\bell_notification.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\bell_notification_hover.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\LeftArrow.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\LeftArrow_Hover.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\RightArrow.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\RightArrow_Hover.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="logo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\PlusIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\AnimalImage.png" />
+    <Resource Include="Images\threedots.png" />
+    <Resource Include="Images\usericondark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ambulance_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\arrow_left3_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\beaker_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\clipboard_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\libraryplus_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\needle_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\notes_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\pharmacy_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\perfectCAT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\cameradark.png" />
+    <Resource Include="Images\emoticonhappydark.png" />
+    <Resource Include="Images\senddark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\PlusIcon_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Animals\AnimalImages\dogPic1.jpg" />
+    <Resource Include="Animals\AnimalImages\dogPic2.jpg" />
+    <Resource Include="Animals\AnimalImages\dogPic3.jpg" />
+    <Resource Include="Animals\AnimalImages\dogPic4.jpg" />
+    <Resource Include="Animals\AnimalImages\dogPic5.jpg" />
+    <Resource Include="Animals\AnimalImages\dogPic6.jpg" />
+    <Resource Include="Animals\AnimalImages\dogPic7.jpg" />
+    <Resource Include="Animals\AnimalImages\dogPic8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Placeholder\bannerImage_1.jpg" />
+    <Resource Include="Images\Placeholder\bannerImage_10.jpg" />
+    <Resource Include="Images\Placeholder\bannerImage_2.jpg" />
+    <Resource Include="Images\Placeholder\bannerImage_3.jpg" />
+    <Resource Include="Images\Placeholder\bannerImage_4.jpg" />
+    <Resource Include="Images\Placeholder\bannerImage_5.jpg" />
+    <Resource Include="Images\Placeholder\bannerImage_6.jpg" />
+    <Resource Include="Images\Placeholder\bannerImage_7.jpg" />
+    <Resource Include="Images\Placeholder\bannerImage_8.jpg" />
+    <Resource Include="Images\Placeholder\bannerImage_9.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\arrowleftDark.png" />
+    <Resource Include="Images\arrowRightDark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\petnetLogo_hover.png" />
+    <Resource Include="Images\threedots_hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\send_hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\NullImage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\BrokenImage.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\application_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\download_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\BrokenImageGreen.png" />
+    <Resource Include="Images\magnify.png" />
+    <Resource Include="Images\magnifydark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\format_line_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\arrow_down_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\arrow_up_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\refresh_button_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\refresh_button_light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\cedar_rapids_map.png" />
+    <Resource Include="Images\mapmarkerdark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\picture_placeholder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\outlined_placeholder-519.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\no_image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\menudark.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

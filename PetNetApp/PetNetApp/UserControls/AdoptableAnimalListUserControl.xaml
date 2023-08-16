@@ -1,0 +1,39 @@
+﻿<UserControl x:Class="WpfPresentation.UserControls.AdoptableAnimalListUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfPresentation.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+            <!-- Copied from AnimalListUserControl created by Molly -->
+    <Viewbox StretchDirection="Both" Stretch="Uniform">
+
+        <Border BorderBrush="#FF9EC1B0" BorderThickness="5" CornerRadius="5" Background="#9EC1B0" Margin="15" Height="250" Width="200" Padding="10">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0"></RowDefinition>
+                    <RowDefinition Height="150"></RowDefinition>
+                    <RowDefinition Height="65"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Border x:Name="Border" BorderBrush="#5F987A" BorderThickness="5" Grid.Row="1" HorizontalAlignment="Center">
+                    <Image x:Name="imgAdoptableAnimalDisplay" Source="..\Images\no_image.png"
+                           HorizontalAlignment="Center" Grid.Row="1" Margin="1" Cursor="Hand"
+                           MouseDown="imgAdoptableAnimalDisplay_MouseDown">
+                    </Image>
+                </Border>
+
+                <Button x:Name="btnViewAdoptableAnimalProfile" Grid.Row="2" HorizontalAlignment="Center"
+                        Width="168" Height="50" Cursor="Hand" Margin="0, 10, 0, 0"
+                        Click="btnViewAdoptableAnimalProfile_Click">
+                    <StackPanel>
+                        <Label x:Name="lblAnimalName" FontWeight="Bold" HorizontalAlignment="Center" Padding="0" Foreground="#FFEEEFE1" FontSize="16" />
+                        <Label x:Name="lblAnimalInfo" HorizontalAlignment="Center" FontSize="14" Foreground="#FFEEEFE1" />
+                    </StackPanel>
+                </Button>
+
+            </Grid>
+        </Border>
+    </Viewbox>
+</UserControl>

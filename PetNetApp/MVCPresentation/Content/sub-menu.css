@@ -1,0 +1,35 @@
+﻿.petnetSubmenuDiv {
+    /*background-color: var(--submenu-background-color);*/
+    padding-top: 2px;
+}
+#petnetSubmenu {
+    margin-left: 35px;
+    padding-top: 0px;
+    padding-bottom: 0;
+    width: 100%;
+}
+.nav-pills .nav-link {
+     border-radius: 0; 
+}
+    #petnetSubmenu ul li a {
+        color: var(--background-color);
+    }
+
+    #petnetSubmenu > .nav-pills .nav-item {
+        background-color: var(--color-green);
+        width: 10%;
+    }
+
+        #petnetSubmenu > .nav-pills .nav-item:nth-child(n+1) {
+            margin-left: 1px;
+        }
+
+    #petnetSubmenu > .nav-pills .nav-item {
+        min-width: 150px;
+        text-align: center;
+    }
+
+#petnetSubmenu > .nav-pills .nav-link.active, #petnetSubmenu > .nav-pills .nav-link:hover {
+    background-color: var(--control-background-color);
+    color: var(--color-green);
+}

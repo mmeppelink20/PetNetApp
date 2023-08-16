@@ -1,0 +1,20 @@
+﻿:root
+{
+    --detail-left-margin: 10px;
+}
+
+html
+{
+    overflow-x: hidden;
+}
+
+.body-content
+{
+    height: stretch;
+}
+
+.footer
+{
+    width: 100vw;
+}
+

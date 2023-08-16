@@ -1,0 +1,116 @@
+﻿<Window x:Class="WpfPresentation.Fundraising.ViewDonationReceiptWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfPresentation.Fundraising"
+        mc:Ignorable="d"
+        Title="View Donation Receipt" Width="500"
+        SizeToContent="Height"
+        WindowStartupLocation="CenterOwner" WindowStyle="None"
+        ResizeMode="NoResize" Background="Transparent" Visibility="Visible" AllowsTransparency="True" Loaded="Window_Loaded">
+
+    <Border BorderThickness="5" Background="#FF3D8361" BorderBrush="#FF1C6758" CornerRadius="20">
+        <Grid x:Name="grdToPrint">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>   <!-- Success label -->
+                <RowDefinition Height="30"/>   <!-- Submitted label -->
+                <RowDefinition Height="10"/>   <!-- Spacer -->
+                <RowDefinition Height="auto"/> <!-- Scroll viewer -->
+                <RowDefinition Height="10"/>   <!-- Spacer -->
+                <RowDefinition Height="35"/>   <!-- Thank you label -->
+                <RowDefinition Height="55"/>   <!-- Buttons -->
+                <RowDefinition Height="20"/>   <!-- Spacer -->
+                
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="60"/>
+                <ColumnDefinition />
+                <ColumnDefinition Width="60"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="0" Grid.Column="1" FontSize="25" x:Name="lblSuccess" Content="Success!" HorizontalAlignment="Center"
+                   Background="#FF3D8361" Foreground="#FFEEF2E6"/>
+            <Button x:Name="btnCloseWindowX" Grid.Row="0" Grid.Column="2" Width="35" Height="35" BorderBrush="Transparent"
+                    Foreground="#FF1C6758" Content="X" Click="btnCloseWindowX_Click"/>
+            <Label Grid.Row="1" Grid.ColumnSpan="3" FontSize="18" x:Name="lblShelterNameMessage" HorizontalAlignment="Center"
+                   Background="#FF3D8361" Foreground="#FFEEF2E6"/>
+            <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Grid.Column="1" Grid.Row="3">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>  <!--Info stack panel-->
+                        <RowDefinition Height="10"/>    <!--Spacer-->
+                        <RowDefinition Height="auto"/>  <!--Financial stack panel-->
+                        <RowDefinition Height="10"/>    <!--Spacer-->
+                        <RowDefinition Height="auto"/>  <!--In-Kind stack panel-->
+                    </Grid.RowDefinitions>
+                    <StackPanel x:Name="stkContactInfo" Grid.Row="0">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="30" />
+                                <RowDefinition Height="30" />
+                                <RowDefinition Height="30" />
+                                <RowDefinition Height="30" />
+                                <RowDefinition Height="30" />
+                                <RowDefinition Height="auto" />
+                            </Grid.RowDefinitions>
+                            <Label x:Name="lblContactInformationTitle" Content="Contact Information" Grid.Row="0" FontSize="16"
+                                   FontWeight="Bold" Foreground="#FFEEF2E6"/>
+                            <Label x:Name="lblName" Grid.Row="1" Content="Name: " FontSize="15" Foreground="#FFEEF2E6" Margin="10 0 0 0"/>
+                            <Label x:Name="lblPhone" Grid.Row="2" Content="Phone: " FontSize="15" VerticalContentAlignment="Top"
+                                   Foreground="#FFEEF2E6" Margin="10 0 0 0"/>
+                            <Label x:Name="lblEmail" Grid.Row="3" Content="Email: " FontSize="15" Foreground="#FFEEF2E6"
+                                   Margin="10 0 0 0"/>
+                            <Label x:Name="lblDate" Grid.Row="4" Content="Date: " FontSize="15" Foreground="#FFEEF2E6"
+                                   Margin="10 0 0 0"/>
+                            <TextBlock x:Name="txtMessage" Text="Message: " Grid.Row="5" FontSize="15" Foreground="#FFEEF2E6" 
+                                    TextWrapping="Wrap" Margin="15 0 0 0"/>
+                        </Grid>
+                    </StackPanel>
+                    <StackPanel x:Name="stkFinancial" Grid.Row="2" Visibility="Collapsed">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="30" />
+                                <RowDefinition Height="30" />
+                            </Grid.RowDefinitions>
+                            <Label x:Name="lblFinancialTitle" Content="Financial Donation" Grid.Row="0" FontSize="16" FontWeight="Bold"
+                                   Foreground="#FFEEF2E6"/>
+                            <Label x:Name="lblFinancialDetails" Grid.Row="1" FontSize="15" Foreground="#FFEEF2E6"/>
+                        </Grid>
+                    </StackPanel>
+                    <StackPanel x:Name="stkInKind" Grid.Row="4" Visibility="Collapsed">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="30" />
+                                <RowDefinition Height="auto" />
+                            </Grid.RowDefinitions>
+                            <Label x:Name="lblInKind" Content="In-Kind Donation(s)" Grid.Row="0" FontSize="16" FontWeight="Bold"
+                                   Foreground="#FFEEF2E6"/>
+                            <WrapPanel x:Name="wrpInKind" Grid.Row="1" Orientation="Vertical"/>
+                        </Grid>
+                    </StackPanel>
+                </Grid>
+            </ScrollViewer>
+            <Label Grid.Row="5" Grid.Column="1" FontSize="18" x:Name="lblThankYou" Content="Thank you for your contribution!"
+                   HorizontalAlignment="Center" Background="#FF3D8361" Foreground="#FFEEF2E6"/>
+            <Button x:Name="btnPrint" Grid.Row="6" Grid.Column="1" Height="40" Width="100" Content="Print" Margin="0 0 125 0"
+                    HorizontalAlignment="Center" Click="btnPrint_Click">
+                <Button.Effect>
+                <DropShadowEffect BlurRadius="0" Color="#FF011F01" Opacity="0.25"/>
+                </Button.Effect>
+                <Button.Style >
+                    <Style TargetType="Button" BasedOn="{StaticResource ResourceKey=rsrcSafeButton}" />
+                </Button.Style>
+            </Button>
+            
+            <Button x:Name="btnClose" Grid.Row="6" Grid.Column="1" Height="40" Width="100" Content="Close" Margin="125 0 0 0"
+                    HorizontalAlignment="Center" Click="btnClose_Click">
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="0" Color="#FF011F01" Opacity="0.25"/>
+                </Button.Effect>
+                <Button.Style >
+                    <Style TargetType="Button" BasedOn="{StaticResource ResourceKey=rsrcSafeButton}" />
+                </Button.Style>
+            </Button>
+        </Grid>
+    </Border>
+</Window>

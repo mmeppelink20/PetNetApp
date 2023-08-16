@@ -1,0 +1,199 @@
+﻿@{string[] tabs = { "Adopt", "Shelters", "Community", "Donate", "Events", "Fundraising", };}
+@using Microsoft.AspNet.Identity
+@using Microsoft.AspNet.Identity.Owin
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Pet.Net!</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @RenderSection("styles", false)
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+
+</head>
+<body>
+    <div class="grid-container">
+
+        <!------------>
+        <!-- HEADER -->
+        <!------------>
+        <div class="shellrow-1">
+
+            <div class="shellcol-1"></div>
+
+            <!-- petnet logo -->
+            <div class="shellcol-2" style="width: 8.5%;">
+                <a href="@Url.Action("Index", "Home")">
+                    <img src="~/Images/petnetLogo_hover.png" height="75" onmouseover="logoHover(this, true)" onmouseout="logoHover(this, false)" />
+                </a>
+            </div>
+
+            <div class="shellcol-3" style="width: 7%;"></div>
+            <div class="shellcol-4" style="width: 7%;"></div>
+            <div class="shellcol-5" style="width: 7%;"></div>
+            <div class="shellcol-6" style="width: 7%;"></div>
+            <div class="shellcol-7" style="width: 7%;"></div>
+            <div class="shellcol-8" style="width: 7%;"></div>
+            <div class="shellcol-9" style="width: 7%;"></div>
+            <div class="shellcol-10" style="width: 7%;"></div>
+            <div class="shellcol-11" style="width: 7%;"></div>
+            <div class="shellcol-12" style="width: 7%;"></div>
+
+            <!-- petnet notif -->
+            <div class="shellcol-13" style="width: 55px;">
+                @if (Request.IsAuthenticated)
+                {
+                    // no link because no notif screen exists
+                    <a href="#">
+                        <img src="~/Images/bell_notification.png" height="50" onmouseover="bellHover(this, true)" onmouseout="bellHover(this, false)" />
+                    </a>
+                }
+                else
+                {
+                    <a href="@Url.Action("Login", "Account")">
+                        <img src="~/Images/bell_notification.png" height="50" onmouseover="bellHover(this, true)" onmouseout="bellHover(this, false)" />
+                    </a>
+                }
+            </div>
+
+
+
+            <!-- petnet profile -->
+            <div class="shellcol-14" style="width: 55px;">
+                @if (Request.IsAuthenticated)
+                {
+                    <a href="@Url.Action("Index", "UserProfile")">
+                        <img src="~/Images/abstract-user-flat-4.png" height="50" onmouseover="profileHover(this, true)" onmouseout="profileHover(this, false)" />
+                    </a>
+                }
+                else
+                {
+                    <a href="@Url.Action("Login", "Account")">
+                        <img src="~/Images/abstract-user-flat-4.png" height="50" onmouseover="profileHover(this, true)" onmouseout="profileHover(this, false)" />
+                    </a>
+                }
+            </div>
+
+            <!-- petnet menu -->
+            <div class="shellcol-15" style="width: 55px;">
+                <div class="dropdown">
+                    <a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                        <img src="~/Images/menuIcon.png" height="50" class="dropbtn" onmouseover="menuHover(this, true)" onmouseout="menuHover(this, false)" />
+                    </a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li class="dropdown-item-text disabled">
+                            @if (Request.IsAuthenticated)
+                            {
+                                ApplicationUserManager userManager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
+                                var user = userManager.FindById(User.Identity.GetUserId());
+
+                                //<p>Hello, @user.GivenName!</p>
+                            }
+                            else
+                            {
+                                <p>Hello, Guest!</p>
+                            }                            
+                         </li>
+                        <li class="dropdown-item" type="button">@Html.ActionLink("Account Settings", "UserDetails", "Manage")</li>
+                        <li class="dropdown-divider"></li>
+                        <li class="dropdown-item" type="button">
+                            @if (Request.IsAuthenticated)
+                            {
+                                using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { @id = "logoutForm", @class = "my-auto" }))
+                                {
+                                    @Html.AntiForgeryToken()
+                                    <a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
+                                }
+                            }
+                            else
+                            {
+                                <a href="@Url.Action("Login", "Account")">Log In</a>
+                            }
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="col-16">.</div>
+
+        </div>
+
+        <!-- MENU -->
+        <div class="shellrow-2 header-menu">
+            <div class="shellcol-1"></div>
+            <div class="shellcol-2 animalButton" style="width: 10%"><button class="header-menu-list-item" style="width: 190px;">@Html.ActionLink("Animals", "Adoptable", "Animals", null, new { @class = (ViewBag.Tab == "Adopt" ? "active-main-tab" : "") })</button></div>
+            <div class="shellcol-3" style="width: 10%"><button class="header-menu-list-item" style="width: 190px;">@Html.ActionLink("Shelters", "ShelterNetwork", "Shelters", null, new { @class = (ViewBag.Tab == "Shelters" ? "active-main-tab" : "") })</button></div>
+            <div class="shellcol-4 fundraisingButton" style="width: 10%"><button class="header-menu-list-item" style="width: 190px;">@Html.ActionLink("Community", "Index", "Community", null, new { @class = (ViewBag.Tab == "Community" ? "active-main-tab" : "") })</button></div>
+            <div class="shellcol-5" style="width: 10%"><button class="header-menu-list-item" style="width: 190px;">@Html.ActionLink("Donate", "Index", "Donate", null, new { @class = (ViewBag.Tab == "Donate" ? "active-main-tab" : "") })</button></div>
+            @*<div class="shellcol-6" style="width: 10%"><button class="header-menu-list-item" style="width: 190px;">@Html.ActionLink("Events", "Index", "Events", null, new { @class = (ViewBag.Tab == "Events" ? "active-main-tab" : "") })</button></div>*@
+            <div class="shellcol-7" style="width: 10%"><button class="header-menu-list-item" style="width: 190px;">@Html.ActionLink("Fundraising", "Index", "Fundraising", null, new { @class = (ViewBag.Tab == "Fundraising" ? "active-main-tab" : "") })</button></div>
+            <div class="shellcol-8" style="width: 3.5%"></div>
+            <div class="shellcol-9" style="width: 3.5%"></div>
+            <div class="shellcol-10" style="width: 3.5%"></div>
+            <div class="shellcol-11" style="width: 3.5%"></div>
+            <div class="shellcol-12" style="width: 3.5%"></div>
+            <div class="shellcol-13" style="width: 3.5%"></div>
+            <div class="shellcol-14" style="width: 3.5%"></div>
+            <div class="shellcol-15" style="width: 3.5%"></div>
+            <div class="shellcol-16">.</div>
+        </div>
+
+        <div class="shellrow-3">
+            @* To have your sub menu show up the tab name must be in the tabs variable at the top of the page*@
+            @if (tabs.Contains((string)ViewBag.Tab))
+            {
+
+                @Html.Partial("_PartialSubMenu");
+            }
+        </div>
+    </div>
+
+
+    <div class="body-content">
+        @RenderBody()
+
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+    @RenderSection("scripts", required: false)
+
+    <footer>
+        <div class="footer-images">
+            <div class="container">
+                <div class="row justify-content-end">
+                    <div class="col-auto">
+                        @Html.ActionLink("Terms of Service", "TermsOfService", "Home")
+                    </div>
+                    <div class="col-auto">
+                        @Html.ActionLink("About Us", "About", "Home")
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+   
+    <script>
+        $('.dropdown-toggle').dropdown()
+        function logoHover(img, onOff) {
+            (onOff) ? img.src = "../Images/petnetLogo.png" : img.src = "../Images/petnetLogo_hover.png";
+        }
+        function bellHover(img, onOff) {
+            (onOff) ? img.src = "../Images/bell_notification_hover.png" : img.src = "../Images/bell_notification.png";
+        }
+        function profileHover(img, onOff) {
+            (onOff) ? img.src = "../Images/user_hover.png" : img.src = "../Images/abstract-user-flat-4.png";
+        }
+        function menuHover(img, onOff) {
+            (onOff) ? img.src = "../Images/menuIcon_hover.png" : img.src = "../Images/menuIcon.png";
+        }
+    </script>
+</body>
+</html>

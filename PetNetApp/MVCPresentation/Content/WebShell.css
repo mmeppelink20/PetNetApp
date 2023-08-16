@@ -1,0 +1,206 @@
+﻿.grid-container {
+    display: grid;
+    columns: 16;
+    grid-template-areas:
+        'header header header header header header header header header header header header header header header header'
+        'menutabs menutabs menutabs menutabs menutabs menutabs menutabs menutabs menutabs menutabs menutabs menutabs menutabs menutabs menutabs menutabs'
+        'submenu submenu submenu submenu submenu submenu submenu submenu submenu submenu submenu submenu submenu submenu submenu submenu';
+    background-color: #1c6758;
+    overflow: no-content;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+[class*="shellcol-"] {
+    margin: 0;
+    padding: 0;
+    float: left;
+    width: 100%;
+    z-index: 1;
+    border: 1px solid rgba(0, 0, 0, 0);
+}
+
+[class*="shellrow-"] {
+    float: left;
+}
+
+.shellcol-1 {
+    width: 2.5%;
+}
+
+.shellcol-2 {
+    width: auto;
+}
+
+.shellcol-3 {
+    width: auto;
+}
+
+.shellcol-4 {
+    width: auto;
+}
+
+.shellcol-5 {
+    width: auto;
+}
+
+.shellcol-6 {
+    width: auto;
+}
+
+.shellcol-7 {
+    width: auto;
+}
+
+.shellcol-8 {
+    width: auto;
+}
+
+.shellcol-9 {
+    width: auto;
+}
+
+.shellcol-10 {
+    width: auto;
+}
+
+.shellcol-11 {
+    width: auto;
+}
+
+.shellcol-12 {
+    width: auto;
+}
+
+.shellcol-13 {
+    width: auto;
+}
+
+.shellcol-14 {
+    width: auto;
+}
+
+.shellcol-15 {
+    width: auto;
+}
+
+.shellcol-16 {
+    width: 7%;
+}
+
+.shellrow-1 {
+    grid-area: header;
+    height: 100px;
+    float: left;
+    padding-top: 15px;
+    background-color: #3d8361;
+}
+
+.shellrow-2 {
+    grid-area: menutabs;
+    height: 50px;
+    padding-top: 5px;
+    background-color: #1c6758;
+    overflow: hidden;
+}
+
+
+
+button.shellrow-2 :hover {
+    background-color: #eef2e6;
+}
+
+.shellrow-3 {
+    grid-area: submenu;
+    height: 15px;
+    background-color: #9EC1B0; /* #EEF2E6 */
+    z-index: 3;
+}
+
+    .shellrow-3 button {
+        height: 40px;
+        width: 150px;
+        margin-top: 3px;
+        color: #1c6758;
+        border: 2px solid #9EC1B0;
+        border-left: none;
+    }
+
+.animalsubmenu {
+    visibility: collapse;
+    z-index: 2;
+}
+
+.fundraisingsubmenu {
+    visibility: collapse;
+}
+
+.showSubMenu {
+    height: 45px;
+}
+
+.showSubMenuTabs {
+    visibility: visible;
+}
+
+.shellrow-1 .shellcol-13 {
+    padding-top: 10px;
+}
+
+.shellrow-1 .shellcol-14 {
+    padding-top: 10px;
+}
+
+.shellrow-1 .shellcol-15 {
+    padding-top: 10px;
+}
+
+.shellrow-2 .shellcol-2 {
+    max-width: 160px;
+    min-width: 150px;
+}
+
+.shellrow-2 .shellcol-3 {
+    max-width: 160px;
+    min-width: 150px;
+}
+
+.shellrow-2 .shellcol-4 {
+    max-width: 160px;
+    min-width: 150px;
+}
+
+.shellrow-2 .shellcol-5 {
+    max-width: 160px;
+    min-width: 150px;
+}
+
+.shellrow-2 .shellcol-6 {
+    max-width: 160px;
+    min-width: 150px;
+}
+
+.shellrow-2 .shellcol-7 {
+    max-width: 160px;
+    min-width: 150px;
+}
+
+.dropdown-item a {
+    display: block;
+    text-decoration: none;
+}
+
+.dropdown-item li:hover {
+    font-weight: 600;
+    color: #1C6758;
+}
+
+.dropdown-item a:hover {
+        font-weight: 600;
+        color: #1C6758;
+
+}

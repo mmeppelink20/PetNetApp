@@ -1,0 +1,28 @@
+﻿* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+
+body {
+    height: 100%;
+}
+
+
+.body-content {
+    overflow: auto;
+}
+
+html {
+    height: 100%;
+}
+
+.body-content {
+    height: calc(95% - var(--header-height));
+}

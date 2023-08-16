@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "_PartialAccountMenu";
+}
+
+<div class="menucol-1">
+    <ul>
+        <li class="menurow-1 account-buttons" type="button"><a href=@Url.Action("UserDetails", "Manage")>User Details</a></li>
+        <li class="menurow-2 account-buttons" type="button"><a href=@Url.Action("ChangePassword", "Manage")>Change Password</a></li>
+    </ul>
+
+    <div class="menurow-4"></div>
+
+    <ul>
+        <li class="menurow-5 account-buttons">
+            @if (Request.IsAuthenticated)
+            {
+                using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { @id = "logoutForm", @class = "my-auto" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <a href="javascript:document.getElementById('logoutForm').submit()">Log off</a>
+                }
+            }
+        </li>
+    </ul>
+</div>
+

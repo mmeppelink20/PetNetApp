@@ -1,0 +1,74 @@
+﻿@model DataObjects.FundraisingCampaignVM
+
+@section styles
+{
+    <link href="~/Content/Fundraising/campaign-partial.css" rel="stylesheet" />
+    <link href="~/Content/Fundraising/campaign.css" rel="stylesheet" />
+}
+@section scripts
+{
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+}
+
+<div class="campaign-container">
+    <div class="campaign-main-grid">
+        <h2 class="campaign-title">@Model.Title</h2>
+        <div class="campaign-date-grid">
+            <h3 class="campaign-start-date-label">Start Date:</h3>
+            <h4 class="campaign-start-date">@(Model.StartDate.HasValue ? Model.StartDate.Value.ToString("MMMM d, yyyy") : "")</h4>
+            <h3 class="campaign-end-date-label">End Date:</h3>
+            <h4 class="campaign-end-date">@(Model.EndDate.HasValue ? Model.EndDate.Value.ToString("MMMM d, yyyy") : "")</h4>
+        </div>
+        <div class="campaign-description-group">
+            <h3 class="campaign-description-label">Description</h3>
+            <h5 class="campaign-description">@Model.Description</h5>
+        </div>
+        <div class="campaign-hosts-sponsors-events-results-grid">
+            <div class="campaign-hosts-sponsors-group">
+                <h3 class="campaign-entity-label">Hosts/Sponsors</h3>
+                <div class="campaign-entities">
+                    @if (Model.Sponsors.Count > 0)
+                    {
+                        foreach (var item in Model.Sponsors)
+                        {
+                            <h5 class="campaign-entity">@(item.GivenName + " " + item.FamilyName)</h5>
+                        }
+                    }
+                    else
+                    {
+                        <h5 class="campaign-entity">None</h5>
+                    }
+                </div>
+            </div>
+            <div class="campaign-events-group">
+                <h3 class="campaign-events-label">Events</h3>
+                <div class="campaign-events">
+                    @if (Model.FundraisingEventList.Count > 0)
+                    {
+                        foreach (var item in Model.FundraisingEventList)
+                        {
+                            <h5 class="campaign-event">@(item.Title)</h5>
+                        }
+                    }
+                    else
+                    {
+                        <h5 class="campaign-event">None</h5>
+                    }
+                </div>
+            </div>
+            <div class="campaign-results-group">
+                <h3 class="campaign-results-label">Results</h3>
+                <div class="campaign-results">
+                    <h4 class="campaign-amount-raised-label">Amount Raised:</h4>
+                    <h5 class="campaign-amount-raised">$@Model.AmountRaised</h5>
+                    <h4 class="campaign-event-count-label">Events:</h4>
+                    <h5 class="campaign-event-count">@Model.FundraisingEventList.Count</h5>
+                    <h4 class="campaign-adopted-count-label">Adopted:</h4>
+                    <h5 class="campaign-adopted-count">@Model.NumAnimalsAdopted</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="WpfPresentation.UserControls.DonationUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfPresentation.UserControls"
+             mc:Ignorable="d" x:Name="this" DataContext="{Binding ElementName=this}"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid x:Name="gdDonation" Background="#3D8361">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Label Grid.Column="0" Foreground="#EEF2E6" VerticalAlignment="Center" x:Name="lblFirstName">First Name</Label>
+        <Label Grid.Column="1" Foreground="#EEF2E6" VerticalAlignment="Center" x:Name="lblLastName">Last Name</Label>
+        <Label Grid.Column="2" Foreground="#EEF2E6" VerticalAlignment="Center" x:Name="lblAmount">Amount</Label>
+        <Label Grid.Column="3" Foreground="#EEF2E6" VerticalAlignment="Center" x:Name="lblDate">Date</Label>
+        <Label Grid.Column="4" Foreground="#EEF2E6" VerticalAlignment="Center" x:Name="lblMessage">Message</Label>
+        <Separator Grid.RowSpan="2"  Grid.ColumnSpan="5" Background="#EEF2E6" Margin="5 0 0 0" x:Name="sepDonation"></Separator>
+        <Label Grid.Row="1" Grid.Column="0" Foreground="#EEF2E6" VerticalAlignment="Center" x:Name="lblFirstNameContent" Content="{Binding Donation.GivenName}"></Label>
+        <Label Grid.Row="1" Grid.Column="1" Foreground="#EEF2E6" VerticalAlignment="Center" x:Name="lblLastNameContent" Content="{Binding Donation.FamilyName}"></Label>
+        <Label Grid.Row="1" Grid.Column="2" Foreground="#EEF2E6" VerticalAlignment="Center" x:Name="lblAmountContent" Content="{Binding Donation.Amount}"></Label>
+        <Label Grid.Row="1" Grid.Column="3" Foreground="#EEF2E6" VerticalAlignment="Center" x:Name="lblDateContent" Content="{Binding Donation.DateDonated}"></Label>
+        <Label Grid.Row="1" Grid.Column="4" Foreground="#EEF2E6" VerticalAlignment="Center" x:Name="lblMessageContent"></Label>
+        <Button Grid.RowSpan="2" Grid.Column="5" Width="75" Height="50" Margin="5 0" Style="{StaticResource ResourceKey=rsrcSafeButton}" x:Name="btnView" Click="btnView_Click">View</Button>
+    </Grid>                                                                                                                                  
+</UserControl>

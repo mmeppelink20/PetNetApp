@@ -1,0 +1,97 @@
+﻿.grid {
+    display: grid;
+    columns: 5;
+    grid-template-areas:
+        'decor1 decor2 login decor3 decor4';
+    align-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr);
+    justify-content: center;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+[class*="logincol-"] {
+    margin: 0;
+    padding: 0;
+}
+
+[class*="loginrow-"] {
+    height: 92.5px;
+}
+
+.logincol-1 {
+    grid-area: decor1;
+    width: 250px;
+}
+
+.logincol-2 {
+    width: 250px;
+    grid-area: decor2;
+}
+
+.logincol-3 {
+    width: 100%;
+    grid-area: login;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.logincol-3 p {
+    text-align: center;
+}
+
+.logincol-3 .loginrow-2 {
+    font-size: 30px;
+    }
+
+.logincol-4 {
+    width: 250px;
+    grid-area: decor3;
+}
+
+.logincol-5 {
+    width: 250px;
+    grid-area: decor4;
+    background-color: #EEF2E6;
+}
+
+.loginrow-1{
+
+}
+
+.loginrow-2 {
+    height: 60px;
+
+}
+
+.loginrow-3 {
+    height: 60px;
+}
+
+.loginrow-4 {
+}
+
+.loginrow-5 {
+}
+
+.loginrow-6 {
+}
+
+.loginrow-7 {
+}
+
+.loginrow-8 {
+}
+
+#loginForm {
+
+}
+
+.body-content {
+    margin: 0;
+    padding: 0;
+}

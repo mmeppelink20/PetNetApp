@@ -1,0 +1,71 @@
+﻿@model DataObjects.FundraisingEventVM
+
+@section styles
+{
+    <link href="~/Content/Fundraising/event-partial.css" rel="stylesheet" />
+    <link href="~/Content/Fundraising/event.css" rel="stylesheet" />
+}
+@section scripts
+{
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+}
+
+<div class="event-container">
+    <div class="event-main-grid">
+        <h2 class="event-title">@Model.Title</h2>
+        <div class="event-date-grid">
+            <h3 class="event-start-date-label">From:</h3>
+            <h4 class="event-start-date">@(Model.StartTime.HasValue ? Model.StartTime.Value.ToString("MMMM d, yyyy h:mm tt") : "")</h4>
+            <h3 class="event-end-date-label">Until:</h3>
+            <h4 class="event-end-date">@(Model.EndTime.HasValue ? Model.EndTime.Value.ToString("MMMM d, yyyy  h:mm tt") : "")</h4>
+        </div>
+        <div class="event-description-group">
+            <h3 class="event-description-label">Description</h3>
+            <h5 class="event-description">@Model.Description</h5>
+            <h5 class="event-description">@Model.AdditionalInfo</h5>
+        </div>
+        <div class="event-hosts-sponsors-events-results-grid">
+            <div class="event-hosts-sponsors-group">
+                <h3 class="event-entity-label">Sponsored By</h3>
+                <div class="event-entities">
+                    @if (Model.Sponsors.Count > 0)
+                    {
+                        foreach (var item in Model.Sponsors)
+                        {
+                    <h5 class="event-entity">@(item.CompanyName + " - " + item.GivenName + " " + item.FamilyName)</h5>
+                        }
+                    }
+                    else
+                    {
+                    <h5 class="event-entity">To Be Announced...</h5>
+                    }
+                </div>
+            </div>
+            <div class="event-events-group">
+                <h3 class="event-events-label">Event Location</h3>
+                <div class="event-events">
+                    <h5 class="event-event">@(Model.Host.CompanyName )</h5>
+                    <h5 class="event-event">@(Model.Host.Address )</h5>
+                </div>
+            </div>
+            <div class="event-animals-group">
+                <h3 class="event-animals-label">Event Animals</h3>
+                <div class="event-animals">
+                    @if (Model.Animals.Count > 0)
+                    {
+                        foreach (var item in Model.Animals)
+                        {
+                    <h5 class="event-entity"><span class="font-weight-bold">@(item.AnimalName)</span>@(" the " + item.AnimalBreedId + " " + item.AnimalTypeId + " " )</h5>
+                        }
+                    }
+                    else
+                    {
+                        <h5 class="event-entity">Coming Soon!</h5>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

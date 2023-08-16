@@ -1,0 +1,106 @@
+﻿@model DataObjects.DonationVM
+
+@{
+    ViewBag.Title = "Donation";
+}
+
+<h2>Donation</h2>
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            First Name
+        </dt>
+        @if (Model.Anonymous)
+        {
+            <dd>Anonymous</dd>
+        }
+        else if (Model.User == null)
+        {
+            <dd>
+                @Html.DisplayFor(model => model.GivenName)
+            </dd>
+        }
+        else
+        {
+            <dd>
+                @Html.DisplayFor(model => model.User.GivenName)
+            </dd>
+        }
+
+        <dt>
+            Last Name
+        </dt>
+        @if (Model.Anonymous)
+        {
+            <dd>Anonymous</dd>
+        }
+        else if (Model.User == null)
+        {
+            <dd>
+                @Html.DisplayFor(model => model.FamilyName)
+            </dd>
+        }
+        else
+        {
+            <dd>
+                @Html.DisplayFor(model => model.User.FamilyName)
+            </dd>
+        }
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Amount)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Amount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Message)
+        </dt>
+        <dd class="textWrap">
+            @Html.DisplayFor(model => model.Message)
+        </dd>
+
+        <dt>
+            Date Donated
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DateDonated)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Target)
+        </dt>
+        <dd class="textWrap">
+            @Html.DisplayFor(model => model.Target)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PaymentMethod)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PaymentMethod)
+        </dd>
+    </dl>
+</div>
+@if (Model.HasInKindDonation)
+{
+    <h4>In-Kind Donations</h4>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-6">Description</div>
+            <div class="col-xs-6">Quantity</div>
+        </div>
+        @foreach (var item in Model.InKindList)
+        {
+            <div class="row">
+                <div class="col-xs-6">@item.Description</div>
+                <div class="col-xs-6">@item.Quantity</div>
+            </div>
+        }
+    </div>
+}
+<p>
+    @Html.ActionLink("Back to your Donations", "Index")
+</p>

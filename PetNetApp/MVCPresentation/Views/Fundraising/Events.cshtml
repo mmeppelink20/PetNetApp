@@ -1,0 +1,98 @@
+﻿@model MVCPresentation.Models.FundraisingEventsViewModel
+
+@{
+    ViewBag.Title = "Events";
+}
+
+@section styles
+{
+    <link href="~/Content/Fundraising/events.css" rel="stylesheet" />
+    <link href="~/Content/Fundraising/events-desktop.css" rel="stylesheet" />
+    <link href="~/Content/Fundraising/event-partial.css" rel="stylesheet" />
+    <link href="~/Content/Fundraising/page-navigation.css" rel="stylesheet" />
+}
+
+@section scripts
+{
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/popper.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/fundraising-events.js"></script>
+}
+
+<div class="modal" tabindex="-1" role="dialog" id="eventModal">
+    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-event" id="modalEvent">
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="petnet-input modal-close-button" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="events-main-grid">
+    <div class="events-title-and-filter-grid">
+        <div class="events-title-group">
+            <h2 class="events-title">Fundraising Events</h2>
+        </div>
+        @using (Html.BeginForm("Events", "Fundraising", FormMethod.Get, new { @class = "event-inputs" }))
+        {
+            @Html.AntiForgeryToken()
+            <div class="search-group">
+                @Html.TextBoxFor(model => model.Search, new { @class = "search-input petnet-input", placeholder = "Search" })
+            </div>
+            <div class="shelter-group">
+                @{
+                    SelectList list = new SelectList(Model.Shelters, "ShelterId", "ShelterName");
+                }
+                @Html.DropDownListFor(model => model.Shelter, list, "All Shelters", new { @class = "shelter-input petnet-input" })
+            </div>
+            <div class="sort-group">
+                @Html.EnumDropDownListFor(model => model.Sort, "Sort", new { @class = "sort-input petnet-input" })
+            </div>
+            <div class="filter-group">
+                @Html.EnumDropDownListFor(model => model.Filter, "Filter", new { @class = "filter-input petnet-input" })
+            </div>
+
+            <div class="search-button-group">
+                <input type="submit" value="Search" class="search-button default-button" />
+            </div>
+        }
+    </div>
+    <div class="events-list @(Model.Events.Count() == 0 ? "events-list-empty" : "")">
+        @{
+            if (Model.Events.Count() > 0)
+            {
+                bool alternate = false;
+                foreach (var fEvent in Model.Events)
+                {
+                    @Html.Partial("FundraisingEventForEvents", new MVCPresentation.Models.FundraisingEventForEventsModel() { FundraisingEvent = fEvent, AlternateColor = alternate });
+                    alternate = !alternate;
+                }
+            }
+            else
+            {
+                <div class="no-events-group">
+                    <h4 class="no-events-text">No fundraising events found</h4>
+                </div>
+            }
+        }
+    </div>
+    <div class="nav-buttons">
+        <div class="nav-buttons-center">
+            @Html.PageLinks(Model.PagingInfo, (page) => Url.Action("Events",
+                new { Sort = (int?)Model.Sort, Filter = (int?)Model.Filter, Search = Model.Search, Shelter = Model.Shelter, Page = page }))
+        </div>
+    </div>
+</div>

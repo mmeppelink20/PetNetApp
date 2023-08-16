@@ -1,0 +1,39 @@
+﻿<Page x:Class="WpfPresentation.Community.CustomerRecordsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfPresentation.Community"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="CustomerRecordsPage" Loaded="Page_Loaded">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="203"/>
+            <RowDefinition Height="186"/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+        <Rectangle />
+
+        <Label x:Name="lblRecordTitle" Grid.Row="0" Content="Records for adopter:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontWeight="Bold" FontSize="22" Height="39" Width="732"/>
+        <Label x:Name="lblFirstName" Grid.Row="0" Content="First Name:" HorizontalAlignment="Left" Margin="10,52,0,118" VerticalAlignment="Center" Height="34" Width="90" VerticalContentAlignment="Center"/>
+        <Label x:Name="lblLastName" Grid.Row="0" Content="Last Name:" HorizontalAlignment="Left" Margin="10,80,0,92" VerticalAlignment="Center" Height="32" Width="90" VerticalContentAlignment="Center"/>
+        <Label x:Name="lblEmail" Grid.Row="0" Content="Email:" HorizontalAlignment="Left" Margin="11,110,0,0" VerticalAlignment="Top" Height="31" Width="51"/>
+        <Label x:Name="lblPhone" Grid.Row="0" Content="Phone:" HorizontalAlignment="Left" Margin="11,136,0,0" VerticalAlignment="Top" Height="31" Width="58"/>
+        <Label x:Name="lblAddress" Grid.Row="0" Content="Address:" HorizontalAlignment="Left" Margin="11,166,0,0" VerticalAlignment="Top" Height="31" Width="70"/>
+
+        <TextBox x:Name="txtFirstName" Grid.Row="0" HorizontalAlignment="Left" Height="24" Margin="114,56,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="301" TextAlignment="Center" IsEnabled="False"/>
+        <TextBox x:Name="txtLastName" Grid.Row="0" HorizontalAlignment="Left" Height="22" Margin="114,84,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="301" HorizontalContentAlignment="Center" IsEnabled="False"/>
+        <TextBox x:Name="txtEmail" Grid.Row="0" HorizontalAlignment="Left" Height="24" Margin="114,112,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="301" TextAlignment="Center" IsEnabled="False"/>
+        <TextBox x:Name="txtPhone" Grid.Row="0" HorizontalAlignment="Left" Height="24" Margin="114,140,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="301" HorizontalContentAlignment="Center" IsEnabled="False"/>
+        <TextBox x:Name="txtAddress" Grid.Row="0" HorizontalAlignment="Left" Height="24" Margin="114,170,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="301" HorizontalContentAlignment="Center" IsEnabled="False"/>
+
+        <DataGrid x:Name="datAdoptionList" Margin="30,20" Grid.Row="1" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserResizeRows="False" Loaded="datAdoptionList_Loaded"/>
+        <Button x:Name="btnBackButton" Content="Back" HorizontalAlignment="Center" Grid.Row="2" VerticalAlignment="Center" Width="92" Height="40" Click="btnBackButton_Click"/>
+        <Border x:Name="noPreviousRecords" BorderBrush="#9EC1B0" BorderThickness="6" CornerRadius="10" Height="100" Grid.Row="1" Margin="50,0">
+            <Label VerticalAlignment="Center" HorizontalAlignment="Center" Content="There are no previous adoption records for this user."/>
+        </Border>
+
+    </Grid>
+</Page>

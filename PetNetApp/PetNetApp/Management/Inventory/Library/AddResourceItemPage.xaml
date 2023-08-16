@@ -1,0 +1,43 @@
+﻿<Page x:Class="WpfPresentation.Management.Inventory.AddResourceItemPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfPresentation.Management.Inventory" xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AddResourceItemPage"
+      x:Name="AddResourceItem"
+      Loaded="AddResourceItem_Loaded">
+
+    <Grid>
+    <Grid.RowDefinitions>
+        <RowDefinition />
+        <RowDefinition Height="80"/>
+        <RowDefinition Height="30"/>
+        <RowDefinition Height="35"/>
+        <RowDefinition />
+        <RowDefinition Height="60"/>
+        <RowDefinition />
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition />
+        <ColumnDefinition />
+        <ColumnDefinition />
+        <ColumnDefinition />
+    </Grid.ColumnDefinitions>
+    <Border Grid.RowSpan="8" Grid.ColumnSpan="5" Background="#00000000"></Border>
+    <Rectangle Grid.Column="1" Grid.Row="1" Grid.RowSpan="5" Grid.ColumnSpan="2" RadiusX="10" RadiusY="10" Stroke="#1C6758" StrokeThickness="3" Margin="1 1 1 1">
+        <Rectangle.Fill >
+            <SolidColorBrush Color="#9EC1B0"></SolidColorBrush>
+        </Rectangle.Fill>
+    </Rectangle>
+    <Label x:Name="lbltitle" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" HorizontalContentAlignment="Center" VerticalAlignment="Center" FontSize="27" FontWeight="DemiBold">Add Resource to System</Label>
+    <Label x:Name="lblname" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right">Resource Name:</Label>
+    <TextBox x:Name="txtname" Grid.Row="2" Grid.Column="2" VerticalAlignment="Center" Margin="10 0 30 0"></TextBox>
+    <Label x:Name="lblcategory" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Right">Categories:</Label>
+    <xctk:CheckComboBox x:Name="cmbcategory" Grid.Row="3" Grid.Column="2" VerticalAlignment="Center" Margin="10 0 30 0" MaxDropDownHeight="150"></xctk:CheckComboBox>
+    <Button x:Name="btnAddResource" Grid.Row="5" Grid.Column="1" Margin="80 15 10 15"  FontSize="12" FontWeight="Medium" Click="btnAddResource_Click">Add Resource</Button>
+    <Button x:Name="btnCancel" Grid.Row="5" Grid.Column="2" Margin="10 15 80 15"  FontSize="12" FontWeight="Medium" Style="{StaticResource ResourceKey=rsrcSafeButton}" Click="btnCancel_Click">Cancel</Button>
+    </Grid>
+</Page>

@@ -1,0 +1,29 @@
+﻿h2 {
+    color: #1c6758;
+    font-size: 25px;
+    font-weight: 600;
+    margin: 20px;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+tr th {
+    background-color: #3d8361;
+    color: #eef2e6;
+}
+
+table td + td {
+    border-left: 1px solid black;
+}
+
+tr:nth-child(even) {
+    background-color: #9EC1B0;
+    color: #1c6758;
+}
+
+tr:nth-child(odd) {
+    background-color: #d6cda4;
+    color: #1c6758;
+}

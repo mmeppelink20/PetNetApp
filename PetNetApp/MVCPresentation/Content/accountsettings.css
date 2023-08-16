@@ -1,0 +1,77 @@
+﻿body {
+    padding: 0;
+    margin: 0;
+}
+
+.settings-area {
+    width: 100%;
+    grid-template-areas: 
+        'accountmenu settings',
+        'accountmenu settings';
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+.menucol-1 {
+    float: left;
+    width: 350px;
+    height: 750px;
+    background-color: rgb(106, 159, 131);
+    grid-area: accountmenu;
+}
+
+.menucol-1 .account-buttons {
+    height: 75px;
+    border-bottom: 2px solid rgb(106, 159, 131);
+    text-align: center;
+    vertical-align: central;
+    width: 350px;
+    background-color: #1C6758;
+    text-decoration: none;
+    list-style: none;
+    font-size: 20px;
+    padding-top: 20px;
+}
+
+.menucol-1 a {
+    display: block;
+    color: white;
+    text-decoration: none;
+}
+
+.menucol-1 .account-buttons:hover {
+    font-weight: 600;
+    background-color: #3D8361
+}
+
+.menucol-2 {
+    float: left;
+    grid-area: settings;
+}
+
+.menurow-4 {
+    height: 69%;
+    text-decoration: none;
+    list-style: none;
+}
+
+.body-content {
+    padding: 0;
+}
+
+.menurow-5.account-buttons {
+    background-color: #C02825;
+}
+
+.menurow-5.account-buttons:hover {
+    background-color: #b22b29;
+    font-weight: 600;
+}
+
+.accol-2 {
+    background-color: orange;
+    vertical-align: central;
+}

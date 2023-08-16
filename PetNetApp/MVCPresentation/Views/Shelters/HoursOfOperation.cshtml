@@ -1,0 +1,103 @@
+﻿@model List<DataObjects.HoursOfOperation>
+
+@section styles
+{
+    <link href="~/Content/ShelterNetwork.css" rel="stylesheet" />
+}
+
+
+@{
+    ViewBag.Title = "Hours Of Operation";
+}
+
+@{
+    int dayOfWeek = 0;
+}
+
+<h2 class="text-center">Hours of Operation</h2>
+@using (Html.BeginForm("HoursOfOperation", "Shelters", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+
+    <table class="table">
+        <tr>
+            <th>
+                <p>Day of Week</p>
+            </th>
+            <th>
+                <a>Hours of Operation</a>
+            </th>
+        </tr>
+
+        @foreach (var hoursOfOperation in Model)
+        {
+
+            <tr>
+                <td>
+                    @{
+                        switch (dayOfWeek)
+                        {
+                            case 0:
+                                <text>
+                                    <p>Sunday</p>
+                                </text>
+                                break;
+                            case 1:
+                                <text>
+                                    <p>Monday</p>
+                                </text>
+                                break;
+                            case 2:
+                                <text>
+                                    <p>Tuesday</p>
+                                </text>
+                                break;
+                            case 3:
+                                <text>
+                                    <p>Wednesday</p>
+                                </text>
+                                break;
+                            case 4:
+                                <text>
+                                    <p>Thursday</p>
+                                </text>
+                                break;
+                            case 5:
+                                <text>
+                                    <p>Friday</p>
+                                </text>
+                                break;
+
+                            case 6:
+                                <text>
+                                    <p>Saturday</p>
+                                </text>
+                                break;
+                        }
+                    }
+                </td>
+
+                @{
+                    TimeSpan timeToFix = TimeSpan.Parse(hoursOfOperation.OpenHour.ToString());
+                    DateTime fixedTime = DateTime.Today.Add(timeToFix);
+                    String fixedOpeningTime = fixedTime.ToString("hh:mm tt");
+
+                    timeToFix = TimeSpan.Parse(hoursOfOperation.CloseHour.ToString());
+                    fixedTime = DateTime.Today.Add(timeToFix);
+                    String fixedClosingTime = fixedTime.ToString("hh:mm tt");
+                }
+
+                <td>
+                    <div style="display:inline-block;white-space:nowrap;">
+                        @fixedOpeningTime - @fixedClosingTime
+                    </div>
+                </td>
+            </tr>
+
+            dayOfWeek++;
+
+        }
+    </table>
+}
+
+<a class="btn-primary" value="Return to Shelter List" href='@Url.Action("", "./Shelters/ShelterNetwork")'>Return to Shelter List</a>

@@ -1,0 +1,32 @@
+﻿<Window x:Class="WpfPresentation.Animals.ApplicationResponseWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfPresentation.Animals"
+        mc:Ignorable="d"
+        Title="ApplicationResponseWindow" Height="450" Width="800"
+        SizeToContent="Height"
+        WindowStyle="None"
+        Background="Transparent" Visibility="Visible"
+        AllowsTransparency="True" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+    <Border CornerRadius="20" BorderBrush="#FF1C6758" BorderThickness="5">
+        <Grid Background="#FF3D8361">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="75"></RowDefinition>
+                <RowDefinition Height="50"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Label x:Name="lblTitle" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#eef2e6" FontSize="25" FontWeight="Bold"></Label>
+            <Button x:Name="btnCloseWindowX" Grid.Row="0" Grid.Column="1" Width="48" Height="48" HorizontalAlignment="Right" VerticalAlignment="Top"
+                    BorderBrush="Transparent" Foreground="#FF1C6758" Click="btnCloseWindowX_Click">
+                <!--<Image Source="../Images/X_Icon.png"  />-->
+                X
+            </Button>
+            <Label Grid.Row="1" x:Name="lblNoApplicants" Content="There are no pending applications. Check back soon!" Visibility="Hidden" Foreground="#eef2e6" FontSize="20" FontWeight="Bold"></Label>
+            <Grid x:Name="grdApplicationResponse" Grid.Row="1" Grid.RowSpan="2" Margin="25">
+                <Frame x:Name="frmApplicationResponse" Background="#EEF2E6"></Frame>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>

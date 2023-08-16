@@ -1,0 +1,12 @@
+﻿@model MVCPresentation.Models.FundraisingCampaignForCampaignsModel
+
+<div class="@(!Model.AlternateColor ? "campaign-control-primary campaign-control" : "campaign-control-alternate campaign-control")">
+    <div class="campaign-control-text-container">
+        <p class="campaign-control-text">@Model.FundraisingCampaign.Title | @(Model.FundraisingCampaign.StartDate != null ? Model.FundraisingCampaign.StartDate.Value.ToString("MMMM d, yyyy") : "None")</p>
+    </div>
+    @using (Html.BeginForm("Campaign", "Fundraising", FormMethod.Get, new { @class = "campaign-control-button-group" }))
+    {
+        @Html.Hidden("campaign", Model.FundraisingCampaign.FundraisingCampaignId);
+        <input type="submit" value="View" data-title="@Model.FundraisingCampaign.Title" data-id="@Model.FundraisingCampaign.FundraisingCampaignId" class="@("campaign-link " + (!Model.AlternateColor ? "campaign-link-primary" : "campaign-link-alternate"))"/>
+    }
+</div>

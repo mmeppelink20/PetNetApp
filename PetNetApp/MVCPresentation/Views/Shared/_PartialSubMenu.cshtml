@@ -1,0 +1,92 @@
+﻿<style>
+    .shellrow-3 {
+        height: 45px;
+    }
+</style>
+<div class="petnetSubmenuDiv">
+    @if (ViewBag.Tab == "Adopt")
+    {
+        <nav class="navbar" id="petnetSubmenu">
+            <ul class="nav nav-pills">
+                @*<li class="nav-item">
+                    @Html.ActionLink("TBD", "Index", "Animals", null, new { @class = (ViewBag.Title == "TBD" ? "nav-link active" : "nav-link") })
+                </li>*@
+                <li class="nav-item">
+                    @Html.ActionLink("Find a Pet", "Adoptable", "Animals", null, new { @class = (ViewBag.Title == "Adoptable" ? "nav-link active" : "nav-link") })
+                </li>
+                @*<li class="nav-item">
+                    @Html.ActionLink("Foster", "Adoptable", "Animals", null, new { @class = (ViewBag.Title == "Become a Fosterer" ? "nav-link active" : "nav-link") })
+                </li>
+                <li class="nav-item">
+                    @Html.ActionLink("Surrender", "Surrender", "Animals", null, new { @class = (ViewBag.Title == "Rehome Your Pet" ? "nav-link active" : "nav-link") })
+                </li>*@
+            </ul>
+        </nav>
+    }
+    else if (ViewBag.Tab == "Community")
+    {
+        <nav class="navbar" id="petnetSubmenu">
+            <ul class="nav nav-pills">
+                @*<li class="nav-item">
+                    @Html.ActionLink("TBD", "Index", "Community", null, new { @class = (ViewBag.Title == "TBD" ? "nav-link active" : "nav-link") })
+                </li>*@
+                <li class="nav-item">
+                    @Html.ActionLink("Discussion", "Index", "Community", null, new { @class = (ViewBag.Title == "Community Page" ? "nav-link active" : "nav-link") })
+                </li>
+            </ul>
+        </nav>
+    }
+    else if (ViewBag.Tab == "Donate")
+    {
+        <nav class="navbar" id="petnetSubmenu">
+            <ul class="nav nav-pills">
+                @*<li class="nav-item">
+                    @Html.ActionLink("TBD", "Index", "Donate", null, new { @class = (ViewBag.Title == "TBD" ? "nav-link active" : "nav-link") })
+                </li>*@
+                <li class="nav-item">
+                    @Html.ActionLink("View Donations", "Index", "Donate", null, new { @class = (ViewBag.Title == "Donate" ? "nav-link active" : "nav-link") })
+                </li>
+            </ul>
+        </nav>
+    }
+    else if (ViewBag.Tab == "Events")
+    {
+        <nav class="navbar" id="petnetSubmenu">
+            @*<ul class="nav nav-pills">
+                <li class="nav-item">
+                    @Html.ActionLink("Events", "Index", "Events", null, new { @class = (ViewBag.Title == "Events" ? "nav-link active" : "nav-link") })
+                </li>
+                <li class="nav-item">
+                    @Html.ActionLink("Event Results", "Index", "Events", null, new { @class = (ViewBag.Title == "Event Results" ? "nav-link active" : "nav-link") })
+                </li>
+            </ul>*@
+        </nav>
+    }
+    else if (ViewBag.Tab == "Fundraising")
+    {
+        <nav class="navbar" id="petnetSubmenu">
+
+            <ul class="nav nav-pills">
+                <li class="nav-item">
+                    @Html.ActionLink("Campaigns", "Campaigns", "Fundraising", null, new { @class = (ViewBag.Title == "Campaigns" ? "nav-link active" : "nav-link") })
+                </li>
+                <li class="nav-item">
+                    @Html.ActionLink("Events", "Events", "Fundraising", null, new { @class = (ViewBag.Title == "Events" ? "nav-link active" : "nav-link") })
+                </li>
+            </ul>
+        </nav>
+    }
+    else if (ViewBag.Tab == "Shelters")
+    {
+        <nav class="navbar" id="petnetSubmenu">
+            <ul class="nav nav-pills">
+                <li class="nav-item">
+                    @Html.ActionLink("Shelter Network", "ShelterNetwork", "Shelters", null, new { @class = (ViewBag.Title == "ShelterNetwork" ? "nav-link active" : "nav-link") })
+                </li>
+                <li class="nav-item">
+                    @Html.ActionLink("Select Shelter", "SelectShelter", "Shelters", null, new { @class = (ViewBag.Title == "SelectShelter" ? "nav-link active" : "nav-link") })
+                </li>
+            </ul>
+        </nav>
+    }
+</div>

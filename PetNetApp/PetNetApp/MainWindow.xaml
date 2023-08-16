@@ -1,0 +1,216 @@
+﻿<Window x:Class="PetNetApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PetNetApp"
+        mc:Ignorable="d"
+        Title="petnet" Height="900" Width="1200" MinHeight="600" MinWidth="800" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+    <Window.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Button" x:Key="rsrcNewNotifications">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <ImageBrush ImageSource="Images/bell_notification.png"/>
+                    </Setter.Value>
+                </Setter>
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="Background">
+                            <Setter.Value>
+                                <ImageBrush ImageSource="Images/bell_notification_hover.png" />
+                            </Setter.Value>
+                        </Setter>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+            <Style TargetType="Button" x:Key="rsrcNotifications">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <ImageBrush ImageSource="Images/bell.png"/>
+                    </Setter.Value>
+                </Setter>
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="Background">
+                            <Setter.Value>
+                                <ImageBrush ImageSource="Images/bell_hover.png" />
+                            </Setter.Value>
+                        </Setter>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+
+            <Style x:Key="rsrcUnselectedTabButton" TargetType="Button">
+                <Setter Property="Background" Value="#D6CDA4"/>
+                <Setter Property="Foreground" Value="#1C6758"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}" CornerRadius="10 10 0 0">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="Background" Value="#EEF2E6"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+            <Style x:Key="rsrcSelectedTabButton" TargetType="Button" BasedOn="{StaticResource ResourceKey=rsrcUnselectedTabButton}">
+                <Setter Property="Background" Value="#EEF2E6"/>
+            </Style>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid Background="#EEF2E6">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Rectangle Grid.Row="0" Fill="#3D8361"/>
+
+        <Rectangle Grid.Row="1" Fill="#1C6758"/>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition MinWidth="160"/>
+                <ColumnDefinition Width="120"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="btnPetNetLogo" Grid.Column="0" Margin="24,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" BorderBrush="#00000000" Panel.ZIndex="1" Width="200" Height="70" Click="btnPetNetLogo_Click">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Background="{TemplateBinding Background}">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Property="Background">
+                            <Setter.Value>
+                                <ImageBrush ImageSource="Images/petnetLogo.png" Stretch="Uniform"/>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background">
+                                    <Setter.Value>
+                                        <ImageBrush ImageSource="Images/petnetLogo_hover.png" Stretch="Uniform"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+            <StackPanel Orientation="Horizontal" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Button Width="40" Height="40" Margin="3" BorderBrush="Transparent" x:Name="btnProfile" Click="btnProfile_Click">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Background="{TemplateBinding Background}">
+                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Setter Property="Background">
+                                <Setter.Value>
+                                    <ImageBrush ImageSource="Images/abstract-user-flat-4.png"/>
+                                </Setter.Value>
+                            </Setter>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background">
+                                        <Setter.Value>
+                                            <ImageBrush ImageSource="Images/user_hover.png" />
+                                        </Setter.Value>
+                                    </Setter>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+                <Button Width="40" Height="40" Margin="3" BorderBrush="Transparent" x:Name="btnMenu" Click="btnMenu_Click">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border Background="{TemplateBinding Background}">
+                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Setter Property="Background">
+                                <Setter.Value>
+                                    <ImageBrush ImageSource="Images/menuIcon.png"/>
+                                </Setter.Value>
+                            </Setter>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background">
+                                        <Setter.Value>
+                                            <ImageBrush ImageSource="Images/menuIcon_hover.png" />
+                                        </Setter.Value>
+                                    </Setter>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                    <Button.ContextMenu>
+                        <ContextMenu>
+                            <MenuItem x:Name="mnuUser" Header="Hello, Guest" IsEnabled="False" />
+                            <MenuItem x:Name="mnuAccountSettings" Header="Account Settings" Click="mnuAccountSettings_Click"/>
+                            <MenuItem x:Name="mnuLogout" Header="Logout" Click="mnuLogout_Click"/>
+                        </ContextMenu>
+                    </Button.ContextMenu>
+                </Button>
+            </StackPanel>
+        </Grid>
+        <ScrollViewer x:Name="svMainTabs" Grid.Row="1" HorizontalScrollBarVisibility="Hidden" ScrollChanged="svMainTabs_ScrollChanged" VerticalScrollBarVisibility="Disabled" Height="45" VerticalAlignment="Bottom" PreviewMouseWheel="ScrollViewer_PreviewMouseWheel">
+            <StackPanel Orientation="Horizontal">
+                <Rectangle Width="25"/>
+                <Button Margin="1 5 1 0" Padding="10 5" MinWidth="125" FontSize="16" Style="{StaticResource ResourceKey=rsrcUnselectedTabButton}" Content="Animals" x:Name="btnAnimals" Click="btnAnimals_Click"/>
+                <Button Margin="1 5 1 0" Padding="10 5" MinWidth="125" FontSize="16" Style="{StaticResource ResourceKey=rsrcUnselectedTabButton}" Content="Shelters" x:Name="btnShelters" Click="btnShelters_Click"/>
+                <Button Margin="1 5 1 0" Padding="10 5" MinWidth="125" FontSize="16" Style="{StaticResource ResourceKey=rsrcUnselectedTabButton}" Content="Events" x:Name="btnEvents" Click="btnEvents_Click"/>
+                <Button Margin="1 5 1 0" Padding="10 5" MinWidth="125" FontSize="16" Style="{StaticResource ResourceKey=rsrcUnselectedTabButton}" Content="Community" x:Name="btnCommunity" Click="btnCommunity_Click"/>
+                <!--<Button Margin="1 5 1 0" Padding="10 5" MinWidth="125" FontSize="16" Style="{StaticResource ResourceKey=rsrcUnselectedTabButton}" Content="Donate" x:Name="btnDonate" Click="btnDonate_Click"/>-->
+                <Button Margin="1 5 1 0" Padding="10 5" MinWidth="125" FontSize="16" Style="{StaticResource ResourceKey=rsrcUnselectedTabButton}" Content="Management" x:Name="btnManagement" Click="btnManagement_Click"/>
+                <Button Margin="1 5 1 0" Padding="10 5" MinWidth="125" FontSize="16" Style="{StaticResource ResourceKey=rsrcUnselectedTabButton}" Content="Fundraising" x:Name="btnFundraising" Click="btnFundraising_Click"/>
+                <Rectangle Width="25"/>
+            </StackPanel>
+        </ScrollViewer>
+        <!-- Tab Navigation Buttons -->
+        <Grid Grid.Row="1">
+            <Button Width="20" Margin="2 0 0 0" HorizontalAlignment="Left"  VerticalAlignment="Center" Height="35" x:Name="btnScrollLeft"  Style="{StaticResource ResourceKey=rsrcLeftScroll}" Click="btnScrollLeft_Click"/>
+            <Button Width="20" Margin="0 0 2 0" HorizontalAlignment="Right" VerticalAlignment="Center" Height="35" x:Name="btnScrollRight" Style="{StaticResource ResourceKey=rsrcRightScroll}"  Click="btnScrollRight_Click"/>
+        </Grid>
+        <Frame x:Name="frameMain" Grid.Row="2" NavigationUIVisibility="Hidden"></Frame>
+    </Grid>
+</Window>

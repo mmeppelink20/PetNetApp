@@ -1,0 +1,42 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!-- Colors -->
+    <Color x:Key="BackgroundColor">#EEF2E6</Color>
+    <Color x:Key="ControlBackgroundColor">#F6F7F3</Color>
+    <Color x:Key="ControlBorderColor">#D6CDA4</Color>
+    <Color x:Key="ControlDisabledBorderColor">#D6CDA4</Color>
+    <Color x:Key="ControlDisabledBackgroundColor">#EEF2E6</Color>
+    <Color x:Key="ControlDisabledForegroundColor">#D6CDA4</Color>
+    <Color x:Key="ControlMouseOverBorderColor">#3D8361</Color>
+    <Color x:Key="ControlMouseOverBackgroundColor">#9EC1B0</Color>
+    <Color x:Key="ControlSelectedBorderColor">#1C6758</Color>
+    <Color x:Key="ControlSelectedBackgroundColor">#F6F7F3</Color>
+    <Color x:Key="ControlSelectedMouseOverBackgroundColor">#3D8361</Color>
+    <Color x:Key="ControlSelectedMouseOverBorderColor">#3D8361</Color>
+    <Color x:Key="ControlPressedBorderColor">#1C6758</Color>
+    <Color x:Key="ControlPressedBackgroundColor">#3D8361</Color>
+    <Color x:Key="ControlPressedGlyphColor">#EEF2E6</Color>
+    <Color x:Key="ControlDisabledGlyphColor">#D6CDA4</Color>
+    <Color x:Key="ControlGlyphColor">#3D8361</Color>
+    <Color x:Key="ControlMouseOverGlyphColor">#1C6758</Color>
+    <Color x:Key="ControlSelectedGlyphColor">#1C6758</Color>
+    <Color x:Key="ControlForegroundColor">#1C6758</Color>
+    <Color x:Key="ControlSelectionHighlightColor">#9EC1B0</Color>
+    <Color x:Key="ControlMultiSelectionSelectedBackgroundColor">#3D8361</Color>
+    <Color x:Key="ControlMultiSelectionSelectedForegroundColor">#EEF2E6</Color>
+    <Color x:Key="ControlMultiSelectionSelectedBorderColor">#1C6758</Color>
+
+    <!-- Data Grid Colors -->
+    <Color x:Key="ControlDataGridRowColor">#9ec1b0</Color>
+    <Color x:Key="ControlDataGridAlternateRowColor">#EEEFE1</Color>
+    <Color x:Key="ControlDataGridColumnHeaderBackgroundColor">#1C6758</Color>
+    <Color x:Key="ControlDataGridColumnHeaderForegroundColor">#EEF2E6</Color>
+
+    <!-- Old Color Keys -->
+    <Color x:Key="ColorGreen">#3D8361</Color>
+    <Color x:Key="ColorLightGreen">#9EC1B0</Color>
+    <Color x:Key="ColorDarkGreen">#1C6758</Color>
+    <Color x:Key="ColorRed">#C02825</Color>
+    <Color x:Key="ColorDarkRed">#b22b29</Color>
+    <Color x:Key="ColorLightGray">#d0d8d4</Color>
+</ResourceDictionary>

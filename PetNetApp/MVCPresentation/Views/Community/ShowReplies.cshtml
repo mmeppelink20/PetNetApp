@@ -1,0 +1,118 @@
+﻿@model DataObjects.PostVM
+@section styles
+{
+    <link href="~/Content/community.css" rel="stylesheet" />
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ShowReplies</title>
+</head>
+<body>
+    <div class="modal" tabindex="-1" role="dialog" id="report-modal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Report</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="report-modal-content">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container lower">
+        <div class="flex overflow">
+            <div class="flexSmall">
+                <img src="http://via.placeholder.com/150x150" class="image">
+            </div>
+            <div class="flexLarge">
+                <h3 class="userNameText">@Model.PosterGivenName@Model.PosterFamilyName</h3>
+                <p class="postText">@Model.PostContent</p>
+            </div>
+        </div>
+        <hr />
+        <div class="flex overflow">
+            <div class="flexSmall">
+                <img src="http://via.placeholder.com/75x75" class="image">
+            </div>
+            <div class="flexLarge">
+                @{Html.RenderPartial("CreateReply", new DataObjects.ReplyVM()); }
+            </div>
+        </div>
+        <hr />
+        @if (Model.Replies.Count > 0)
+        {
+            foreach (var reply in Model.Replies)
+            {
+                <div class="flex overflow">
+                    <div class="flexSmall">
+                        <img src="http://via.placeholder.com/100x100" class="image">
+                    </div>
+                    <div class="flexLarge">
+                        <h3 class="userNameText">@reply.ReplierGivenName@reply.ReplierFamilyName</h3>
+                        @if (!reply.ReplyVisibility)
+                        {
+                            <h7 class="deactive">Deactivated</h7>
+                        }
+                        <p class="communityText">@reply.ReplyContent</p>
+                    </div>
+                </div>
+                <div class="table">
+                    <div class="row">
+                        <div class="cell">
+                            @{
+                                bool hasPrevious = false;
+                            }
+                            @if (reply.ReplyVisibility && ViewBag.UserId == reply.ReplyAuthor)
+                            {
+
+                                @Html.ActionLink("Edit Reply", "EditReply", new { id = reply.ReplyId }, new { @class = "report-button" });
+                                <text> | </text>
+                            }
+
+                            @if (reply.ReplyVisibility && (ViewBag.UserId == reply.ReplyAuthor || ViewBag.HasAdminRole || ViewBag.HasModeratorRole))
+                            {
+                                @Html.ActionLink("Delete Reply", "DeleteReply", new { id = reply.ReplyId });
+                                hasPrevious = true;
+                            }
+
+                            @if (!reply.ReplyVisibility && (ViewBag.UserId == reply.ReplyAuthor || ViewBag.HasAdminRole || ViewBag.HasModeratorRole))
+                            {
+                                @Html.ActionLink("Reinstate Reply", "ReinstateReply", new { id = reply.ReplyId });
+                                hasPrevious = true;
+                            }
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                if (hasPrevious && reply.ReplyAuthor != ViewBag.UserId)
+                                {
+                                    <text> &nbsp;| </text>
+                                }
+                                ViewBag.HasPrevious = hasPrevious;
+                                <div id="report-post-@reply.ReplyId" class="float-right">
+                                    @Html.Partial("ReportReplyPartial", reply)
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <h5>Be the first to reply!</h5>
+        }
+
+    </div>
+    <div class="container">
+        @Html.ActionLink("Back", "Index", new { textarea = "" }, new { @class = "btn btn-primary" })
+    </div>
+    <script src="~/Scripts/report.js"></script>
+    <br />
+</body>
+</html>

@@ -1,0 +1,72 @@
+﻿@model IEnumerable<DataObjects.Shelter>
+
+@{
+    ViewBag.Title = "SelectShelter";
+}
+
+<h2 class="">Select a Shelter</h2>
+
+<div class="container"><table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ShelterName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ZipCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AreasOfNeed)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShelterActive)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShelterName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ZipCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AreasOfNeed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShelterActive)
+            </td>
+            <td>
+                @Html.ActionLink("Select", "SelectedShelter", new { id = item.ShelterId }, new { @class = "btn btn-primary btn-block m-3" })
+            </td>
+        </tr>
+    }
+
+</table></div>
+

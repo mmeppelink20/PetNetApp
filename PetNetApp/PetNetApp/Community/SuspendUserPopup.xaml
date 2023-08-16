@@ -1,0 +1,74 @@
+﻿<Window x:Class="WpfPresentation.Community.SuspendUserPopup"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfPresentation.Community"
+        mc:Ignorable="d"
+        Title="Suspend User" SizeToContent="Height" Width="700" 
+        WindowStartupLocation="CenterOwner" WindowStyle="None"
+        ResizeMode="NoResize" Loaded="Window_Loaded" Background="Transparent" Visibility="Visible" AllowsTransparency="True">
+    <!--
+    Created by Barry Mikulas
+    Created 2023/02/26
+    Summary: Window is used to set a user's suspend status to true
+    NOTE: may also be used to unsuspend a user as well
+    -->
+
+    <Border BorderThickness="5" Background="#FF3D8361" BorderBrush="#FF1C6758" CornerRadius="20">
+        <Grid Opacity="0.9" Margin="0,0,0,0">
+            <Grid.RowDefinitions>
+                <!--Title-->
+                <RowDefinition Height="60"/>
+                <!--Message Boxes-->
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="60"/>
+                <!--Confirm Password Box-->
+                <RowDefinition Height="60"/>
+                <!--Confirm and Cancel Buttons-->
+                <RowDefinition Height="60"/>
+            </Grid.RowDefinitions>
+            <!--Window Title-->
+            <Label x:Name="lblSuspendUserTitle"  Grid.Row="0" FontSize="36" Content="Suspend User" HorizontalAlignment="Center" Margin="0" VerticalAlignment="Center" Background="#FF3D8361" Foreground="#FFEEF2E6"/>
+            <Button x:Name="btnCloseWindowX" Grid.Row="0" Grid.Column="1" Width="48" Height="48" HorizontalAlignment="Right" VerticalAlignment="Top"
+                    BorderBrush="Transparent" Foreground="#FF1C6758" Content="X" Click="btnCloseWindowX_Click"/>
+            <Rectangle  Grid.Row="0" x:Name="rectHeader" Fill="{DynamicResource DataGridColumnHeader.Background}" Height="5" Width="300" VerticalAlignment="Bottom" HorizontalAlignment="Center" />
+            <!--Suspend confirmation message-->
+            <TextBox x:Name="txtSuspendUserMessage" Grid.Row="1" Height="60" Width="300" Text="This text will be replaced. " Background="#FF3D8361" Foreground="#FFEEF2E6" BorderThickness="0" TextAlignment="Center" TextWrapping="Wrap" HorizontalContentAlignment="Center" VerticalContentAlignment="Bottom"/>
+            <TextBox x:Name="txtSuspendUserMessage2" Grid.Row="2" Height="60" Width="300" Text="This text will be replaced. " Background="#FF3D8361" Foreground="#FFEEF2E6" BorderThickness="0" TextAlignment="Center" TextWrapping="Wrap" VerticalContentAlignment="Top" />
+            <Rectangle  Grid.Row="2" x:Name="rectConfirmPassword" Fill="{DynamicResource DataGridColumnHeader.Background}" Height="3" Width="300" VerticalAlignment="Bottom" HorizontalAlignment="Center" />
+            <!--Confirm password-->
+            <PasswordBox x:Name="txtConfirmPassword" Grid.Column="1" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center" Width="300" Height="45" Foreground="#FF1C6758" BorderBrush="#FFD6CDA4" Background="#FFF6F7F3" KeyDown="txtConfirmPassword_KeyDown" >
+                <PasswordBox.ContextMenu>
+                    <ContextMenu/>
+                </PasswordBox.ContextMenu>
+            </PasswordBox>
+            <!--Confirm and Cancel Button-->
+            <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" >
+                <Button Grid.Row="4" x:Name="btnConfirm" Content="Confirm" VerticalAlignment="Center" Margin="10" Width="180" Height="41" Click="btnConfirm_Click">
+                    <Button.Style >
+                        <Style TargetType="Button" BasedOn="{StaticResource ResourceKey=rsrcSafeButton}">
+                            <Setter Property="Background" Value="#FF9EC1B0"/>
+                            <Setter Property="Foreground" Value="#FF1C6758"/>
+                        </Style>
+                    </Button.Style>
+                    <Button.Effect>
+                        <DropShadowEffect BlurRadius="0" Color="#FF011F01" Opacity="0.25"/>
+                    </Button.Effect>
+                </Button>
+                <Button Grid.Row="3" x:Name="btnCancel" Content="Cancel"  VerticalAlignment="Center" Margin="10" Width="180" Height="41" Click="btnCancel_Click">
+                    <Button.Style >
+                        <Style TargetType="Button" BasedOn="{StaticResource ResourceKey=rsrcSafeButton}">
+                            <!--<Setter Property="Background" Value="#FF9EC1B0"/>
+                            <Setter Property="Foreground" Value="#FF1C6758"/>-->
+
+                        </Style>
+                    </Button.Style>
+                    <Button.Effect>
+                        <DropShadowEffect BlurRadius="0" Color="#FF011F01" Opacity="0.25"/>
+                    </Button.Effect>
+                </Button>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>

@@ -1,0 +1,105 @@
+﻿@using MVCPresentation.Models
+@model LoginViewModel
+@{
+    ViewBag.Title = "Welcome Back!";
+}
+
+<head>
+    <link href="~/Content/login.css" rel="stylesheet" />
+</head>
+
+<div class="grid">
+    <div class="logincol-1">
+        <div class="loginrow-1"></div>
+        <div class="loginrow-2"></div>
+        <div class="loginrow-3"></div>
+        <div class="loginrow-4"></div>
+        <div class="loginrow-5"></div>
+        <div class="loginrow-6"></div>
+        <div class="loginrow-7"></div>
+        <div class="loginrow-8"></div>
+    </div>
+    <div class="logincol-2">
+        <div class="loginrow-1"></div>
+        <div class="loginrow-2"></div>
+        <div class="loginrow-3"></div>
+        <div class="loginrow-4"></div>
+        <div class="loginrow-5"></div>
+        <div class="loginrow-6"></div>
+        <div class="loginrow-7"></div>
+        <div class="loginrow-8"></div>
+    </div>
+    <div class="logincol-3">
+        <hr />
+        <div class="loginrow-1"></div>
+
+        <div class="loginrow-2">
+            <h2>@ViewBag.Title</h2>
+            <hr />
+        </div>     
+
+        <section id="loginForm">
+            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {<div class="loginrow-3">
+                    @Html.AntiForgeryToken()
+
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <p>Please log in below.</p>
+                    <hr />
+                </div>
+                <div class="loginrow-4">
+                    @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                </div>
+                <div class="loginrow-5">
+                    @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                </div>
+                <div class="loginrow-6">
+                    @Html.CheckBoxFor(m => m.RememberMe)
+                    @Html.LabelFor(m => m.RememberMe)
+                    <hr />
+                </div>
+
+
+                <div class="loginrow-7">
+                    <input type="submit" value="Log in" class="btn btn-primary" />
+                    <hr />
+                </div>
+
+
+                <div class="loginrow-8">
+                    @Html.ActionLink("No account? Click here!", "Register")
+                </div>
+
+            }
+        </section>
+            </div>
+
+    <div class="logincol-4">
+        <div class="loginrow-1"></div>
+        <div class="loginrow-2"></div>
+        <div class="loginrow-3"></div>
+        <div class="loginrow-4"></div>
+        <div class="loginrow-5"></div>
+        <div class="loginrow-6"></div>
+        <div class="loginrow-7"></div>
+        <div class="loginrow-8"></div>
+    </div>
+    <div class="logincol-5">
+        <div class="loginrow-1"></div>
+        <div class="loginrow-2"></div>
+        <div class="loginrow-3"></div>
+        <div class="loginrow-4"></div>
+        <div class="loginrow-5"></div>
+        <div class="loginrow-6"></div>
+        <div class="loginrow-7"></div>
+        <div class="loginrow-8"></div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

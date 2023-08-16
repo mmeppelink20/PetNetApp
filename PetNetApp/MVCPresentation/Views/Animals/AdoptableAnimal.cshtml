@@ -1,0 +1,60 @@
+﻿@model DataObjects.AnimalVM
+
+@{
+    ViewBag.Title = "AdoptableAnimal";
+}
+
+@section styles{
+    <link href="~/Content/Animal/adoptableAnimal.css" rel="stylesheet" />
+    <link href="~/Content/Animal/adoptableAnimal-desktop.css" rel="stylesheet" />
+}
+
+<h4>Animal Profile</h4>
+<hr />
+    <div class="adoptableAnimal-main-grid">
+        <div class="adoptableAnimal-image-and-button-grid">
+            <input type="button" class="previous-image-button" onclick="plusSlides(-1)" />
+            <div class="image-container">
+                @{
+                    if (((List<Images>)ViewBag.AnimalImages).Count() > 0)
+                    {
+                        foreach (Images image in (List<Images>)ViewBag.AnimalImages)
+                        {
+                            @Html.Partial("AnimalImageForAdoptableAnimal", image)
+                        }
+                    }
+
+                }
+            </div>
+            <input type="button" class="next-image-button" onclick="plusSlides(1)" />
+        </div>
+        <div class="adoptableAnimal-animal-infomation-grid">
+            <h1 class="animal-name">@Model.AnimalName</h1>
+            <h2 class="animal-breed">Breed: @Model.AnimalBreedId</h2>
+            <h2 class="animal-shelter">ShelterID: @Model.AnimalShelterId</h2>
+            <p class="animal-description">@Model.Description</p>
+            <button class="btn" onclick="location.href='@Url.Action("AdoptionApplication", "Animals", new {animalId=Model.AnimalId})'"><span class="fill-application-icon"></span><span>Fill out Application</span></button>
+            <form method="get" class="nav nav-buttons-center" action="@Url.Content("/Files/AdoptionApplication.docx")">
+                <button type="submit" class="btn"><span class="download-application-icon"></span> <span class="hide">Download Application</span></button>
+
+            </form>
+            <button class="btn" onclick="location.href='@Url.Action("AddBookmark", "UserProfile", new { animalId = Model.AnimalId })'"><img src="~/Images/bookmark_light.png" width="30"/><span>Bookmark Animal</span></button>
+
+
+        </div>
+        <div class="adoptableAnimal-comment-grid">
+            <div class="user-icon no-border"></div>
+            <div class="adoptable-animal-note">
+                <p class="">@ViewBag.AnimalNote</p>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <p>
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+
+
+@section Scripts{
+    @Scripts.Render("~/Scripts/Animal/animalImage.js")
+}

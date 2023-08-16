@@ -1,0 +1,22 @@
+﻿.nav-button {
+    width: 35px;
+    height: 35px;
+    display: inline-block;
+    margin: 1px;
+    font-weight: normal;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    font-size: 14px;
+    line-height: 35px;
+}
+
+@media only screen and (max-width: 374px) {
+    .nav-button {
+        line-height: 30px;
+        width: 30px;
+        height: 30px;
+    }
+}

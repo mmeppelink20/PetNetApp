@@ -1,0 +1,50 @@
+﻿@model IEnumerable<MVCPresentation.Models.AdoptableAnimalModel>
+
+@section styles
+{
+    <link href="~/Content/animals.css" rel="stylesheet" />
+}
+
+@{
+    ViewBag.Title = "Adoptable";
+}
+
+<div id="filterByAnimalType">
+    <div class="container my-4">
+        <div class="row">
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 justify-content-center">
+                <h4>Showing @ViewBag.DisplayedAnimals</h4>
+            </div>
+
+            <fieldset class="col-sm-12 col-md-6 col-lg-4 col-xl-3 justify-content-end">
+                @using (Ajax.BeginForm("Adoptable", "Animals",
+                                            new AjaxOptions { UpdateTargetId = "filterByAnimalType" }))
+                {                    
+                    @Html.Label("Show")
+                    <span></span>
+                    @Html.DropDownList("FilterAnimal", new SelectList(ViewBag.FilterOptions), new { @class = "custom-select-sm"})                    
+
+                    <button class="btn-sm btn-primary">Filter</button>
+
+                }
+            </fieldset>
+        </div>
+
+            <div class="row">
+                @foreach (var animal in Model)
+                {
+                    <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                        <div class="card mb-4" style="background: #9EC1B0;">
+                            <img src="@animal.AnimalImageSource" class="card-img-top p-2" alt="Image of @animal.AnimalVM.AnimalName" />
+                            <div class="card-body">
+                                <h5 class="card-title text-center">@Html.DisplayFor(modelItem => animal.AnimalVM.AnimalName)</h5>
+                                <p class="cart-text text-center">@Html.DisplayFor(modelItem => animal.AnimalVM.AnimalBreedId)@Html.DisplayFor(modelItem => animal.ShelterName)</p>
+                                @Html.ActionLink(" ", "AdoptableAnimal", "Animals", new { animalId = animal.AnimalVM.AnimalId }, new { @class = "stretched-link" })
+                            </div>
+
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+</div>

@@ -1,0 +1,48 @@
+﻿@model DataObjects.Reply
+
+@section styles
+{
+
+    <link href="~/Content/community.css" rel="stylesheet" />
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>EditReply</title>
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="container lower">
+            <div class="form-horizontal">
+                <h4>Your Reply</h4>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.HiddenFor(model => model.ReplyId)
+
+                <div class="form-group">
+                    <div class="col-md-10">
+                        @Html.TextAreaFor(model => model.ReplyContent, 5, 100, new { maxlength = 250, @class = "form-control size" })
+                        @Html.ValidationMessageFor(model => model.ReplyContent, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div>
+                        <input type="submit" value="Save" class="btn btn-primary" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+    <div class="container">
+        @Html.ActionLink("Back", "Index")
+    </div>
+</body>
+</html>

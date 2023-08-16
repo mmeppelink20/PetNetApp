@@ -1,0 +1,97 @@
+﻿<Page x:Class="WpfPresentation.Misc.LogInPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfPresentation.Misc"
+      mc:Ignorable="d" 
+      d:DesignHeight="550"
+      d:DesignWidth="800"
+      Title="LogInPage" Loaded="Page_Loaded" >
+
+    <Grid ScrollViewer.CanContentScroll="True">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10*"/> <!-- Green Border -->
+            <ColumnDefinition Width="7*"/> <!-- Light Gold Border -->
+            <ColumnDefinition Width="30*"/> <!-- Body -->
+            <ColumnDefinition Width="7*"/> <!-- Light Gold Border -->
+            <ColumnDefinition Width="10*"/> <!-- Green Border -->
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/> <!-- Green Border -->
+            <RowDefinition Height="20*" MinHeight="45"/> <!-- Spacing -->
+            <RowDefinition Height="60"/> <!-- Header Text -->
+            <RowDefinition x:Name="rowError" MinHeight="15"/> <!-- Errors -->
+            <RowDefinition Height="20"/> <!-- Email Header -->
+            <RowDefinition Height="50"/> <!-- Email Textbox -->
+            <RowDefinition Height="30"/> <!-- Password Header -->
+            <RowDefinition Height="50"/> <!-- Password Textbox -->
+            <RowDefinition Height="10"/> <!-- Spacing -->
+            <RowDefinition Height="75"/> <!-- Log-In Button -->
+            <RowDefinition Height="10"/> <!-- Spacing -->
+            <RowDefinition Height="40"/> <!-- Sign-Up Text -->
+            <RowDefinition Height="60"/> <!-- Sign-Up Button -->
+            <RowDefinition Height="20*"/> <!-- Spacing -->
+            <RowDefinition Height="25"/> <!-- Green Border -->
+        </Grid.RowDefinitions>
+
+
+        <!-- Top Bar -->
+        <Rectangle Fill="#6a9f83" Height="25" Grid.ColumnSpan="5"/>
+
+
+        <!-- Text Prompts -->
+        <Label x:Name="lblWelcomeBack" Content="Welcome back!" FontFamily="Segoe UI Emoji" FontWeight="Black" FontSize="30" Grid.Column="2" Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Center" Padding="0">
+            <Label.Effect>
+                <DropShadowEffect BlurRadius="0" ShadowDepth="3" Color="#FFD6CDA4" Opacity="0.5"/>
+            </Label.Effect>
+        </Label>
+        <Label x:Name="lblPleaseLogin" Content="- Please log in below -" FontFamily="Segoe UI Emoji" FontWeight="Bold" FontSize="16" Grid.Column="2" Grid.Row="2" Foreground="#FF3D8361" VerticalAlignment="Center" HorizontalAlignment="Center" Padding="0" Margin="0,25,0,0"/>
+        <Rectangle x:Name="rectHeader" Fill="#FFD6CDA4" Height="3" Width="250" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Column="2" Grid.Row="2" />
+
+        <!-- Text Error Prompts -->
+        <Label x:Name="lblErrorErr" Visibility="Hidden" Content="* Error" FontFamily="Segoe UI Emoji" FontWeight="Bold" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Red" Grid.Column="2" Grid.Row="3" Padding="4,0,4,4" Margin="0,0,0,10"/>
+        <Label x:Name="lblErrorHelp" Visibility="Hidden" Content="* Error" FontFamily="Segoe UI Emoji" FontWeight="Bold" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Red" Grid.Column="2" Grid.Row="3" Padding="4,4,4,0" Margin="0,10,0,0"/>
+
+
+        <!-- Email Field + Email Label + Error-->
+        <Label Content="Email" FontFamily="Segoe UI Emoji" FontWeight="Bold" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="#FF3D8361" Grid.Column="2" Grid.Row="4" Margin="0,0,185,0" Padding="0"/>
+        <Label x:Name="lblUserError" Visibility="Hidden" Content="*" FontFamily="Segoe UI Emoji" FontWeight="Bold" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="2" Grid.Row="4" Foreground="Red" Margin="0,0,135,0" Padding="0"/>
+        <TextBox x:Name="txtEmail" VerticalAlignment="Center" HorizontalAlignment="Center" Width="250" Height="45" Grid.Column="2" Grid.Row="5" Background="#FFF6F7F3" KeyDown="txtEmail_KeyDown" />
+
+        <!--- Password Field + Password Label + Error -->
+        <Label Content="Password" FontFamily="Segoe UI Emoji" FontWeight="Bold" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,160,0" Grid.Column="2" Grid.Row="6" Foreground="#FF3D8361" Padding="0"/>
+        <Label x:Name="lblPasswordError" Visibility="Hidden" Content="*" FontFamily="Segoe UI Emoji" FontWeight="Bold" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,80,0" Grid.Column="2" Grid.Row="6" Foreground="Red"/>
+        <PasswordBox x:Name="txtPassword" VerticalAlignment="Center" HorizontalAlignment="Center" Width="250" Height="45" Grid.Column="2" Grid.Row="7" Foreground="#FF1C6758" BorderBrush="#FFD6CDA4" Background="#FFF6F7F3" KeyDown="txtPassword_KeyDown" />
+
+        <Rectangle Fill="#FFD6CDA4" Height="3" Width="250" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Column="2" Grid.Row="9" />
+
+        <!-- LogIn Button -->
+        <Button x:Name="btnLogIn" Content="➡ Log In" Width="140" Height="50" Grid.Column="2" Grid.Row="9" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold" Click="btnLogIn_Click" Foreground="#FFEEF2E6">
+            <Button.Effect>
+                <DropShadowEffect BlurRadius="0" Color="#FF011F01" Opacity="0.25"/>
+            </Button.Effect>
+        </Button>
+
+        <Rectangle Fill="#FFD6CDA4" Height="3" Width="250" VerticalAlignment="Top" HorizontalAlignment="Center" Grid.Column="2" Grid.Row="9" />
+
+
+        <Label Content="New to Petnet?" FontFamily="Segoe UI Emoji" FontWeight="Bold" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="2" Grid.Row="11" Foreground="#FF3D8361" Padding="5,3,5,5"/>
+        <Label Content="Click below to sign up!" FontFamily="Segoe UI Emoji" FontWeight="Bold" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Column="2" Grid.Row="11" Foreground="#FF3D8361" Padding="5,5,5,2"/>
+        <Button x:Name="btnSignUp" Content="➡ Sign Up" Width="140" Height="50" Grid.Column="2" Grid.Row="12" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold" Click="btnSignUp_Click">
+            <Button.Effect>
+                <DropShadowEffect BlurRadius="0" Color="#FF011F01" Opacity="0.25"/>
+            </Button.Effect>
+        </Button>
+
+
+        <!-- Backgound Colors -->
+        <Rectangle Fill="#9ec1b0" Grid.Row="1" Grid.RowSpan="13" />
+        <Rectangle Fill="#eceee0" Grid.Column="1" Grid.Row="1" Grid.RowSpan="13" />
+        <Rectangle Fill="#eceee0" Grid.Column="3" Grid.Row="1" Grid.RowSpan="13" />
+        <Rectangle Fill="#9ec1b0" Grid.Column="4" Grid.Row="1" Grid.RowSpan="13" />
+        
+        <!-- Bottom Bar -->
+        <Rectangle Fill="#6a9f83" Height="25" Grid.Row="14" Grid.ColumnSpan="5"/>
+    </Grid>
+</Page>

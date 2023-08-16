@@ -1,0 +1,777 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DC4F1495-01D6-472B-8F33-12FBDDAF4002}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MVCPresentation</RootNamespace>
+    <AssemblyName>MVCPresentation</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44338</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>4.3</TypeScriptToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.3\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.3\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.3\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.4.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.4.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.4.0.1\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.4.0.1\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.4.0.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.4.0.1\lib\net45\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.4.0.1\lib\net45\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.4.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\AnimalsController.cs" />
+    <Compile Include="Controllers\CommunityController.cs" />
+    <Compile Include="Controllers\DonateController.cs" />
+    <Compile Include="Controllers\DonationsController.cs" />
+    <Compile Include="Controllers\EventsController.cs" />
+    <Compile Include="Controllers\FundraisingController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ManagementController.cs" />
+    <Compile Include="Controllers\PledgeController.cs" />
+    <Compile Include="Controllers\SheltersController.cs" />
+    <Compile Include="Controllers\TicketController.cs" />
+    <Compile Include="Controllers\UserDonationsController.cs" />
+    <Compile Include="Controllers\UserProfileController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\Binders\UsersModelBinder.cs" />
+    <Compile Include="Migrations\202304070738315_InitialCreate.cs" />
+    <Compile Include="Migrations\202304070738315_InitialCreate.Designer.cs">
+      <DependentUpon>202304070738315_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304070741507_UserFields.cs" />
+    <Compile Include="Migrations\202304070741507_UserFields.Designer.cs">
+      <DependentUpon>202304070741507_UserFields.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304070814588_Zipcode.cs" />
+    <Compile Include="Migrations\202304070814588_Zipcode.Designer.cs">
+      <DependentUpon>202304070814588_Zipcode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304141422458_Repo Cloned.cs" />
+    <Compile Include="Migrations\202304141422458_Repo Cloned.Designer.cs">
+      <DependentUpon>202304141422458_Repo Cloned.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AnimalViewModels.cs" />
+    <Compile Include="Models\DonationViewModels.cs" />
+    <Compile Include="Models\FundraisingViewModels.cs" />
+    <Compile Include="HtmlHelpers\PagingHelpers.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\PagingInfo.cs" />
+    <Compile Include="Models\TicketModel.cs" />
+    <Compile Include="Models\ShelterViewModels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\accountsettings.css" />
+    <Content Include="Content\about-us.css" />
+    <Content Include="Content\animals.css" />
+    <Content Include="colors.css" />
+    <Content Include="Content\Animal\adoptableAnimal-desktop.css" />
+    <Content Include="Content\Animal\adoptableAnimal.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-override.css" />
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\community.css" />
+    <Content Include="Content\button-styles.css" />
+    <Content Include="Content\Fundraising\events-mobile.css" />
+    <Content Include="Content\Fundraising\event.css" />
+    <Content Include="Content\Fundraising\event-partial.css" />
+    <Content Include="Content\Fundraising\campaign-partial.css" />
+    <Content Include="Content\Fundraising\campaign.css" />
+    <Content Include="Content\Fundraising\events-desktop.css" />
+    <Content Include="Content\Fundraising\campaigns-desktop.css" />
+    <Content Include="Content\Fundraising\campaigns-mobile.css" />
+    <Content Include="Content\Fundraising\campaigns.css" />
+    <Content Include="Content\Fundraising\events.css" />
+    <Content Include="Content\login.css" />
+    <Content Include="Content\sub-menu.css" />
+    <Content Include="Content\Fundraising\page-navigation.css" />
+    <Content Include="Content\ShelterNetwork.css" />
+    <Content Include="Content\Ticket\TicketList.css" />
+    <Content Include="Content\WebShell.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Images\Animal\0c126019-3b6a-49a2-9103-d57ddaffaa69.png" />
+    <Content Include="Images\Animal\0f19e696-2a27-41ce-b267-21ff8197cb4b.png" />
+    <Content Include="Images\Animal\314a2539-5dee-40ce-ac5b-026d53750c92.png" />
+    <Content Include="Images\bookmark_dark.png" />
+    <Content Include="Images\bookmark_light.png" />
+    <Content Include="Images\logo.ico" />
+    <Content Include="Views\Shared\_PartialSubMenu.cshtml" />
+    <Content Include="Views\Events\Index.cshtml" />
+    <Content Include="Views\Shelters\Index.cshtml" />
+    <Content Include="Views\UserProfile\BookmarksView.cshtml" />
+    <Content Include="Views\Animals\SurrenderSplash.cshtml" />
+    <Content Include="Views\Animals\SurrenderAnimalForm.cshtml" />
+    <Content Include="Views\Animals\SurrenderAnimalFormSubmit.cshtml" />
+    <Content Include="Views\UserProfile\AdoptionApplicationsPartial.cshtml" />
+    <Content Include="Views\Animals\Index.cshtml" />
+    <Content Include="Views\Shared\_PartialAccountMenu.cshtml" />
+    <Content Include="Views\Manage\Settings.cshtml" />
+    <Content Include="Views\Manage\AccountSettings.cshtml" />
+    <Content Include="Views\Community\ReinstatePost.cshtml" />
+    <Resource Include="Images\Animal\no_image.png" />
+    <Resource Include="Images\Animal\BrokenImageGreen.png" />
+    <Resource Include="Images\Animal\BrokenImage.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Content Include="Images\Animal\7b3815b5-e7ca-4736-bf5a-029eeb6706bf.png" />
+    <Content Include="Images\application_light.png" />
+    <Content Include="Images\download_light.png" />
+    <Content Include="Scripts\Animal\animalImage.js" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\esm\popper-utils.js" />
+    <Content Include="Scripts\esm\popper-utils.min.js" />
+    <Content Include="Scripts\esm\popper.js" />
+    <Content Include="Scripts\esm\popper.min.js" />
+    <Content Include="Scripts\fundraising-events.js" />
+    <Content Include="Scripts\fundraising-campaigns.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\popper-utils.js" />
+    <Content Include="Scripts\popper-utils.min.js" />
+    <Content Include="Scripts\popper.js" />
+    <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\report.js" />
+    <Content Include="Scripts\src\index.js" />
+    <Content Include="Scripts\src\methods\defaults.js" />
+    <Content Include="Scripts\src\methods\destroy.js" />
+    <Content Include="Scripts\src\methods\disableEventListeners.js" />
+    <Content Include="Scripts\src\methods\enableEventListeners.js" />
+    <Content Include="Scripts\src\methods\placements.js" />
+    <Content Include="Scripts\src\methods\update.js" />
+    <Content Include="Scripts\src\modifiers\applyStyle.js" />
+    <Content Include="Scripts\src\modifiers\arrow.js" />
+    <Content Include="Scripts\src\modifiers\computeStyle.js" />
+    <Content Include="Scripts\src\modifiers\flip.js" />
+    <Content Include="Scripts\src\modifiers\hide.js" />
+    <Content Include="Scripts\src\modifiers\index.js" />
+    <Content Include="Scripts\src\modifiers\inner.js" />
+    <Content Include="Scripts\src\modifiers\keepTogether.js" />
+    <Content Include="Scripts\src\modifiers\offset.js" />
+    <Content Include="Scripts\src\modifiers\preventOverflow.js" />
+    <Content Include="Scripts\src\modifiers\shift.js" />
+    <Content Include="Scripts\src\utils\clockwise.js" />
+    <Content Include="Scripts\src\utils\computeAutoPlacement.js" />
+    <Content Include="Scripts\src\utils\debounce.js" />
+    <Content Include="Scripts\src\utils\find.js" />
+    <Content Include="Scripts\src\utils\findCommonOffsetParent.js" />
+    <Content Include="Scripts\src\utils\findIndex.js" />
+    <Content Include="Scripts\src\utils\getBordersSize.js" />
+    <Content Include="Scripts\src\utils\getBoundaries.js" />
+    <Content Include="Scripts\src\utils\getBoundingClientRect.js" />
+    <Content Include="Scripts\src\utils\getClientRect.js" />
+    <Content Include="Scripts\src\utils\getFixedPositionOffsetParent.js" />
+    <Content Include="Scripts\src\utils\getOffsetParent.js" />
+    <Content Include="Scripts\src\utils\getOffsetRect.js" />
+    <Content Include="Scripts\src\utils\getOffsetRectRelativeToArbitraryNode.js" />
+    <Content Include="Scripts\src\utils\getOppositePlacement.js" />
+    <Content Include="Scripts\src\utils\getOppositeVariation.js" />
+    <Content Include="Scripts\src\utils\getOuterSizes.js" />
+    <Content Include="Scripts\src\utils\getParentNode.js" />
+    <Content Include="Scripts\src\utils\getPopperOffsets.js" />
+    <Content Include="Scripts\src\utils\getReferenceNode.js" />
+    <Content Include="Scripts\src\utils\getReferenceOffsets.js" />
+    <Content Include="Scripts\src\utils\getRoot.js" />
+    <Content Include="Scripts\src\utils\getRoundedOffsets.js" />
+    <Content Include="Scripts\src\utils\getScroll.js" />
+    <Content Include="Scripts\src\utils\getScrollParent.js" />
+    <Content Include="Scripts\src\utils\getStyleComputedProperty.js" />
+    <Content Include="Scripts\src\utils\getSupportedPropertyName.js" />
+    <Content Include="Scripts\src\utils\getViewportOffsetRectRelativeToArtbitraryNode.js" />
+    <Content Include="Scripts\src\utils\getWindow.js" />
+    <Content Include="Scripts\src\utils\getWindowSizes.js" />
+    <Content Include="Scripts\src\utils\includeScroll.js" />
+    <Content Include="Scripts\src\utils\index.js" />
+    <Content Include="Scripts\src\utils\isBrowser.js" />
+    <Content Include="Scripts\src\utils\isFixed.js" />
+    <Content Include="Scripts\src\utils\isFunction.js" />
+    <Content Include="Scripts\src\utils\isIE.js" />
+    <Content Include="Scripts\src\utils\isModifierEnabled.js" />
+    <Content Include="Scripts\src\utils\isModifierRequired.js" />
+    <Content Include="Scripts\src\utils\isNumeric.js" />
+    <Content Include="Scripts\src\utils\isOffsetContainer.js" />
+    <Content Include="Scripts\src\utils\removeEventListeners.js" />
+    <Content Include="Scripts\src\utils\runModifiers.js" />
+    <Content Include="Scripts\src\utils\setAttributes.js" />
+    <Content Include="Scripts\src\utils\setStyles.js" />
+    <Content Include="Scripts\src\utils\setupEventListeners.js" />
+    <Content Include="Scripts\umd\popper-utils.js" />
+    <Content Include="Scripts\umd\popper-utils.min.js" />
+    <Content Include="Scripts\umd\popper.js" />
+    <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="Views\Animals\AdoptionApplication.cshtml" />
+    <Content Include="Views\Shared\Success.cshtml" />
+    <Content Include="Views\Donations\Index.cshtml" />
+    <Content Include="Views\Donations\Details.cshtml" />
+    <Content Include="Views\Community\Index.cshtml" />
+    <Content Include="Views\Community\Create.cshtml" />
+    <Content Include="Views\Community\Edit.cshtml" />
+    <Content Include="Views\UserDonations\Index.cshtml" />
+    <Content Include="Views\UserDonations\Details.cshtml" />
+    <Content Include="Scripts\umd\popper.min.js.map" />
+    <Content Include="Scripts\umd\popper.js.map" />
+    <Content Include="Scripts\umd\popper.js.flow" />
+    <Content Include="Scripts\umd\popper-utils.min.js.map" />
+    <Content Include="Scripts\umd\popper-utils.js.map" />
+    <Content Include="Scripts\README.md" />
+    <Content Include="Scripts\popper.min.js.map" />
+    <Content Include="Scripts\popper.js.map" />
+    <Content Include="Scripts\popper-utils.min.js.map" />
+    <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\Fundraising\Campaigns.cshtml" />
+    <Content Include="Views\Fundraising\FundraisingCampaignForCampaigns.cshtml" />
+    <Content Include="Views\Fundraising\Campaigns.Mobile.cshtml" />
+    <Content Include="Views\Fundraising\Campaign.cshtml" />
+    <Content Include="Views\Community\ShowReplies.cshtml" />
+    <Content Include="Views\Community\CreateReply.cshtml" />
+    <Content Include="Views\Community\EditReply.cshtml" />
+    <Content Include="Views\Shelters\ShelterNetwork.cshtml" />
+    <Content Include="Views\UserProfile\Index.cshtml" />
+    <Content Include="Views\Shelters\SelectShelter.cshtml" />
+    <Content Include="Views\Community\Delete.cshtml" />
+    <Content Include="Views\Shelters\HoursOfOperation.cshtml" />
+    <Content Include="Views\Shelters\EditHoursOfOperation.cshtml" />
+    <Content Include="Views\Community\DeleteReply.cshtml" />
+    <Content Include="Views\Animals\Adoptable.cshtml" />
+    <Content Include="Views\Community\ReportPartial.cshtml" />
+    <Content Include="Views\Community\BeginPostReport.cshtml" />
+    <Content Include="Views\Animals\AdoptableAnimal.cshtml" />
+    <Content Include="Views\Animals\AnimalImageForAdoptableAnimal.cshtml" />
+    <Content Include="Views\Fundraising\Events.cshtml" />
+    <Content Include="Views\Fundraising\Index.cshtml" />
+    <Content Include="Views\Fundraising\FundraisingEventForEvents.cshtml" />
+    <Content Include="Views\Fundraising\Event.cshtml" />
+    <Content Include="Views\Fundraising\Events.Mobile.cshtml" />
+    <Content Include="Views\Admin\Details.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Ticket\Index.cshtml" />
+    <Content Include="Views\Ticket\Create.cshtml" />
+    <Content Include="Views\Community\ReportReplyPartial.cshtml" />
+    <Content Include="Views\Community\BeginReplyReport.cshtml" />
+    <Content Include="Views\Pledge\Create.cshtml" />
+    <Content Include="Views\Management\Index.cshtml" />
+    <Content Include="Views\Management\Create.cshtml" />
+    <Content Include="Views\Home\TermsOfService.cshtml" />
+    <Content Include="Views\Donate\Donate.cshtml" />
+    <Resource Include="Images\abstract-user-flat-4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\ambulance_dark.png" />
+    <Resource Include="Images\AnimalImage.png" />
+    <Resource Include="Images\arrow_left3_dark.png" />
+    <Resource Include="Images\arrowleftDark.png" />
+    <Resource Include="Images\arrowRightDark.png" />
+    <Resource Include="Images\beaker_dark.png" />
+    <Resource Include="Images\bell.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\bell_hover.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\bell_notification.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\bell_notification_hover.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\cameradark.png" />
+    <Resource Include="Images\clipboard_dark.png" />
+    <Resource Include="Images\emoticonhappydark.png" />
+    <Resource Include="Images\LeftArrow.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\LeftArrow_Hover.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\libraryplus_dark.png" />
+    <Resource Include="Images\menuIcon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\menuIcon_hover.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\needle_dark.png" />
+    <Resource Include="Images\notes_dark.png" />
+    <Resource Include="Images\perfectCAT.png" />
+    <Resource Include="Images\petnetLogo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\petnetLogo_hover.png" />
+    <Resource Include="Images\pharmacy_dark.png" />
+    <Resource Include="Images\Placeholder\bannerImage_1.jpg" />
+    <Resource Include="Images\Placeholder\bannerImage_10.jpg" />
+    <Resource Include="Images\Placeholder\bannerImage_2.jpg" />
+    <Resource Include="Images\Placeholder\bannerImage_3.jpg" />
+    <Resource Include="Images\Placeholder\bannerImage_4.jpg" />
+    <Resource Include="Images\Placeholder\bannerImage_5.jpg" />
+    <Resource Include="Images\Placeholder\bannerImage_6.jpg" />
+    <Resource Include="Images\Placeholder\bannerImage_7.jpg" />
+    <Resource Include="Images\Placeholder\bannerImage_8.jpg" />
+    <Resource Include="Images\Placeholder\bannerImage_9.jpg" />
+    <Resource Include="Images\PlusIcon.png" />
+    <Resource Include="Images\PlusIcon_light.png" />
+    <Resource Include="Images\RightArrow.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\RightArrow_Hover.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\send_hover.png" />
+    <Resource Include="Images\senddark.png" />
+    <Resource Include="Images\threedots.png" />
+    <Resource Include="Images\threedots_hover.png" />
+    <Resource Include="Images\user_hover.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\usericondark.png" />
+    <Content Include="Scripts\index.js.flow" />
+    <Content Include="Scripts\esm\popper.min.js.map" />
+    <Content Include="Scripts\esm\popper.js.map" />
+    <Content Include="Scripts\esm\popper-utils.min.js.map" />
+    <Content Include="Scripts\esm\popper-utils.js.map" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="Files\AdoptionApplication.docx" />
+    <Content Include="Images\Animal\02b98ed7-56c8-4f27-a4db-66f0bab9b1a9" />
+    <Content Include="Images\Animal\033d7dc7-a09f-45ba-849a-751bbade50ed" />
+    <Content Include="Images\Animal\04bf80b5-ce5f-4bd5-896a-4cf965fc9032" />
+    <Content Include="Images\Animal\053bdd7a-9b14-4522-afe3-500b18c1f2c5" />
+    <Content Include="Images\Animal\05779021-3864-45ba-8e4d-ce72917105ee" />
+    <Content Include="Images\Animal\0a29578e-bde1-4cf9-a58e-06cf38608231" />
+    <Content Include="Images\Animal\0a5ad819-0dc7-4431-91c0-bd073b6ecd4b" />
+    <Content Include="Images\Animal\0c5bcf4d-0da4-4c99-9751-db0f3d76bcba" />
+    <Content Include="Images\Animal\0f809f81-5f8f-4ea8-9b28-686af1f44f56" />
+    <Content Include="Images\Animal\10792310-e783-4a40-9d66-5ada9ce5912d" />
+    <Content Include="Images\Animal\11abc597-7b3b-4897-b7df-a0e2dce10f3b" />
+    <Content Include="Images\Animal\12004013-d044-4ce6-b3ee-253e7cd35ac3" />
+    <Content Include="Images\Animal\137a2cc0-8334-4688-b55b-ae34c5ff0ab5" />
+    <Content Include="Images\Animal\1b397382-d732-415a-9a5e-1465ee234eea" />
+    <Content Include="Images\Animal\1c327828-338f-4f05-b416-8e261c279e9d" />
+    <Content Include="Images\Animal\1dbd4560-e63c-4232-9e79-9db98f0a9680" />
+    <Content Include="Images\Animal\1f4f1c94-ac49-4c52-9511-caefa69199cf" />
+    <Content Include="Images\Animal\20d06893-ba67-4b26-9ead-38b2359b6f19" />
+    <Content Include="Images\Animal\23c8c1e2-ffe2-4ae4-9a47-ee6910e129c1" />
+    <Content Include="Images\Animal\23f4880c-37e4-442c-9b14-a83b35ba2505" />
+    <Content Include="Images\Animal\261b378a-657d-4aef-a665-b2e55d2464c7" />
+    <Content Include="Images\Animal\27b46ac7-8b12-4d1d-b905-14c4588d28b6" />
+    <Content Include="Images\Animal\28ab3d26-71ae-4bd0-bca8-9da003636d96" />
+    <Content Include="Images\Animal\29c665b6-45c5-4732-bd02-438ee2d5b970" />
+    <Content Include="Images\Animal\2a41c950-e54e-4144-b8aa-6b0b19a678e6" />
+    <Content Include="Images\Animal\2f91ffc1-e9e9-4548-908d-ce49012b37cc" />
+    <Content Include="Images\Animal\39226afc-746d-4930-886a-efdf50e5e90c" />
+    <Content Include="Images\Animal\3d488cb8-651d-44d4-8088-09b564f7e26b" />
+    <Content Include="Images\Animal\3e31ff5c-ac4f-44f3-b958-96a4a6edf6a3" />
+    <Content Include="Images\Animal\3fca64bc-37ef-47a8-98c4-50662710c1d2" />
+    <Content Include="Images\Animal\43786c37-eb92-4916-a1fe-7e38ce67ceae" />
+    <Content Include="Images\Animal\45199ebf-1b0f-4bb6-9118-5d7f96eae480" />
+    <Content Include="Images\Animal\4726acfb-b469-4ecc-8a15-c822eab6fcdc" />
+    <Content Include="Images\Animal\47cdfa28-d3d1-4c02-9cf5-0e548b0d2014" />
+    <Content Include="Images\Animal\4876814b-f736-4214-b0b3-27f575033b8c" />
+    <Content Include="Images\Animal\48dff575-9bfa-444c-b88d-3dba16aad495" />
+    <Content Include="Images\Animal\4c396bcb-4170-4266-8030-105020b2e875" />
+    <Content Include="Images\Animal\4c6ecf8b-afa2-43e4-b27a-91b99674efb6" />
+    <Content Include="Images\Animal\4df2dd7e-3391-4826-b4ea-84dff1a60300" />
+    <Content Include="Images\Animal\56b78978-107a-41bb-b5eb-60283b3e760e" />
+    <Content Include="Images\Animal\5929d2a9-c625-4947-8f04-a32190ea34f8" />
+    <Content Include="Images\Animal\5ade651d-9f2d-4b71-9226-7ffbe95f7770" />
+    <Content Include="Images\Animal\5f0e227b-b35e-4115-bc87-2f054c9ba2ba" />
+    <Content Include="Images\Animal\6005c4c1-fc00-41ad-8f8b-c434c181c544" />
+    <Content Include="Images\Animal\60e2795f-a01a-47c0-82c6-d610b8f61189" />
+    <Content Include="Images\Animal\62b1b015-90db-47e4-89a2-471b95771c57" />
+    <Content Include="Images\Animal\663af7ce-ed63-4bd6-a210-7594c96fb99f" />
+    <Content Include="Images\Animal\69d16755-14de-449b-99c3-b979fd58171b" />
+    <Content Include="Images\Animal\69e740c5-340a-4b7f-a27e-28d8af63e1b6" />
+    <Content Include="Images\Animal\6a1d49be-3177-4702-ab86-04725bb9bd74" />
+    <Content Include="Images\Animal\6bc5cbe7-a84d-4ece-b267-3bcf92ae0493" />
+    <Content Include="Images\Animal\6c96a6c2-3ecd-4103-9d0c-99e246559233" />
+    <Content Include="Images\Animal\6e1fe45b-ca46-4924-b704-241eb2b32985" />
+    <Content Include="Images\Animal\72bfd6fa-03cf-4b80-8845-5ed1d7ad7157" />
+    <Content Include="Images\Animal\7401aaa6-c4f5-4da3-94ea-0def55c54b5f" />
+    <Content Include="Images\Animal\742f8ea9-380f-4757-b38a-080386733f2e" />
+    <Content Include="Images\Animal\743ecdc2-6ccf-4249-977c-0fe294b8d311" />
+    <Content Include="Images\Animal\7716a6a5-0715-4999-8b4e-eaafb2b4a44d" />
+    <Content Include="Images\Animal\77358795-a561-4396-b7ba-722a6af7f743" />
+    <Content Include="Images\Animal\777aa3f6-1cb3-4779-bb84-f6c9b6f51bdd" />
+    <Content Include="Images\Animal\77c4c0dd-b0e3-4f35-a3a2-11d48ba2f4ca" />
+    <Content Include="Images\Animal\7956ebf2-5684-45b0-b3be-d96a1ee57820" />
+    <Content Include="Images\Animal\796912c8-94f2-49b6-a1a4-c78f1c11734c" />
+    <Content Include="Images\Animal\7a4461e2-998c-4a9c-aa05-c9c03d13dc00" />
+    <Content Include="Images\Animal\7a8a6217-f385-4cc1-9cde-f305f139dc3f" />
+    <Content Include="Images\Animal\7ab1192b-e8a2-439b-ab21-5d551708a906" />
+    <Content Include="Images\Animal\7c4d6781-8b94-4ded-8edb-9f32fac9d90e" />
+    <Content Include="Images\Animal\7d8019f9-aa32-4880-b635-b2fa3fed5075" />
+    <Content Include="Images\Animal\7de7a2e6-1869-4038-ab3e-9db232584c05" />
+    <Content Include="Images\Animal\89a7f7ee-771b-4d11-bd9f-399e48c587bc" />
+    <Content Include="Images\Animal\8aeebf4d-e6e2-435f-9a94-6364dc2a80a4" />
+    <Content Include="Images\Animal\8c6c105b-24b8-455a-af25-301833a73cc2" />
+    <Content Include="Images\Animal\8e1dbc5b-16dc-43e5-88d0-ebb17b2872af" />
+    <Content Include="Images\Animal\93830c60-b769-499c-a3bc-8c2bd6255c18" />
+    <Content Include="Images\Animal\9392f747-2aff-4b33-b0cb-b600dde42b0b" />
+    <Content Include="Images\Animal\9550c441-b4a6-4197-9b7a-abe7077239c3" />
+    <Content Include="Images\Animal\969b7626-2e88-4560-8dd4-a106165ff1c4" />
+    <Content Include="Images\Animal\97717fa2-a471-443c-8fa1-4767d24cd893" />
+    <Content Include="Images\Animal\9dc7e5a0-0f9e-4520-bbfe-a26cfcfd555e" />
+    <Content Include="Images\Animal\9fa4860f-04a2-411f-adad-6c7a979a2b91" />
+    <Content Include="Images\Animal\a019126c-820c-4e2a-adf3-cccd9c28f580" />
+    <Content Include="Images\Animal\a1f78391-6208-4ec4-afc1-f7c57177f0a0" />
+    <Content Include="Images\Animal\a55759a1-0239-400d-8f91-8a0c78ddc13d" />
+    <Content Include="Images\Animal\b536283f-5a32-46f7-bfc4-f2ed865b856e" />
+    <Content Include="Images\Animal\b5fceb68-bbf6-44f8-988b-c9ee77447992" />
+    <Content Include="Images\Animal\b67c125c-dd54-4dfb-9a67-4f24101e8cdb" />
+    <Content Include="Images\Animal\ba1ead7a-0a29-4276-bca5-e3e39dff22c6" />
+    <Content Include="Images\Animal\bc69596b-fe98-4f8c-aaa5-4a71a48cf159" />
+    <Content Include="Images\Animal\bd0e465a-fb30-498d-9864-30694bd22ede" />
+    <Content Include="Images\Animal\bd34a8eb-5068-44c5-90ad-b246affde66c" />
+    <Content Include="Images\Animal\bdce9aa1-8a3d-4ec1-887f-f8c0bf818d7e" />
+    <Content Include="Images\Animal\c3b14344-2aa1-4293-bd45-d6f31454be45" />
+    <Content Include="Images\Animal\c4ecafd1-15a8-4e4f-be46-67bf281354fb" />
+    <Content Include="Images\Animal\c5853b9c-5934-494f-9c32-d8282451ccec" />
+    <Content Include="Images\Animal\c5bed0ee-c152-4ee5-be9f-5ded9b6b78b1" />
+    <Content Include="Images\Animal\c6ae3cf2-ef1e-4967-88ca-75e7b30cb72c" />
+    <Content Include="Images\Animal\c761f742-de92-496f-b1f5-bc55e6be52f9" />
+    <Content Include="Images\Animal\ca25f0d0-bace-4c68-bc65-40aeef993120" />
+    <Content Include="Images\Animal\cc413aaa-52f2-49d4-9271-06097e773290" />
+    <Content Include="Images\Animal\d40b20a6-5a67-46be-86a2-ba1c3a0ff57e" />
+    <Content Include="Images\Animal\d5b4c50d-c3a8-4e6e-afb6-abb8c0eab524" />
+    <Content Include="Images\Animal\d85446f2-7f77-4165-9e70-c0b7048602be" />
+    <Content Include="Images\Animal\d94f7a5d-0982-4a4a-ad71-d98c9a6d2472" />
+    <Content Include="Images\Animal\d96ae8cd-8d62-47cc-898d-97ae2dbe6191" />
+    <Content Include="Images\Animal\db13092b-be8c-4d12-9957-ff93c25f22fe" />
+    <Content Include="Images\Animal\db6b20f2-9393-4ea3-8525-d2a8cc3fe016" />
+    <Content Include="Images\Animal\dde2eb38-50bc-44f5-a920-3d413f4fc524" />
+    <Content Include="Images\Animal\dec2017c-46ea-46ed-84ee-c654d08fe110" />
+    <Content Include="Images\Animal\df23a933-b0dc-4f81-96b7-6d307aa7d3ff" />
+    <Content Include="Images\Animal\e09fe852-0462-482f-972e-a296fd3b4709" />
+    <Content Include="Images\Animal\e1f8ca02-2543-4874-9acf-bfb36f537fb6" />
+    <Content Include="Images\Animal\e4f50598-f732-49f3-b133-5e106f21d997" />
+    <Content Include="Images\Animal\e5d34d63-22d2-4544-b11c-c27a3a5eae24" />
+    <Content Include="Images\Animal\e7373fed-5e98-42e4-ae4b-36ae66ec7857" />
+    <Content Include="Images\Animal\ec1df1df-7088-48ef-ac17-7c4567dd791c" />
+    <Content Include="Images\Animal\ecf09fc1-d654-46ee-95e6-3afc10b6eb54" />
+    <Content Include="Images\Animal\ee5f87eb-3d4a-4803-bd7c-73ca124c2fb9" />
+    <Content Include="Images\Animal\ef497a71-4618-49b0-a08e-4d680de53857" />
+    <Content Include="Images\Animal\effbd0db-7000-4224-a0b6-870d563433bf" />
+    <Content Include="Images\Animal\f19130de-86fb-4f20-be81-95649b84a715" />
+    <Content Include="Images\Animal\f44fdfc1-35ac-4b41-9e02-c27006ef3be0" />
+    <Content Include="Images\Animal\f61baa06-b44c-4474-90b7-d09864ac6853" />
+    <Content Include="Images\Animal\f7036743-2526-4479-b1fc-a2cbd982af85" />
+    <Content Include="Images\Animal\f750a05e-4c06-4230-adb0-f6804de83c5d" />
+    <Content Include="Images\Animal\fc6f2599-83fd-4dc1-aaea-d5731da15621" />
+    <Content Include="Images\Animal\fe6615c6-1c04-44e3-a28c-ca071f74c212" />
+    <Content Include="Images\Animal\b974a96a-621e-49d5-9b51-2d52c3cc3cdd" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\UserDetails.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Content\Donations\" />
+    <Folder Include="Views\Default\" />
+    <Folder Include="Views\Post\" />
+    <Folder Include="Views\Test\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataObjects\DataObjects.csproj">
+      <Project>{5f873a2c-b117-4b22-88c8-bc29b3acba2e}</Project>
+      <Name>DataObjects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LogicLayerInterfaces\LogicLayerInterfaces.csproj">
+      <Project>{3f5e4460-f710-4b9a-85a4-cc30109ad376}</Project>
+      <Name>LogicLayerInterfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LogicLayer\LogicLayer.csproj">
+      <Project>{bbe0fac3-fcec-449c-b337-6c81a6225159}</Project>
+      <Name>LogicLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\index.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202304070738315_InitialCreate.resx">
+      <DependentUpon>202304070738315_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304070741507_UserFields.resx">
+      <DependentUpon>202304070741507_UserFields.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304070814588_Zipcode.resx">
+      <DependentUpon>202304070814588_Zipcode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304141422458_Repo Cloned.resx">
+      <DependentUpon>202304141422458_Repo Cloned.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Images\logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50618</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:44338/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

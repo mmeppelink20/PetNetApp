@@ -1,0 +1,34 @@
+﻿@model DataObjects.ReplyVM
+
+@if (Model.ReplyVisibility && ViewBag.UserId != Model.ReplyAuthor)
+{
+    if (!Model.UserReplyReport)
+    {
+        AjaxOptions options = new AjaxOptions()
+        {
+            UpdateTargetId = "report-modal-content",
+            HttpMethod = "GET"
+        };
+        using (Ajax.BeginForm("BeginReportReply", "Community", null, options, new { @class = "float-right", method = "GET" }))
+        {
+            @Html.Hidden("reply", Model.ReplyId)
+            <button type="submit" class="report-button" data-toggle="modal" data-target="#report-modal">Report</button>
+            <p class="float-right report-error">@(ViewBag.ReportError != null ? " " + (string)ViewBag.ReportError : "")</p>
+        }
+    }
+    else
+    {
+        AjaxOptions options = new AjaxOptions()
+        {
+            UpdateTargetId = "report-post-" + Model.ReplyId,
+            HttpMethod = "Post"
+        };
+        using (Ajax.BeginForm("UnreportReply", "Community", null, options, new { @class = "float-right" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.Hidden("reply", Model.ReplyId)
+            <button type="submit" class="report-button">Unreport</button>
+            <p class="float-right report-error">@(ViewBag.ReportError != null ? " " + (string)ViewBag.ReportError : "")</p>
+        }
+    }
+}

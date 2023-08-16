@@ -1,0 +1,82 @@
+﻿<Window x:Class="WpfPresentation.Fundraising.AddFundraisingEventHostWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfPresentation.Fundraising"
+        xmlns:uc="clr-namespace:WpfPresentation.UserControls"
+        mc:Ignorable="d"
+        Title="AddFundraisingEventHostWindow" Height="550" Width="600" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*" MinHeight="100"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Add Event Host" FontSize="25" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.ColumnSpan="2"/>
+        <uc:PlaceholderTextBox DefaultText="Search Sponsors" Grid.Row="1" Grid.Column="0" Width="200" Margin="10 5" HorizontalAlignment="Right" x:Name="ptbSearchText" KeyDown="ptbSearchText_KeyDown"/>
+        <Button x:Name="btnSearch" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right" Margin="10 0" Width="30" Height="30">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Setter Property="Background">
+                        <Setter.Value>
+                            <ImageBrush ImageSource="/WpfPresentation;component/Images/magnify.png"/>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background">
+                                <Setter.Value>
+                                    <ImageBrush ImageSource="/WpfPresentation;component/Images/magnifydark.png" />
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Background">
+                                <Setter.Value>
+                                    <ImageBrush ImageSource="/WpfPresentation;component/Images/magnify.png" />
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+       
+        
+        <DataGrid x:Name="datHost" Grid.Row="2" Grid.ColumnSpan="2" Margin="20 10" VerticalAlignment="Stretch" Width="500" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding CompanyName}" Header="CompanyName" Width="3*"/>
+                <DataGridTextColumn  Header="Name" Width="2*">
+                    <DataGridTextColumn.Binding>
+                        <MultiBinding StringFormat="{}{0} {1}">
+                            <Binding Path="GivenName" />
+                            <Binding Path="FamilyName" />
+                        </MultiBinding>
+                    </DataGridTextColumn.Binding>
+                </DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding Email}" Header="Email" Width="2*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.ColumnSpan="2" HorizontalAlignment="Right" Margin="20 10">
+            <Button x:Name="btnDone" Content="Done" Width="100" Height="40" Margin="5" Click="btnDone_Click"/>
+            <Button x:Name="btnCancel" Content="Cancel" Style="{StaticResource rsrcWarningButton}" Width="100" Height="40" Margin="5" IsCancel="True"/>
+        </StackPanel>
+    </Grid>
+</Window>

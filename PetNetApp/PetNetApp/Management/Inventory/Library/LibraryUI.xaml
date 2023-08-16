@@ -1,0 +1,79 @@
+﻿<Page x:Class="WpfPresentation.Management.Inventory.Library.LibraryUI" 
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfPresentation.Management.Inventory.Library"
+      xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      MinWidth="800"
+      Title="LibraryUI" Loaded="Page_Loaded">
+
+    <Grid>
+        <Grid Margin="15,0,15,15">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition Width="200" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70"/>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Label x:Name="lblLibraryUIMain" Grid.Column="0" Grid.Row="0" Style="{StaticResource ResourceKey=rsrcLabel}"
+                   FontSize="24" FontWeight="Bold" HorizontalAlignment="Left" VerticalAlignment="Center">PetNet Inventory Library</Label>
+            <StackPanel x:Name="stackLibraryUIPageTop" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Right" >
+                <Button x:Name="btnLibraryHelp" Content="?" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Right"
+                    Margin="10" MinHeight="50" MinWidth="50" Style="{StaticResource ResourceKey=rsrcDefaultButton}" Click="btnLibraryHelp_Click"/>
+                <xctk:CheckComboBox x:Name="comboFilterLibraryByTag" HorizontalAlignment="Right"
+                          Margin="10" MinWidth="180" ItemSelectionChanged="comboFilterLibraryByTag_ItemSelectionChanged"/>
+                <TextBox x:Name="txtFilterLibraryByName" HorizontalAlignment="Right" Style="{StaticResource ResourceKey=rsrcTextBox}"
+                         Margin="10" MinWidth="180" GotFocus="txtFilterLibraryByName_GotFocus" LostFocus="txtFilterLibraryByName_LostFocus" KeyDown="txtFilterLibraryByName_KeyDown">Filter by Name</TextBox>
+            </StackPanel>
+            <DataGrid Grid.Column="0" Grid.Row="1"
+                x:Name="datLibraryInventory" IsReadOnly="True" Style="{StaticResource ResourceKey=rsrcDataGrid}"
+                      AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn ElementStyle="{StaticResource ResourceKey=rsrcMultiLineTextBlock}" Binding="{Binding ItemId}" Header="Item Name" Width="4*" />
+                    <!--<DataGridTextColumn ElementStyle="{StaticResource ResourceKey=rsrcMultiLineTextBlock}" Binding="{Binding CategoryId}" Header="Item CategoryId" Width="6*" />-->
+                    <DataGridTemplateColumn Header="Item Tags" Width="6*">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+
+                                <ListBox ItemsSource="{Binding CategoryId}" Background="Transparent">
+                                    <ListBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <Border CornerRadius="3" BorderBrush="#3D8361" Background="#EEF2E6" BorderThickness="2" Margin="2" Padding="3 1">
+                                                <TextBlock Text="{Binding}" Style="{StaticResource ResourceKey=rsrcMultiLineTextBlock}" TextAlignment="Center" Foreground="#1C6758" />
+                                            </Border>
+                                        </DataTemplate>
+                                    </ListBox.ItemTemplate>
+                                    <ListBox.ItemsPanel>
+                                        <ItemsPanelTemplate>
+                                            <VirtualizingStackPanel IsItemsHost="True" Orientation="Horizontal" VerticalAlignment="Center"  />
+                                        </ItemsPanelTemplate>
+                                    </ListBox.ItemsPanel>
+                                </ListBox>
+
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+            <StackPanel x:Name="stackLibraryUIPageRight" Grid.Column="1" Grid.Row="1" >
+                <Label x:Name="lblPetNetAdminButtons" Style="{StaticResource ResourceKey=rsrcLabel}" HorizontalAlignment="Center">PetNet Administrators</Label>
+                <Button x:Name="btnAddLibraryItem" Style="{StaticResource ResourceKey=rsrcDefaultButton}" Margin="5" Padding="5" MinHeight="30" Click="btnAddLibraryItem_Click">Add Library Item</Button>
+                <Button x:Name="btnEditLibraryItem" Style="{StaticResource ResourceKey=rsrcDefaultButton}" Margin="5" Padding="5" MinHeight="30" Click="btnEditLibraryItem_Click">Edit Library Item</Button>
+                <Button x:Name="btnAddCategory" Style="{StaticResource ResourceKey=rsrcDefaultButton}" Margin="5" Padding="5" MinHeight="30" Click="btnAddCategory_Click">Add Item Category</Button>
+                <Label x:Name="lblShelterAdminButtons" Style="{StaticResource ResourceKey=rsrcLabel}" HorizontalAlignment="Center">Shelter Administrators</Label>
+                <Button x:Name="btnAddToShelterInventory" Style="{StaticResource ResourceKey=rsrcDefaultButton}" Margin="5" Padding="5" MinHeight="50" Click="btnAddToShelterInventory_Click" >
+                    <TextBlock TextWrapping="Wrap" TextAlignment="Center">
+                        Add to Shelter Inventory
+                    </TextBlock>
+                </Button>
+                <Button x:Name="btnRequestLibraryAddition" Style="{StaticResource ResourceKey=rsrcDefaultButton}" Margin="5" Padding="5" Click="btnRequestLibraryAddition_Click">Request a New Item</Button>
+            </StackPanel>
+        </Grid>
+        <Frame x:Name="frmLibrary" Grid.RowSpan="1" Margin="0,0,0,0"/>
+    </Grid>
+</Page>

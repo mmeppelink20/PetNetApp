@@ -1,0 +1,150 @@
+﻿@model MVCPresentation.Models.DonationsViewModel
+
+@{
+    ViewBag.Title = "Donate";
+}
+
+
+<div class="container">
+    <div class="row">
+        <h2>Donations</h2>
+    </div>
+
+    <div class="row">
+        <p>
+            @Html.ActionLink("Donate Here!", "Donate","Donate", new { textarea = "" }, new { @class = "btn btn-primary" })
+        </p>
+        @using (Html.BeginForm("Index", "Donations", FormMethod.Get, new { @class = "ml-auto" }))
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="d-flex flex-row-reverse">
+                <div class="p-1">
+                    <input type="submit" value="Filter" class="btn btn-primary" tabindex="7"/>
+                </div>
+                <div class="p-1" tabindex="6">
+                    @{
+                        SelectList list = new SelectList(Model.Shelters, "ShelterId", "ShelterName");
+                    }
+                    @Html.DropDownListFor(model => model.Shelter, list, "All Shelters",
+                            new { @class = "btn btn-secondary dropdown-toggle", @style = "background: #3d8361; border-color: #7fac92" })
+                </div>
+
+                <div class="p-1" tabindex="5">
+                    @Html.EnumDropDownListFor(model => model.MiscellaneousFilterOptions, "Other Options",
+                            new { @class = "btn btn-secondary dropdown-toggle", @style = "background: #3d8361; border-color: #7fac92" })
+                </div>
+
+                <div class="p-1" tabindex="4">
+                    @Html.EnumDropDownListFor(model => model.AmountFilterOptions, "Amount",
+                            new { @class = "btn btn-secondary dropdown-toggle", @style = "background: #3d8361; border-color: #7fac92" })
+                </div>
+                <div class="p-1" tabindex="3">
+                    @Html.EnumDropDownListFor(model => model.DateFilterOptions, "Date", new
+                    {
+                        @class = "btn btn-secondary dropdown-toggle",
+                   @style = "background: #3d8361; border-color: #7fac92"
+                    })
+                </div>
+                <div class="p-1" tabindex="2">
+                    @Html.EnumDropDownListFor(model => model.Sort, "Sort",
+                            new { @class = "btn btn-secondary dropdown-toggle", @style = "background: #3d8361; border-color: #7fac92" })
+                </div>
+            </div>
+        }
+
+    </div>
+
+
+
+    <div class="overflow">
+        @if (Model.Count != 0)
+        {
+            <table class="table">
+                <tr>
+                    <th>
+                        First Name
+                    </th>
+                    <th>
+                        Last Name
+                    </th>
+                    <th>
+                        Shelter Name
+                    </th>
+                    <th>
+                        Amount
+                    </th>
+                    <th>
+                        Date
+                    </th>
+                    <th>
+                        Message
+                    </th>
+                </tr>
+                @foreach (var item in Model.DonationVMs)
+                {
+                    var date = item.DateDonated.Value.ToString("MM/dd/yyyy");
+                    string shortMessage = "";
+                    if (item.Message != null && item.Message.Length > 45)
+                    {
+                        shortMessage = item.Message.Substring(0, 45) + "...";
+                    }
+                    <tr>
+                        @if (item.Anonymous)
+                        {
+                            <th>Anonymous</th>
+                            <th></th>
+                        }
+                        else if (item.UserId == null)
+                        {
+                            <th>
+                                @Html.DisplayFor(modelItem => item.GivenName)
+                            </th>
+                            <th>
+                                @Html.DisplayFor(modelItem => item.FamilyName)
+                            </th>
+                        }
+                        else
+                        {
+                            <th>
+                                @Html.DisplayFor(modelItem => item.User.GivenName)
+                            </th>
+                            <th>
+                                @Html.DisplayFor(modelItem => item.User.FamilyName)
+                            </th>
+                        }
+                        <th>
+                            @Html.DisplayFor(modelItem => item.ShelterName)
+                        </th>
+                        <th>
+                            $@Html.DisplayFor(modelItem => item.Amount)
+                        </th>
+                        <th>
+                            @Html.DisplayFor(modelItem => date)
+                        </th>
+                        @if (item.Message != null && item.Message.Length > 45)
+                        {
+                            <th>
+                                @Html.DisplayFor(modelItem => shortMessage)
+                            </th>
+                        }
+                        else
+                        {
+                            <th>
+                                @Html.DisplayFor(modelItem => item.Message)
+                            </th>
+                        }
+                        <td>
+                            @Html.ActionLink("View", "Details", new { id = item.DonationId }, new { @class = "btn btn-primary" })
+                        </td>
+                    </tr>
+                }
+            </table>
+        }
+        else
+        {
+            <p class="h2">No donations to display</p>
+        }
+
+    </div>
+</div>

@@ -1,0 +1,41 @@
+﻿<Page x:Class="WpfPresentation.Events.ViewEvents"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfPresentation.Events"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ViewEvents" Loaded="Page_Loaded">
+
+    <Grid Background="#eef2e6">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="75"/>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="110"/>
+            <RowDefinition />
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="30"/>
+
+        </Grid.RowDefinitions>
+
+        <Label x:Name="lblEventName" Content=" Events" Margin="269,31,256,0" VerticalAlignment="Center" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center" />
+        <Grid Grid.Row="1" Margin="25, 0, 25, 0" Grid.RowSpan="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="191*"/>
+                <ColumnDefinition Width="184*"/>
+            </Grid.ColumnDefinitions>
+            <DataGrid x:Name="datVeiwEventsGrid"   IsReadOnly="True" ColumnWidth="*" Grid.ColumnSpan="2" SelectionMode="Single" MouseDoubleClick="datVeiwEventsGrid_MouseDoubleClick"  />
+
+        </Grid>
+        <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Center">
+
+            <Button x:Name="btn_add" Content="Add" Grid.Column="3" HorizontalAlignment="Center" Width="155" Height="50" RenderTransformOrigin="0.19,0.5" Margin="10,0,0,0" Padding="1"  VerticalAlignment="Bottom" Click="btn_add_Click" />
+            <Button x:Name="btn_delete" Content="Delete" Grid.Column="3" HorizontalAlignment="Center" Width="155" Height="50" RenderTransformOrigin="0.19,0.5" Margin="10,0,0,0" Padding="1"  VerticalAlignment="Top" Click="btn_delete_Click" />
+            <Button x:Name="btn_edit" Content="Edit" Grid.Column="3" HorizontalAlignment="Center" Width="155" Height="50" RenderTransformOrigin="0.19,0.5" Margin="10,0,0,0" Padding="1"  VerticalAlignment="Bottom" Click="btn_edit_Click" />
+
+
+        </StackPanel>
+
+    </Grid>
+</Page>

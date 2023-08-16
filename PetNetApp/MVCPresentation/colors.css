@@ -1,0 +1,30 @@
+﻿:root {
+    --background-color: #EEF2E6;
+    --control-background-color: #F6F7F3;
+    --control-border-color: #D6CDA4;
+    --control-disabled-border-color: #D6CDA4;
+    --control-disabled-background-color: #EEF2E6;
+    --control-disabled-foreground-color: #D6CDA4;
+    --control-mouse-over-border-color: #3D8361;
+    --control-mouse-over-background-color: #9EC1B0;
+    --control-selected-border-color: #1C6758;
+    --control-selected-background-color: #F6F7F3;
+    --control-selected-mouse-over-background-color: #3D8361;
+    --control-selected-mouse-over-border-color: #3D8361;
+    --control-pressed-border-color: #1C6758;
+    --control-pressed-background-color: #3D8361;
+    --control-pressed-glyph-color: #EEF2E6;
+    --control-disabled-glyph-color: #D6CDA4;
+    --control-glyph-color: #3D8361;
+    --control-mouse-over-glyph-color: #1C6758;
+    --control-selected-glyph-color: #1C6758;
+    --control-foreground-color: #1C6758;
+    --control-selection-highlight-color: #9EC1B0;
+    --control-multi-selection-selected-background-color: #3D8361;
+    --control-multi-selection-selected-foreground-color: #EEF2E6;
+    --control-multi-selection-selected-border-color: #1C6758;
+    --control-data-grid-row-color: #9ec1b0;
+    --control-data-grid-alternate-row-color: #EEEFE1;
+    --control-data-grid-column-header-background-color: #1C6758;
+    --control-data-grid-column-header-foreground-color: #EEF2E6;
+}

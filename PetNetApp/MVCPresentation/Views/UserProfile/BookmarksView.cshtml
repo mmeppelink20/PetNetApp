@@ -1,0 +1,34 @@
+﻿@model IEnumerable<DataObjects.Bookmark>
+@using Microsoft.AspNet.Identity
+@using Microsoft.AspNet.Identity.Owin
+    @{
+        Layout = null;
+    }
+
+    @{
+        ViewBag.Title = "BookmarksView";
+    }
+
+    <div>
+        <br />
+        <table class="table">
+
+            @if (Model == null)
+            {
+               
+            }
+            else
+            {
+            foreach (var item in Model)
+            {
+                        @Html.DisplayFor(modelItem => item.AnimalName) <br />
+
+                        @Html.ActionLink("Profile    ", "AdoptableAnimal", "Animals", new { animalId = item.AnimalId }, null) <br />
+
+                        @Html.ActionLink("Delete", "DeleteBookmark", new { animalId = item.AnimalId })    <br /> <br />
+            }
+            }
+        </table>
+    </div>
+
+

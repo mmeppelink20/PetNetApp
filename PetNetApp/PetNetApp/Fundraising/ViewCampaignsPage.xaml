@@ -1,0 +1,82 @@
+﻿<Page x:Class="WpfPresentation.Fundraising.ViewCampaignsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfPresentation.Fundraising"
+      xmlns:uc="clr-namespace:WpfPresentation.UserControls"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ViewCampaignsPage" Background="#EEF2E6" Unloaded="Page_Unloaded" Loaded="Page_Loaded">
+
+    <Grid Margin="26 0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="150"/>
+            <RowDefinition/>
+            <RowDefinition Height="100"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Margin="0 20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="1*" MinWidth="350"/>
+            </Grid.ColumnDefinitions>
+            <Label FontSize="25" Content="Fundraising Campaigns" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="0 0 0 5"/>
+            <Grid Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <uc:PlaceholderTextBox x:Name="tbSearch" DefaultText="Enter Campaign Keyword" Margin="5 0" Grid.ColumnSpan="3" Height="50" Grid.Row="0" KeyDown="tbSearch_KeyDown"/>
+                <ComboBox x:Name="cbSort" Grid.Column="0" Grid.Row="1" Height="50" Margin="5 0" SelectedIndex="0">
+                    <ComboBoxItem IsEnabled="False">Sort By</ComboBoxItem>
+                    <ComboBoxItem>Title</ComboBoxItem>
+                    <ComboBoxItem>Start Date</ComboBoxItem>
+                </ComboBox>
+                <Button x:Name="btnSearch" Margin="5 0" Height="50" Grid.Row="1" Grid.Column="2" Content="Search" Click="btnSearch_Click"/>
+                <ComboBox x:Name="cbFilter" Grid.Column="1" Grid.Row="1" Height="50" Margin="5 0" SelectedIndex="0">
+                    <ComboBoxItem Content="Filter By" IsEnabled="False"/>
+                    <ComboBoxItem Content="Ongoing"/>
+                    <ComboBoxItem Content="Completed"/>
+                    <ComboBoxItem Content="Both"/>
+                    <ComboBoxItem Content="Deleted"/>
+                </ComboBox>
+            </Grid>
+        </Grid>
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+            <Grid>
+            <Border x:Name="nothingToShowMessage" BorderBrush="#9EC1B0" BorderThickness="6" CornerRadius="10" Width="300" Height="100">
+                <Label VerticalAlignment="Center" HorizontalAlignment="Center">There are no campaigns to display.</Label>
+            </Border>
+            <StackPanel x:Name="stackCampaigns">
+                
+            </StackPanel>
+            </Grid>
+        </ScrollViewer>
+        <Grid Grid.Row="2" VerticalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="190"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="190"/>
+            </Grid.ColumnDefinitions>
+            <Button Width="150" Height="40" Content="Add Campaign" VerticalAlignment="Center" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" x:Name="btnAddCampaign" Click="btnAddCampaign_Click"/>
+            <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center">
+                <Button x:Name="btnFirstPage" Content="&lt;&lt;" Width="40" Height="40" Margin="2" Click="btnFirstPage_Click" />
+                <Button x:Name="btnPreviousPage" Content="&lt;" Width="40" Height="40" Margin="2" Click="btnPreviousPage_Click"/>
+                <StackPanel x:Name="stackInnerButtons" Orientation="Horizontal">
+                    
+                </StackPanel>
+                <Button x:Name="btnNextPage" Content="&gt;" Width="40" Height="40" Margin="2" Click="btnNextPage_Click"/>
+                <Button x:Name="btnLastPage" Content="&gt;&gt;" Width="40" Height="40" Margin="2" Click="btnLastPage_Click"/>
+            </StackPanel >
+            <StackPanel Grid.Row="0" Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right">
+                <uc:PlaceholderTextBox x:Name="tbPage" Height="40" Width="80" DefaultText="Page" KeyDown="tbPage_KeyDown"/>
+                <Button x:Name="btnNavigatePage" Content="Go" Width="80" Height="40" Margin="10 0" Click="btnNavigatePage_Click"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>

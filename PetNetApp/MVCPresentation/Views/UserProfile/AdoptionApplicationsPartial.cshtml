@@ -1,0 +1,35 @@
+﻿@model IEnumerable<DataObjects.AdoptionApplicationVM>
+
+@if (Model.Any())
+{
+    <table class="table">
+        @foreach (var item in Model)
+        {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AdoptionAnimal.AnimalName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AdoptionAnimal.AnimalShelterId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ApplicationStatusId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AdoptionApplicationDate)
+                    </td>
+                    @*<td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.AdoptionApplicationId }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.AdoptionApplicationId }) |
+                    </td>*@
+                </tr>
+        }
+
+    </table>
+}
+else
+{
+    <h3>No Applications Available</h3>
+}
+
+

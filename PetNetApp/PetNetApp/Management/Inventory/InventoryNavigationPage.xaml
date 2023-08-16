@@ -1,0 +1,55 @@
+﻿<Page x:Class="WpfPresentation.Management.Inventory.InventoryNavigationPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfPresentation.Management.Inventory"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="InventoryNavigationPage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition />
+            <ColumnDefinition Width="50" />
+        </Grid.ColumnDefinitions>
+        <StackPanel Orientation="Vertical" Grid.Column="0" Background="#9EC1B0" >
+            <Button x:Name="btnShelterInventory" Margin="0 5" Padding="10 5" MinWidth="200" Height="35" Style="{StaticResource ResourceKey=rsrcUnselectedButton}" HorizontalAlignment="Left"  
+                    Click="btnShelterInventory_Click">
+                <Label Width="200" HorizontalContentAlignment="Left">Shelter Inventory</Label>
+            </Button>
+            <Button x:Name="btnItemLibrary" Margin="0 5" Padding="5 5" MinWidth="200" Height="35" Style="{StaticResource ResourceKey=rsrcUnselectedButton}" HorizontalAlignment="Left" 
+                    Click="btnItemLibrary_Click">
+                <Label Width="200" HorizontalContentAlignment="Left">Item Library</Label>
+            </Button>
+            <Button x:Name="btnRequestFromShelter" Margin="0 5" Padding="10 5" Width="200" Height="35" Style="{StaticResource ResourceKey=rsrcUnselectedButton}" HorizontalContentAlignment="Left" Click="btnRequestFromShelter_Click"   
+                    >
+                <Label Width="200" HorizontalContentAlignment="Left">Request From Shelter</Label>
+            </Button>
+            <Button x:Name="btnViewRequests" Margin="0 5" Padding="10 5" MinWidth="200" Height="35" Style="{StaticResource ResourceKey=rsrcUnselectedButton}" HorizontalAlignment="Left"  
+                    Click="btnViewRequests_Click">
+                <Label Width="200" HorizontalContentAlignment="Left">View Shelter Requests</Label>
+            </Button>
+            <Button x:Name="btnViewResourceAddRequest" Margin="0 5" Padding="10 5" MinWidth="200" Height="35" Style="{StaticResource ResourceKey=rsrcUnselectedButton}" HorizontalAlignment="Left"   
+                    Click="btnViewResourceAddRequest_Click">
+                <Label Width="200" HorizontalContentAlignment="Left">View New Item Requests</Label>
+            </Button>
+            <Button x:Name="btnCheckIn" Margin="0 5" Padding="10 5" MinWidth="200" Height="35" Style="{StaticResource ResourceKey=rsrcUnselectedButton}" HorizontalAlignment="Left"   
+                    Click="btnCheckIn_Click">
+                <Label Width="200" HorizontalContentAlignment="Left">Check-In/Check-Out</Label>
+            </Button>
+            <Button x:Name="btnInventoryChanges" Margin="0 5" Padding="10 5" MinWidth="200" Height="35" Style="{StaticResource ResourceKey=rsrcUnselectedButton}" HorizontalAlignment="Left"   
+                    Click="btnInventoryChanges_Click">
+                <Label Width="200" HorizontalContentAlignment="Left">Inventory Changes</Label>
+            </Button>
+            <Button x:Name="btnAnimalSpecialNeeds" Margin="0 5" Padding="10 5" Width="200" Height="35" Style="{StaticResource ResourceKey=rsrcUnselectedButton}" HorizontalContentAlignment="Left"   
+                    Click="btnAnimalSpecialNeeds_Click">
+                <Label Width="200" HorizontalContentAlignment="Left">Aniaml Special Needs</Label>
+            </Button>
+            
+        </StackPanel>
+        <Frame x:Name="frameInventory" Grid.Column="1" ></Frame>
+        <Rectangle Fill="#9EC1B0" Grid.Column="2"></Rectangle>
+    </Grid>
+</Page>

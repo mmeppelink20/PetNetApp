@@ -1,0 +1,33 @@
+﻿<Page x:Class="WpfPresentation.Animals.MedicalFilesPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfPresentation.Animals"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="MedicalFilesPage" Loaded="Page_Loaded_1">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="70"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Label x:Name="lblAdditionalFiles" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontWeight="DemiBold">Images</Label>
+
+        <DataGrid x:Name="datAdditionalFiles" Grid.Row="1" IsReadOnly="True" Margin="75, 0, 75, 0" BorderBrush="Transparent" AutoGenerateColumns="False" HorizontalScrollBarVisibility="Disabled">
+            <DataGrid.RowStyle>
+                <Style TargetType="DataGridRow">
+                    <EventSetter Event="MouseEnter" Handler="DataGridRow_MouseEnter"/>
+                </Style>
+            </DataGrid.RowStyle>
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding ImageFileName}" Header="Image Name" Width="*"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label x:Name="lblNoFiles" Grid.Row="1" FontSize="16"></Label>
+        
+        
+    </Grid>
+</Page>

@@ -1,0 +1,41 @@
+﻿<Page x:Class="WpfPresentation.Management.AssignAnimalToKennel"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfPresentation.Management"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AssignAnimalToKennel" Loaded="Page_Loaded">
+
+    <Grid>
+        <Grid Background="#eef2e6">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="1.5*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="150"/>
+                <RowDefinition />
+                <RowDefinition Height="150"/>
+            </Grid.RowDefinitions>
+            <Label x:Name="lblKennelNumber" Grid.Column="1" HorizontalAlignment="Center" FontSize="35" FontWeight="Bold" Padding="0 10 0 0">Kennel Number</Label>
+            <Border BorderBrush="Green" Background="#9EC1B0" CornerRadius="5" BorderThickness="1" Grid.Column="1" Grid.Row="1" >
+            <StackPanel >
+                <Label x:Name="lblKennelTitle" HorizontalAlignment="Center" Margin="0 10 0 30" FontSize="30">Add Animal to Kennel "#"</Label>
+                <Button x:Name="btnViewAnimalList" Cursor="Hand" HorizontalAlignment="Center" Margin="0 0 0 20" Background="Transparent" BorderBrush="Transparent"
+                        Foreground="Blue" FontWeight="Normal" Click="btnViewAnimalList_Click">
+                    <TextBlock TextDecorations="Underline">View Animal List</TextBlock>
+                </Button>
+                <TextBox x:Name="txtAnimalID" Width="300" Height="40" Padding="1 0 0 0" Margin="0 0 0 50">Animal ID #</TextBox>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button x:Name="btnSave" Margin="0 0 25 0" Width="150" Height="45" Click="btnSave_Click">Save</Button>
+                    <Button x:Name="btnCancel" Width="150" Height="45" Click="btnCancel_Click">Cancel</Button>
+                </StackPanel>
+            </StackPanel>
+            </Border>
+            <Button x:Name="btnGoBack" Grid.Row="6" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="50" Width="100" Margin="5 0 0 5" Click="btnGoBack_Click">Back</Button>
+        </Grid>
+    </Grid>
+</Page>

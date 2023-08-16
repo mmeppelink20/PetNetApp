@@ -1,0 +1,181 @@
+﻿:root {
+    --background-color: #EEF2E6;
+    --submenu-background-color: #6A9F83;
+    --control-background-color: #F6F7F3;
+    --control-border-color: #D6CDA4;
+    --control-disabled-border-color: #D6CDA4;
+    --control-disabled-background-color: #EEF2E6;
+    --control-disabled-foreground-color: #D6CDA4;
+    --control-mouse-over-border-color: #3D8361;
+    --control-mouse-over-background-color: #9EC1B0;
+    --control-selected-border-color: #1C6758;
+    --control-selected-background-color: #F6F7F3;
+    --control-selected-mouse-over-background-color: #3D8361;
+    --control-selected-mouse-over-border-color: #3D8361;
+    --control-pressed-border-color: #1C6758;
+    --control-pressed-background-color: #3D8361;
+    --control-pressed-glyph-color: #EEF2E6;
+    --control-disabled-glyph-color: #D6CDA4;
+    --control-glyph-color: #3D8361;
+    --control-mouse-over-glyph-color: #1C6758;
+    --control-selected-glyph-color: #1C6758;
+    --control-foreground-color: #1C6758;
+    --control-selection-highlight-color: #9EC1B0;
+    --control-multi-selection-selected-background-color: #3D8361;
+    --control-multi-selection-selected-foreground-color: #EEF2E6;
+    --control-multi-selection-selected-border-color: #1C6758;
+    --control-data-grid-row-color: #9ec1b0;
+    --control-data-grid-alternate-row-color: #EEEFE1;
+    --control-data-grid-column-header-background-color: #1C6758;
+    --control-data-grid-column-header-foreground-color: #EEF2E6;
+    --color-green: #3D8361;
+    --color-light-green: #9EC1B0;
+    --color-dark-green: #1C6758;
+    --color-red: #C02825;
+    --color-dark-red: #b22b29;
+    --color-light-gray: #d0d8d4;
+}
+
+
+body {
+    background-color: #eef2e6;
+    position: relative;
+    overflow: auto;
+    padding-bottom: 5vh;
+    min-height: 100vh;
+    color: #1C6758;
+}
+
+.navbar-default {
+    background-color: #3d8361;
+    border-width: 0;
+}
+
+.header {
+    background-color: #3d8361;
+    padding-top: 10px;
+    height: 10%;
+}
+
+.header-images {
+    margin-left: 2%;
+}
+
+    .header-images span {
+        margin-left: 75vw;
+    }
+
+.header-menu-list {
+    list-style-type: none;
+    margin: 0;
+    margin-left: 50px;
+    padding: 0;
+    overflow: hidden;
+}
+
+.header-menu-list-item {
+    padding-bottom: 5px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-color: #1c6758;
+    float: left;
+    /*width: 10%;*/
+    min-width: 150px;
+    background-color: #d6cda4;
+    font-size: 16px;
+}
+
+    .header-menu-list-item a {
+        display: block;
+        color: #1c6758;
+        text-align: center;
+        text-decoration: none;
+        padding: 7px;
+        font-size: 18px;
+    }
+
+        .header-menu-list-item a:hover, .active-main-tab {
+            background-color: #eef2e6;
+            font-weight: bolder;
+            border-top-left-radius: 25px;
+            border-top-right-radius: 25px;
+        }
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    height: 5%;
+    width: 100%;
+    background-color: #3d8361;
+}
+
+.textWrap {
+    word-wrap: break-word;
+}
+
+.overflow {
+    overflow-y: auto;
+}
+
+.userprofilepic {
+    position: relative;
+    display: inline-block;
+}
+
+#mainHeader > .navbar .nav-item .nav-link {
+    padding: 0.5rem 0.5rem;
+}
+
+#mainHeader > .navbar form .btn-light {
+    background-color: var(--control-mouse-over-background-color);
+    color: var(--color-dark-green);
+    border-color: var(--color-dark-green);
+}
+
+    #mainHeader > .navbar form .btn-light:hover {
+        background-color: var(--background-color);
+        color: var(--color-dark-green);
+        border-color: var(--background-color);
+    }
+
+.notification-image, .menu-icon-image, .user-image-wrapper {
+    position: relative;
+    height: 45px;
+    width: 45px;
+}
+
+    .notification-image img, .menu-icon-image img, .user-image-wrapper img{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+    }
+    .notification-image .hover-img, .menu-icon-image .hover-img, .user-image-wrapper .hover-img{
+        display: none;
+    }
+    .notification-image:hover .hover-img, .menu-icon-image:hover .hover-img, .user-image-wrapper:hover .hover-img {
+        display: block;
+    }
+
+footer {
+    z-index: 10;
+    overflow:hidden;
+}

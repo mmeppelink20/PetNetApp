@@ -1,0 +1,30 @@
+﻿@model DataObjects.Post
+@section styles
+{
+    <link href="~/Content/community.css" rel="stylesheet" />
+}
+
+@using (Html.BeginForm("Create", "Community"))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            <div>
+                @Html.TextAreaFor(model => model.PostContent, 5, 100, new {maxlength=250,  @class = "form-control size" })
+                @Html.ValidationMessageFor(model => model.PostContent, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div>
+                <input type="submit" value="Post" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

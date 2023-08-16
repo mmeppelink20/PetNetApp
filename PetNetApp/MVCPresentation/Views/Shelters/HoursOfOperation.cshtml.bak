@@ -1,0 +1,175 @@
+﻿@model List<DataObjects.HoursOfOperation>
+
+@section styles
+{
+    <link href="~/Content/ShelterNetwork.css" rel="stylesheet" />
+}
+
+
+@{
+    ViewBag.Title = "Hours Of Operation";
+}
+
+@{
+    int dayOfWeek = 0;
+    string dayString = "";
+}
+
+<h2 class="text-center">Hours of Operation</h2>
+<table class="table">
+    <tr>
+        <th>
+            <p>Day of Week</p>
+        </th>
+        <th>
+            <a>Hours of Operation</a>
+        </th>
+        @if (User.IsInRole("Admin"))
+        {
+            <th>
+            </th>
+        }
+    </tr>
+
+    @foreach (var hoursOfOperation in Model)
+    {
+
+        <tr>
+            <td>
+                @{
+                    switch (dayOfWeek)
+                    {
+                        case 0:
+                            <text>
+                                <p>Sunday</p>
+                            </text>
+                            dayString = "Sunday";
+                            break;
+                        case 1:
+                            <text>
+                                <p>Monday</p>
+                            </text>
+                            dayString = "Monday";
+                            break;
+                        case 2:
+                            <text>
+                                <p>Tuesday</p>
+                            </text>
+                            dayString = "Tuesday";
+                            break;
+
+                        case 3:
+                            <text>
+                                <p>Wednesday</p>
+                            </text>
+                            dayString = "Wednesday";
+                            break;
+
+                        case 4:
+                            <text>
+                                <p>Thursday</p>
+                            </text>
+                            dayString = "Thursday";
+                            break;
+
+                        case 5:
+                            <text>
+                                <p>Friday</p>
+                            </text>
+                            dayString = "Friday";
+                            break;
+
+                        case 6:
+                            <text>
+                                <p>Saturday</p>
+                            </text>
+                            dayString = "Saturday";
+                            break;
+                    }
+                }
+            </td>
+            @{
+                TimeSpan timeToFix = TimeSpan.Parse(hoursOfOperation.OpenHour.ToString());
+                DateTime fixedTime = DateTime.Today.Add(timeToFix);
+                String fixedOpeningTime = fixedTime.ToString("hh:mm tt");
+
+                timeToFix = TimeSpan.Parse(hoursOfOperation.CloseHour.ToString());
+                fixedTime = DateTime.Today.Add(timeToFix);
+                String fixedClosingTime = fixedTime.ToString("hh:mm tt");
+            }
+            <td>
+                @if (                <div style="display:inline-block;white-space:nowrap;">
+                    @*<input type="text" name="OpenHour" value="@fixedOpeningTime" /> - <input type="text" name="CloseHour" value="@fixedClosingTime" />*@
+                    @Html.TextBoxFor(item => item.OpenHour)
+                </div>
+                }
+                else
+                {
+                    <div style="display:inline-block;white-space:nowrap;">
+                        @fixedOpeningTime - @fixedClosingTime
+                    </div>
+
+                }
+            </td>
+
+            @if (User.IsInRole("Admin"))
+                {
+                
+
+#line default
+#line hidden
+
+#line 17 "C:\Users\teftf\Documents\Capstone\Capstone-2023-DAY\PetNetApp\MVCPresentation\Views\Shelters\HoursOfOperation.cshtml"
+               __o = Html.TextBoxFor(item => item.OpenHour);
+
+
+#line default
+#line hidden
+
+#line 18 "C:\Users\teftf\Documents\Capstone\Capstone-2023-DAY\PetNetApp\MVCPresentation\Views\Shelters\HoursOfOperation.cshtml"
+                      
+                }
+                else
+                {
+                    
+
+#line default
+#line hidden
+
+#line 19 "C:\Users\teftf\Documents\Capstone\Capstone-2023-DAY\PetNetApp\MVCPresentation\Views\Shelters\HoursOfOperation.cshtml"
+                   __o = fixedOpeningTime;
+
+
+#line default
+#line hidden
+
+#line 20 "C:\Users\teftf\Documents\Capstone\Capstone-2023-DAY\PetNetApp\MVCPresentation\Views\Shelters\HoursOfOperation.cshtml"
+                                       __o = fixedClosingTime;
+
+
+#line default
+#line hidden
+
+#line 21 "C:\Users\teftf\Documents\Capstone\Capstone-2023-DAY\PetNetApp\MVCPresentation\Views\Shelters\HoursOfOperation.cshtml"
+                          
+
+                }
+
+#line default
+#line hidden
+
+#line 22 "C:\Users\teftf\Documents\Capstone\Capstone-2023-DAY\PetNetApp\MVCPresentation\Views\Shelters\HoursOfOperation.cshtml"
+            if (User.IsInRole("Admin"))
+            {
+                <td>
+                    <a>@Html.ActionLink("Save Hours of Operation for " + dayString, "EditHoursOfOperation", "Shelter")</a>
+                </td>
+            }
+
+        </tr>
+
+        dayOfWeek++;
+
+    }
+</table>
+<a class="btn-primary" value="Return to Shelter List" href='@Url.Action("", "./Shelters")'>Return to Shelter List</a>

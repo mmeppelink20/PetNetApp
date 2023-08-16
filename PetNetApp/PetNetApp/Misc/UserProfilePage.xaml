@@ -1,0 +1,70 @@
+﻿<Page x:Class="WpfPresentation.Misc.UserProfilePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfPresentation.Misc"
+      mc:Ignorable="d" 
+      d:DesignHeight="800" d:DesignWidth="1000"
+      Title="UserProfilePage" Loaded="Page_Loaded">
+
+    <Grid Background="#EEF2E6">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition />
+            <ColumnDefinition Width="200"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition />
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Column="0" Grid.Row="1" Background="#9EC1B0"></Border>
+        <Border Grid.Column="2" Grid.Row="1" Background="#9EC1B0"></Border>
+
+        <Grid Grid.Column="1" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <Image x:Name="imgProfileImage" Grid.Column="0" Grid.Row="0" Height="150" Width="150" HorizontalAlignment="Center" VerticalAlignment="Top" Source="../Images/usericondark.png" Margin="0 25 0 0"></Image>
+            <StackPanel Grid.Column="1" Grid.Row="0" Orientation="Vertical" VerticalAlignment="top" Margin="0 25 0 0">
+                <Label FontWeight="SemiBold" HorizontalAlignment="Left" FontSize="12" Content="Display Name"></Label>
+                <Label x:Name="lblDisplayName" FontWeight="SemiBold" HorizontalAlignment="Left" FontSize="20" Content="Display Name"></Label>
+                <Label x:Name="lblFosterToggle" Content="Available to Foster" Visibility="Hidden"></Label>
+            </StackPanel>
+
+
+            <StackPanel Grid.Column="2" Grid.Row="0" Orientation="Vertical" Margin="0 15 5 0">
+                <Button x:Name="btnBackToList" Margin="5" Height="50" Click="btnBackToList_Click">Back To List</Button>
+            </StackPanel>
+
+            <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="35"/>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Orientation="Horizontal" VerticalAlignment="Top" Margin="15 1 15 0" Background="#1C6758">
+                    <Button x:Name="btnPendingAdoptionApplications" Margin="1 1 1 0" Padding="10 5" MinWidth="225" Height="35" Style="{StaticResource ResourceKey=rsrcUnselectedButton}" Click="btnPendingAdoptionApplications_Click">Adoption Applications</Button>
+                    <Button x:Name="btnFosterApplications" Margin="1 1 1 0" Padding="10 5" MinWidth="150" Height="35" Style="{StaticResource ResourceKey=rsrcUnselectedButton}" Click="btnFosterApplications_Click">Foster Applications</Button>
+                </StackPanel>
+                <ScrollViewer x:Name="scrTabBox" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Margin="15 0 15 10">
+                    <StackPanel x:Name="spTabBox" Background="white" ></StackPanel>
+                </ScrollViewer>
+                <Label Grid.Row="1" Grid.Column="0" x:Name="lblNoApplications" Visibility="Hidden" FontWeight="DemiBold" FontSize="20" Margin="15 0 15 0">No Applications</Label>
+            </Grid>
+            
+            
+        </Grid>
+        <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Background="#1C6758"></Border>
+        <Border Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" Background="#1C6758"></Border>
+    </Grid>
+</Page>

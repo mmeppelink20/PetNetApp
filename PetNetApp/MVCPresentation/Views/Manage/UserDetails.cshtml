@@ -1,0 +1,125 @@
+﻿@model MVCPresentation.Models.UserDetailsViewModel
+@{
+    ViewBag.Title = "User Details";
+
+    IEnumerable<String> genders = (IEnumerable<String>)ViewBag.Genders;
+    IEnumerable<String> pronouns = (IEnumerable<String>)ViewBag.Pronouns;
+}
+
+<head>
+    <link href="~/Content/accountsettings.css" rel="stylesheet" />
+    <style>
+        .mt-2, .my-2 {
+            margin-top: 0rem !important;
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+            padding-left: 0.5rem !important;
+            padding-right: 0.5rem !important;
+        }
+    </style>
+</head>
+
+<div class="settings-area">
+    @Html.Partial("_PartialAccountMenu")
+</div>
+
+@using (Html.BeginForm("UserDetails", "Manage", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="container-fluid" style="height: 100%; ">
+        <div class="row">
+            <div class="col mr-5 ml-5 mt-2" style="background-color: #9EC1B0; height: 750px; width: 0;"></div>
+            <div class="col-6 mt-2" width="70%" style="min-width: 545px;">
+                <form>
+                    <!-- Spacing -->
+                    <div class="row" style="height: 75px;">
+                        <div class="col"></div>
+                    </div>
+
+                    <h4>User Details</h4>
+                    <hr />
+                    <!-- First Row Text -->
+                    <div class="row">
+                        <div class="col">First Name</div>
+                        <div class="col">Last Name</div>
+                    </div>
+
+                    <!-- First Row Textboxes -->
+                    <div class="row">
+                        <div class="col" style="width: 300px;">
+                            @Html.TextBoxFor(m => m.GivenName, new { @Value = Model.GivenName })
+                        </div>
+                        <div class="col">
+                            @Html.TextBoxFor(m => m.FamilyName, new { @Value = Model.FamilyName })
+                            <br />
+                        </div>
+                    </div>
+
+                    <!-- Second Row Text -->
+                    <div class="row">
+                        <div class="col">Address</div>
+                        <div class="col">Apt / Suite / Etc.</div>
+                    </div>
+
+                    <!-- Second Row Textboxes -->
+                    <div class="row">
+                        <div class="col">
+                            @Html.TextBoxFor(m => m.Address, new { @Value = Model.Address })
+                            <br />
+                        </div>
+                        <div class="col">
+                            @Html.TextBoxFor(m => m.Address2, new { @Value = Model.Address2 })
+                            <br />
+                        </div>
+                    </div>
+
+                    <!-- Third Row Text -->
+                    <div class="row">
+                        <div class="col">Zipcode</div>
+                        <div class="col">Phone</div>
+                    </div>
+
+                    <!-- Third Row Textboxes -->
+                    <div class="row">
+                        <div class="col">
+                            @Html.TextBoxFor(m => m.Zipcode, new { @Value = Model.Zipcode })
+                            <br />
+                        </div>
+                        <div class="col">
+                            @Html.TextBoxFor(m => m.Phone, new { @Value = Model.Phone })
+                        </div>
+                    </div>
+
+                    <!-- Fourth Row Text -->
+                    <div class="row">
+                        <div class="col">Gender</div>
+                        <div class="col">Pronouns</div>
+                    </div>
+
+                    <!-- Forth Row Combo Boxes -->
+                    <div class="row">
+                        <div class="col">
+                            @Html.DropDownListFor(m => m.GenderId, new SelectList(genders, "Select Gender"), new { @Value = Model.GenderId })
+                        </div>
+                        <div class="col">
+                            @Html.DropDownListFor(m => m.PronounId, new SelectList(pronouns, "Select Pronouns"), new { @Value = Model.PronounId })
+                        </div>
+                    </div>
+                    <br />
+                    @Html.ValidationSummary("", new { @class = "text-danger" })
+                </form>
+
+                <hr />
+
+                <!-- Update User Details Button -->
+                <div class="form-group-2">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" class="btn btn-primary" value="Update User Details" />
+                    </div>
+                </div>
+            </div>
+            <div class="col mr-5 ml-5 mt-2" style="background-color: #9EC1B0; height: 750px;"></div>
+        </div>
+    </div>
+}

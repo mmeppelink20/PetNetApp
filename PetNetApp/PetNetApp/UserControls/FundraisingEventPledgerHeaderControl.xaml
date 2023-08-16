@@ -1,0 +1,26 @@
+﻿<UserControl x:Class="WpfPresentation.UserControls.FundraisingEventPledgerHeaderControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfPresentation.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Border x:Name="container" CornerRadius="10" Height="40" HorizontalAlignment="Stretch" BorderThickness="0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="100"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Orientation="Horizontal" Margin="20 0" VerticalAlignment="Center" Grid.Column="0" >
+                    <Label MinWidth="150">Given Name</Label>
+                    <Label MinWidth="150">Family Name</Label>
+                    <Label MinWidth="170">Pledge Amount</Label>
+                    <Label MinWidth="155">Donation Amount</Label>
+                    <Label MinHeight="150">Date</Label>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

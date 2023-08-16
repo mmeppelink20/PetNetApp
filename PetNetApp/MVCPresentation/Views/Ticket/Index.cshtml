@@ -1,0 +1,69 @@
+﻿@model IEnumerable<DataObjects.TicketVM>
+
+@{
+    ViewBag.Title = "Tickets";
+}
+
+@section styles
+{
+    <link href="~/Content/Ticket/TicketList.css" rel="stylesheet" />
+}
+
+<h2>Tickets List</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Ticket Status
+        </th>
+        <th>
+            Ticket Title
+        </th>
+        <th>
+            Ticket Context
+        </th>
+        <th>
+            Ticket Date
+        </th>
+        <th>
+            Ticket Active
+        </th>
+        <th>
+            Ticket Email
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TicketStatusId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TicketTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TicketContext)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TicketDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TicketActive)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.TicketId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.TicketId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.TicketId })
+            </td>
+        </tr>
+    }
+
+</table>

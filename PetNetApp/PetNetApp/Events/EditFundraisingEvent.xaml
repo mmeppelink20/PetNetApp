@@ -1,0 +1,99 @@
+﻿<Page x:Class="WpfPresentation.Events.EditFundraisingEvent"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfPresentation.Events"
+      xmlns:uc="clr-namespace:WpfPresentation.UserControls"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="EditFundraisingEvent" Loaded="Page_Loaded">
+
+    <Grid Margin="50 0" HorizontalAlignment="Center" MinWidth="700" MaxWidth="1100">
+        <Grid.RowDefinitions>
+            <RowDefinition MinHeight="500" MaxHeight="550"/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Row="0" Margin="10 0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="70"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Content="Edit Fundraising Event" FontSize="30" VerticalAlignment="Center"/>
+                <Label Grid.Row="1" Content="TITLE" FontSize="20"/>
+                <Label x:Name="lblTitleError" Grid.Row="1" Content="This field is requied" FontSize="20" Margin="70 0 0 0" Foreground="Red" Visibility="Hidden"/>
+
+                <uc:PlaceholderTextBox x:Name="tbEventTitle" Grid.Row="2" Height="40" Margin="0 5 10 0" DefaultText="Enter Event Title Here"/>
+
+
+                <Label Grid.Row="3" Content="DESCRIPTION" FontSize="20"/>
+                <Label x:Name="lblDescriptionError" Grid.Row="3" Content="This field is requied" FontSize="20" Margin="150 0 0 0" Foreground="Red" Visibility="Hidden"/>
+                <uc:PlaceholderTextBox x:Name="tbDescription" Grid.Row="4" Height="90" Margin="0 5 10 0" TextWrapping="Wrap" VerticalContentAlignment="Top" DefaultText="Enter Event Description Here"/>
+
+                <Grid Grid.Row="5" Margin="0 0 5 0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0" Grid.Column="0" Content="CAMPAIGN" FontSize="20"/>
+                    <Label Grid.Row="0" Grid.Column="1" Content="HOST" FontSize="20" Margin="10 0"/>
+                    <ComboBox Grid.Row="1" Grid.Column="0" x:Name="cbCampaign" MaxWidth="300" HorizontalAlignment="Left" MinWidth="250" Height="40" Margin="0 10"/>
+                    <ComboBox Grid.Row="1" Grid.Column="1" x:Name="cbHost" MaxWidth="300" HorizontalAlignment="Left" MinWidth="250" Height="40" Margin="10"/>
+                    <Label Grid.Row="2" Grid.Column="0" Content="DATE" FontSize="20"/>
+                    <Label Grid.Row="2" Grid.Column="1" Content="TIME" FontSize="20" Margin="10 0"/>
+                    <DatePicker x:Name="datePicker" Grid.Row="3" Grid.Column="0" MaxWidth="300" MinWidth="250" HorizontalAlignment="Left" Height="40" VerticalAlignment="Top">
+                        <DatePicker.CalendarStyle>
+                            <Style TargetType="Calendar">
+                                <Setter Property="DisplayMode" Value="Year"/>
+                            </Style>
+                        </DatePicker.CalendarStyle>
+                    </DatePicker>
+                    <Grid Grid.Row="3" Grid.Column="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <ComboBox x:Name="cbxStartTimeHour" Grid.Row="0" Grid.Column="0" Width="90" Height="40" HorizontalAlignment="Left" Margin="10 0 0 0"/>
+                        <ComboBox x:Name="cbxStartTimeMinutes" Grid.Row="0" Grid.Column="1" Width="90" Height="40" HorizontalAlignment="Left" Margin="10 0 0 0"/>
+                        <ComboBox x:Name="cbxAMorPM" Grid.Row="0" Grid.Column="2" Width="90" Height="40" HorizontalAlignment="Left" Margin="10 0 0 0"/>
+
+                        <Label Grid.Row="1" Grid.Column="0" Content="to" Margin="10 0 0 0"/>
+
+                        <ComboBox x:Name="cbxEndTimeHour" Grid.Row="2" Grid.Column="0" Width="90" Height="40" HorizontalAlignment="Left" Margin="10 0 0 0"/>
+                        <ComboBox x:Name="cbxEndTimeMinutes" Grid.Row="2" Grid.Column="1" Width="90" Height="40" HorizontalAlignment="Left" Margin="10 0 0 0"/>
+                        <ComboBox x:Name="cbxAMorPMEnd" Grid.Row="2" Grid.Column="2" Width="90" Height="40" HorizontalAlignment="Left" Margin="10 0 0 0"/>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </ScrollViewer>
+
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="150"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="btnNext" Grid.Column="0" Width="120" Margin="0 0 10 0" HorizontalAlignment="Right" Content="Next" Height="50" Click="btnNext_Click"/>
+            <Button x:Name="btnCancel" Grid.Column="1" Width="120" Content="Cancel" Height="50" Click="btnCancel_Click"/>
+        </Grid>
+
+    </Grid>
+</Page>

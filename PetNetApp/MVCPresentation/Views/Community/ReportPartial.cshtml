@@ -1,0 +1,35 @@
+﻿@model DataObjects.PostVM
+
+@if (Model.PostVisibility && ViewBag.UserId != Model.PostAuthor)
+{
+    <text> &nbsp;| </text>
+    if (!Model.UserPostReported)
+    {
+        AjaxOptions options = new AjaxOptions()
+        {
+            UpdateTargetId = "report-modal-content",
+            HttpMethod = "GET"
+        };
+        using (Ajax.BeginForm("BeginReportPost", "Community", null, options, new { @class = "float-right", method = "GET"}))
+        {
+            @Html.Hidden("post", Model.PostId)
+            <button type="submit" class="report-button" data-toggle="modal" data-target="#report-modal">Report</button>
+            <p class="float-right report-error">@(ViewBag.ReportError != null ? " " + (string)ViewBag.ReportError : "")</p>
+        }
+    }
+    else
+    {
+        AjaxOptions options = new AjaxOptions()
+        {
+            UpdateTargetId = "report-post-" + Model.PostId,
+            HttpMethod = "Post"
+        };
+        using (Ajax.BeginForm("UnreportPost", "Community", null, options, new { @class = "float-right" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.Hidden("post", Model.PostId)
+            <button type="submit" class="report-button">Unreport</button>
+            <p class="float-right report-error">@(ViewBag.ReportError != null ? " " + (string)ViewBag.ReportError : "")</p>
+        }
+    }
+}

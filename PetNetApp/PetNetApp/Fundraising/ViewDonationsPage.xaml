@@ -1,0 +1,85 @@
+﻿<Page x:Class="WpfPresentation.Fundraising.ViewDonationsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfPresentation.Fundraising"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ViewDonationsPage" Loaded="Page_Loaded">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="4*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label VerticalAlignment="Center" FontSize="25" Margin="30 0 0 0">Donations</Label>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Width="150" Height="50" Margin="0 0 20 0" x:Name="btnReport" Click="btnReport_Click">Generate Report</Button>
+            <Button Width="150" Height="50" Margin="0 0 20 0" x:Name="btnFilterDonations" Click="btnFilterDonations_Click">Filter Donations</Button>
+            <Button Width="150" Height="50" Margin="0 0 20 0" x:Name="btnEnterDonation" Click="btnEnterDonation_Click">Enter Donation</Button>
+            <Popup x:Name="popFilterDonations" Width="255" Height="250" AllowsTransparency="True"
+                   PlacementTarget="{Binding ElementName=btnFilterDonations}" VerticalOffset="12">
+                <Border BorderThickness="3" Background="#FF3D8361" BorderBrush="#FF1C6758" CornerRadius="20">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="40"/> <!-- Title -->
+                            <RowDefinition Height="35"/> <!-- Dropdown 1 -->
+                            <RowDefinition Height="35"/> <!-- Dropdown 2 -->
+                            <RowDefinition Height="15"/> <!-- Spacer -->
+                            <RowDefinition Height="5"/>  <!-- Line -->
+                            <RowDefinition Height="25"/> <!-- Stack Panel-->
+                            <RowDefinition Height="25"/> <!-- Checkbox -->
+                            <RowDefinition Height="25"/> <!-- Checkbox -->
+                            <RowDefinition Height="5"/>  <!-- Line -->
+                            <RowDefinition Height="40"/>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0" FontSize="20" x:Name="lbl_Title" Content="Filter Donations" HorizontalAlignment="Center"
+                               VerticalAlignment="Center" Foreground="#EEF2E6"/>
+                        <ComboBox Name="cmbFilterCategory" Grid.Row="1" Height="28" Width="185" HorizontalAlignment="Left" Margin="12 0 0 0"
+                                  SelectionChanged="cmbFilterCategory_SelectionChanged">
+                        </ComboBox>
+                        <ComboBox Name="cmbFilterOption" Grid.Row="2" Height="28" Width="185" HorizontalAlignment="Left" Margin="12 0 0 0"
+                                  IsEnabled="False"/>
+
+                        <Rectangle  Grid.Row="4" x:Name="rectDivider1" Fill="#FF1C6758" Height="2" Width="185"
+                                    HorizontalAlignment="Center" />
+                        <StackPanel Grid.Row="5">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Label x:Name="lblHasMessage" Grid.Column="0" Content="Has Message" Margin="20 0 0 0"
+                                       Foreground="#EEF2E6" FontSize="13" MouseDown="lblHasMessage_MouseDown"/>
+                                <CheckBox x:Name="ckbHasMessage" Grid.Column="0" Margin="106 5 0 0" />
+                                <Label x:Name="lblNoMessage" Grid.Column="1" Content="No Message" Margin="5 0 0 0"
+                                       Foreground="#EEF2E6" FontSize="13" MouseDown="lblNoMessage_MouseDown"/>
+                                <CheckBox x:Name="ckbNoMessage" Grid.Column="1" Margin="0 5 22 0"
+                                          HorizontalAlignment="Right" />
+                            </Grid>
+                        </StackPanel>
+                        <Label x:Name="lblShowFinancialDonations" Grid.Row="6" Content="Show Financial Donations" Margin="40 0 0 0"
+                               Foreground="#EEF2E6" FontSize="13" MouseDown="lblShowFinancialDonations_MouseDown"/>
+                        <CheckBox x:Name="ckbShowFinancialDonations" Grid.Row="6" Margin="0 5 37 0" HorizontalAlignment="Right"/>
+                        <Label x:Name="lblShowInKindDonations" Grid.Row="7" Content="Show In-Kind Donations" Margin="48 0 0 0"
+                               Foreground="#EEF2E6" FontSize="13" MouseDown="lblShowInKindDonations_MouseDown" />
+                        <CheckBox x:Name="ckbShowInKindDonations" Grid.Row="7" Margin="0 5 37 0" HorizontalAlignment="Right"/>
+                        <Rectangle  Grid.Row="8" x:Name="rectDivider2" Fill="#FF1C6758" Height="2" Width="185"
+                                    HorizontalAlignment="Center" Margin="0 1 0 0"/>
+                        <Label x:Name="lblFilter" Grid.Row="10" HorizontalAlignment="Center" Content="Filter" Margin="0 0 50 3"
+                               Foreground="#EEF2E6" VerticalAlignment="Center" MouseDown="lblFilter_MouseDown" MouseEnter="lblFilter_MouseEnter"
+                               MouseLeave="lblFilter_MouseLeave" />
+                        <Label x:Name="lblReset" Grid.Row="10" HorizontalAlignment="Center" Content="Reset" Margin="50 0 0 3"
+                               Foreground="#EEF2E6" VerticalAlignment="Center" MouseDown="lblReset_MouseDown"
+                               MouseEnter="lblReset_MouseEnter" MouseLeave="lblReset_MouseLeave"/>
+                        
+                    </Grid>
+                </Border>
+            </Popup>
+        </StackPanel>
+        <ScrollViewer Grid.Row="1" Margin="20 0 20 20">
+            <StackPanel x:Name="spDonations"></StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>

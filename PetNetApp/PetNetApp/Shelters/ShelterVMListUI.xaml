@@ -1,0 +1,54 @@
+﻿<Page x:Class="WpfPresentation.Shelters.ShelterVMListUI"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfPresentation.Shelters"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ShelterVMListUI"
+      Loaded="Page_Loaded">
+
+    <Grid>
+        <Grid Margin="15,0,15,15">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70"/>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Button x:Name="btnAddShelter" Grid.Column="0" Grid.Row="0" Content="+ | Add Shelter" Style="{StaticResource ResourceKey=rsrcDefaultButton}" Margin="20 10 10 10" Click="btnAddShelter_Click" />
+            <ComboBox x:Name="cboxFilter" Grid.Column="3" Grid.Row="0" Margin="10 10 20 10" Visibility="Hidden"/>
+            <TextBox x:Name="txtSearch" Grid.Column="2" Grid.Row="0" Margin="10" Visibility="Hidden"/>
+            <DataGrid x:Name="datShelterVMListView"
+                  Visibility="Visible"
+                  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4"
+                  IsReadOnly="True" Margin="20 0 20 20"
+                  Style="{StaticResource ResourceKey=rsrcDataGrid}"
+                  MouseDoubleClick="datShelterVMListView_MouseDoubleClick" AutoGenerateColumns="False" HorizontalScrollBarVisibility="Disabled">
+                <DataGrid.Columns>
+                    <DataGridTextColumn ElementStyle="{StaticResource ResourceKey=rsrcMultiLineTextBlock}" Binding="{Binding ShelterId}" Header="ID" Width="1*"></DataGridTextColumn>
+                    <DataGridTextColumn ElementStyle="{StaticResource ResourceKey=rsrcMultiLineTextBlock}" Binding="{Binding ShelterName}" Header="Shelter Name" Width="2*"></DataGridTextColumn>
+                    <DataGridTextColumn ElementStyle="{StaticResource ResourceKey=rsrcMultiLineTextBlock}" Binding="{Binding Address}" Header="Address" Width="2*"></DataGridTextColumn>
+                    <DataGridTextColumn ElementStyle="{StaticResource ResourceKey=rsrcMultiLineTextBlock}" Binding="{Binding Address2}" Header="Address Two" Width="2*"></DataGridTextColumn>
+                    <DataGridTextColumn ElementStyle="{StaticResource ResourceKey=rsrcMultiLineTextBlock}" Binding="{Binding ZipCode}" Header="Zip" Width="1*"></DataGridTextColumn>
+                    <DataGridTextColumn ElementStyle="{StaticResource ResourceKey=rsrcMultiLineTextBlock}" Binding="{Binding Phone}" Header="Phone" Width="2*"></DataGridTextColumn>
+                    <DataGridTextColumn ElementStyle="{StaticResource ResourceKey=rsrcMultiLineTextBlock}" Binding="{Binding Email}" Header="Email" Width="2*"></DataGridTextColumn>
+                    <DataGridTextColumn ElementStyle="{StaticResource ResourceKey=rsrcMultiLineTextBlock}" Binding="{Binding AreasOfNeed}" Header="Areas of Need" Width="2*"></DataGridTextColumn>
+                    <DataGridTextColumn ElementStyle="{StaticResource ResourceKey=rsrcMultiLineTextBlock}" Binding="{Binding ShelterActive}" Header="Active?" Width="1*"></DataGridTextColumn>
+                </DataGrid.Columns>
+                <DataGrid.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem x:Name="contextViewShelter" Header="View Shelter" Click="contextViewShelter_Click" />
+                        <MenuItem x:Name="contextEditShelter" Header="Edit Shelter" Click="contextEditShelter_Click" />
+                        <MenuItem x:Name="contextDeactivateShelter" Header="Deactivate Shelter" Click="contextDeactivateShelter_Click" />
+                    </ContextMenu>
+                </DataGrid.ContextMenu>
+            </DataGrid>
+        </Grid>
+    </Grid>
+</Page>

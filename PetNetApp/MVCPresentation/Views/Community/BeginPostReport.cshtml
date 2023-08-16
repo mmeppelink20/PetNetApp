@@ -1,0 +1,30 @@
+﻿@model DataObjects.PostVM
+
+@{
+    ViewBag.Title = "BeginPostReport";
+}
+
+<h3> Report Post </h3>
+<p>@Model.PostContent</p>
+<br />
+
+@{
+    AjaxOptions options = new AjaxOptions()
+    {
+        HttpMethod = "Post",
+        UpdateTargetId = "report-post-" + Model.PostId,
+        OnComplete = "hideReportModal"
+    };
+}
+@using (Ajax.BeginForm("ReportPost", "Community", null, options))
+{
+    @Html.AntiForgeryToken()
+    @Html.Hidden("post", Model.PostId)
+    SelectList reportReasons = new SelectList(ViewBag.ReportReasons,"ReportMessageId","ReportMessageDescription",null);
+    @Html.DropDownList("reason", reportReasons, "Reason")
+    <button type="submit">Report</button>
+}
+
+@section scripts {
+    <script src="~/Scripts/report.js"></script>
+}

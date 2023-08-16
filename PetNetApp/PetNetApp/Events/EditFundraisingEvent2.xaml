@@ -1,0 +1,100 @@
+﻿<Page x:Class="WpfPresentation.Events.EditFundraisingEvent2"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfPresentation.Events"
+      xmlns:uc="clr-namespace:WpfPresentation.UserControls"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="EditFundraisingEvent2" Loaded="Page_Loaded">
+
+    <Grid Margin="50 0" HorizontalAlignment="Center" MinWidth="700" MaxWidth="1100">
+        <Grid.RowDefinitions>
+            <RowDefinition MaxHeight="600"/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Row="0" Margin="10 0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="70"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="0" Content="Edit Fundraising Event" FontSize="30" VerticalAlignment="Center"/>
+                <Label Grid.Row="1" Content="EVENT CONTACTS" FontSize="20"/>
+                <Label x:Name="lblContactError" Grid.Row="1" Content="Please select at least one contact" FontSize="20" Margin="100 0 0 0" Foreground="Red" Visibility="Hidden"/>
+                <Button x:Name="btnChooseContact" Grid.Column="1" Grid.Row="1" Content="Choose Contact" Width="150" HorizontalAlignment="Right" Margin="0 0 20 0" Click="btnChooseContact_Click"/>
+
+                <Border Grid.Row="2" Grid.ColumnSpan="2" BorderBrush="#3D8361" 
+                        BorderThickness="2" Padding="5" MinHeight="100" MaxHeight="350" Margin="0 10 10 10">
+                    <ScrollViewer  VerticalScrollBarVisibility="Auto">
+                        <StackPanel x:Name="stpContactList">
+
+                        </StackPanel>
+                    </ScrollViewer>
+                </Border>
+
+                <Label Grid.Row="3" Content="SPONSORS" FontSize="20"/>
+                <Button x:Name="btnSponsorContact" Grid.Column="1" Grid.Row="3" Content="Choose Sponsor" Width="150" HorizontalAlignment="Right" Margin="0 0 20 0" Click="btnSponsorContact_Click"/>
+
+                <Border Grid.Row="4" Grid.ColumnSpan="2" BorderBrush="#3D8361" BorderThickness="2" 
+                        Padding="5" MinHeight="100" MaxHeight="350" Margin="0 10 10 10">
+                    <ScrollViewer VerticalScrollBarVisibility="Auto">
+                        <StackPanel x:Name="stpSponsorList">
+
+                        </StackPanel>
+                    </ScrollViewer>
+                </Border>
+
+                <Grid Grid.Row="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" Content="ANIMALS TO TAKE" VerticalAlignment="Center"/>
+
+                </Grid>
+                <Button x:Name="btnChooseAnimal" Grid.Row="5" Grid.Column="1" Margin="0 0 20 0" Content="Choose Animal" Height="40" Width="150" HorizontalAlignment="Right" Click="btnChooseAnimal_Click"></Button>
+                <Button x:Name="btnUploadImage" Grid.Row="7" Grid.Column="0" Content="Upload Image" Width="200" HorizontalAlignment="Left" Margin="0 0 20 0" Height="45" Click="btnUploadImage_Click"></Button>
+                <Border Grid.Row="6" BorderBrush="#3D8361" Grid.ColumnSpan="2"  BorderThickness="2" 
+                        Padding="5" MinHeight="100"  Margin="0 10 10 10" MaxHeight="350">
+                    <ScrollViewer VerticalScrollBarVisibility="Auto">
+                        <StackPanel x:Name="stpAnimalList">
+
+                        </StackPanel>
+                    </ScrollViewer>
+                </Border>
+
+                <Label Grid.Row="8" Content="NOTES"/>
+                <uc:PlaceholderTextBox x:Name="txtNote" Grid.Row="9" Grid.ColumnSpan="2" Height="90" Margin="0 5 10 0" TextWrapping="Wrap" VerticalContentAlignment="Top" DefaultText="Additional notes regarding parking or location if other than host's primary address"/>
+            </Grid>
+        </ScrollViewer>
+
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="150"/>
+            </Grid.ColumnDefinitions>
+            <CheckBox x:Name="cbIsHidden" Grid.Row="0" Content="Hidden" HorizontalAlignment="Right" FontSize="18"/>
+            <Button x:Name="btnSave" Grid.Column="1" Width="120" Margin="0 0 10 0" HorizontalAlignment="Right" Content="Save" Height="50" Click="btnSave_Click"/>
+            <Button x:Name="btnCancel" Grid.Column="2" Width="120" Content="Cancel" Height="50" Click="btnCancel_Click"/>
+        </Grid>
+
+    </Grid>
+</Page>

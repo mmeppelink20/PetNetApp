@@ -1,0 +1,16 @@
+﻿.container-about-main {
+    width: 90%;
+    background-color: #EEEFE1;
+}
+
+.container-about {
+    border-radius: 10px;
+    height: min-content;
+    width: 100%;
+    margin: auto;
+    background-color: #D6CDA4;
+    margin-top: 50px;
+    padding: 10px;
+}
+
+

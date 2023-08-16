@@ -1,0 +1,53 @@
+﻿<Page x:Class="WpfPresentation.Animals.ViewAllAdoptableAnimalsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfPresentation.Animals"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Background="#9EC1B0"
+      Title="ViewAllAdoptableAnimalsPage" Loaded="Page_Loaded">
+    
+    <!-- Based on AnimalListPage.xaml created by Molly -->
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+            <!-- user control -->
+            <RowDefinition Height="25"/>
+        </Grid.RowDefinitions>
+        <Label HorizontalAlignment="Right" VerticalAlignment="Center" Margin="138 0">Show:</Label>
+        <ComboBox x:Name="cmbAnimalFilter" Width="100" Height="35" Margin="38 0" HorizontalAlignment="Right" DropDownClosed="cmbAnimalFilter_DropDownClosed">
+            <ComboBoxItem IsSelected="True">All</ComboBoxItem>
+            <ComboBoxItem>Dogs</ComboBoxItem>
+            <ComboBoxItem>Cats</ComboBoxItem>
+            <ComboBoxItem>Birds</ComboBoxItem>
+            <ComboBoxItem>Other</ComboBoxItem>
+        </ComboBox>
+        <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Visible" Grid.Row="1" Padding="20, 20, 20, 0" Margin="38, 10, 38, 0" Background="#EEEFE1">
+            <Grid x:Name="grdAdoptableAnimalsList" Grid.Row="1" Grid.Column="1" Background="#EEEFE1" Margin="30 0 30 30">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Border x:Name="nothingToShowMessage" BorderBrush="#9EC1B0" BorderThickness="2" CornerRadius="10"
+                Width="400" Height="100" Grid.Row="1" Grid.ColumnSpan="4">
+                    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                        <Label Content="Uh oh! We don't have any animals in the system." HorizontalAlignment="Center"/>
+                        <Label Content="Please check back soon!" HorizontalAlignment="Center" />
+                    </StackPanel>
+                    
+                </Border>
+            </Grid>
+        </ScrollViewer>
+        <Rectangle Grid.Row="3" Grid.ColumnSpan="3" Fill="#1C6758"></Rectangle>
+    </Grid>
+</Page>

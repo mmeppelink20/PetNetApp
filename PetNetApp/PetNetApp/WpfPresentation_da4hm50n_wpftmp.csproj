@@ -1,0 +1,501 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{78640225-77F2-41C1-BB8D-A5B581979AA2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>WpfPresentation</RootNamespace>
+    <AssemblyName>WpfPresentation</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Animals\AddEditVaccinationsPage.xaml.cs">
+      <DependentUpon>AddEditVaccinationsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Animals\AnimalMedicalProfile.xaml.cs">
+      <DependentUpon>AnimalMedicalProfile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Animals\AnimalMedicalTestsPage.xaml.cs">
+      <DependentUpon>AnimalMedicalTestsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Community\SuspendUserPopup.xaml.cs">
+      <DependentUpon>SuspendUserPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Development\Animals\AddAnimalPage.xaml.cs">
+      <DependentUpon>AddAnimalPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Development\Animals\AddAnimalSecondPage.xaml.cs">
+      <DependentUpon>AddAnimalSecondPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Animals\EditDetailAnimalProfile.xaml.cs">
+      <DependentUpon>EditDetailAnimalProfile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Animals\EditTreatment.xaml.cs">
+      <DependentUpon>EditTreatment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Animals\MedicalFilesPage.xaml.cs">
+      <DependentUpon>MedicalFilesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Animals\MedicalPage.xaml.cs">
+      <DependentUpon>MedicalPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Animals\EditProcedurePage.xaml.cs">
+      <DependentUpon>EditProcedurePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Animals\MedProcedurePage.xaml.cs">
+      <DependentUpon>MedProcedurePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Development\Community\RoleManagementPopup.xaml.cs">
+      <DependentUpon>RoleManagementPopup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Development\Community\RoleManagementTemp.xaml.cs">
+      <DependentUpon>RoleManagementTemp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Animals\UploadAdditionalFileWindow.xaml.cs">
+      <DependentUpon>UploadAdditionalFileWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Animals\VaccinationsPage.xaml.cs">
+      <DependentUpon>VaccinationsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Development\Fundraising\FundraisingPage.xaml.cs">
+      <DependentUpon>FundraisingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ViewCampaignsFundraisingCampaignUserControl.xaml.cs">
+      <DependentUpon>ViewCampaignsFundraisingCampaignUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Fundraising\FundraisingPage.xaml.cs">
+      <DependentUpon>FundraisingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Fundraising\ViewCampaignsPage.xaml.cs">
+      <DependentUpon>ViewCampaignsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Management\KenOccupancyUpdate-333.xaml.cs">
+      <DependentUpon>KenOccupancyUpdate-333.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Management\VolunteerInfoPage.xaml.cs">
+      <DependentUpon>VolunteerInfoPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Misc\UserDetailsPage.xaml.cs">
+      <DependentUpon>UserDetailsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Shelters\AlterShelter.xaml.cs">
+      <DependentUpon>AlterShelter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Shelters\ShelterPage.xaml.cs">
+      <DependentUpon>ShelterPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Shelters\ShelterVMListUI.xaml.cs">
+      <DependentUpon>ShelterVMListUI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\PlaceholderTextBox.cs" />
+    <Compile Include="Animals\ViewAdoptableAnimalProfile.xaml.cs">
+      <DependentUpon>ViewAdoptableAnimalProfile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Development\Fundraising\ViewCampaignsPage.xaml.cs">
+      <DependentUpon>ViewCampaignsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Development\Management\SchedulePage.xaml.cs">
+      <DependentUpon>SchedulePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Animals\MedicalTreatmentPage.xaml.cs">
+      <DependentUpon>MedicalTreatmentPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Management\ViewTicketList.xaml.cs">
+      <DependentUpon>ViewTicketList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Management\AssignAnimalToKennel.xaml.cs">
+      <DependentUpon>AssignAnimalToKennel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Management\ViewAnimalsForKennel.xaml.cs">
+      <DependentUpon>ViewAnimalsForKennel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Management\AddKennelPage.xaml.cs">
+      <DependentUpon>AddKennelPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Management\ViewKennelPage.xaml.cs">
+      <DependentUpon>ViewKennelPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Misc\AccountSettingsPage.xaml.cs">
+      <DependentUpon>AccountSettingsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Misc\DeactivateButtonPage.xaml.cs">
+      <DependentUpon>DeactivateButtonPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Misc\LandingPage.xaml.cs">
+      <DependentUpon>LandingPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Misc\AccountInfoPage.xaml.cs">
+      <DependentUpon>AccountInfoPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Misc\LandingBodyLoggedInPage.xaml.cs">
+      <DependentUpon>LandingBodyLoggedInPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Misc\LandingBodyLoggedOutPage.xaml.cs">
+      <DependentUpon>LandingBodyLoggedOutPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Misc\LogInPage.xaml.cs">
+      <DependentUpon>LogInPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Misc\SignUp.xaml.cs">
+      <DependentUpon>SignUp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Misc\UserProfilePage.xaml.cs">
+      <DependentUpon>UserProfilePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\KennelUserControl.xaml.cs">
+      <DependentUpon>KennelUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AnimalListUserControl.xaml.cs">
+      <DependentUpon>AnimalListUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Development\Shelters\AlterShelter.xaml.cs">
+      <DependentUpon>AlterShelter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Development\Shelters\ShelterPage.xaml.cs">
+      <DependentUpon>ShelterPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Development\Shelters\ShelterVMListUI.xaml.cs">
+      <DependentUpon>ShelterVMListUI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Animals\AddEditAnimalDeath.xaml.cs">
+      <DependentUpon>AddEditAnimalDeath.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Animals\AnimalsPage.xaml.cs">
+      <DependentUpon>AnimalsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Community\CommunityPage.xaml.cs">
+      <DependentUpon>CommunityPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Community\UserManagementPage.xaml.cs">
+      <DependentUpon>UserManagementPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Community\UsersControl\UCPreviewUser.xaml.cs">
+      <DependentUpon>UCPreviewUser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Animals\AnimalListPage.xaml.cs">
+      <DependentUpon>AnimalListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Development\Animals\AnimalsPage.xaml.cs">
+      <DependentUpon>AnimalsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Animals\MedicalNavigationPage.xaml.cs">
+      <DependentUpon>MedicalNavigationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Development\Community\CommunityPage.xaml.cs">
+      <DependentUpon>CommunityPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Development\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Development\Management\ManagementPage.xaml.cs">
+      <DependentUpon>ManagementPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Development\Management\VolunteerManagment.xaml.cs">
+      <DependentUpon>VolunteerManagment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PromptWindow.xaml.cs">
+      <DependentUpon>PromptWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Development\StyleShowcase.xaml.cs">
+      <DependentUpon>StyleShowcase.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Management\ManagementPage.xaml.cs">
+      <DependentUpon>ManagementPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataObjects\DataObjects.csproj">
+      <Project>{5f873a2c-b117-4b22-88c8-bc29b3acba2e}</Project>
+      <Name>DataObjects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LogicLayerInterfaces\LogicLayerInterfaces.csproj">
+      <Project>{3f5e4460-f710-4b9a-85a4-cc30109ad376}</Project>
+      <Name>LogicLayerInterfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LogicLayer\LogicLayer.csproj">
+      <Project>{bbe0fac3-fcec-449c-b337-6c81a6225159}</Project>
+      <Name>LogicLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Development\Donate\" />
+    <Folder Include="Development\Donations\" />
+    <Folder Include="Development\Events\" />
+    <Folder Include="Development\Misc\" />
+    <Folder Include="Donate\" />
+    <Folder Include="Donations\" />
+    <Folder Include="Events\" />
+    <Folder Include="Images\Icons\" />
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <ReferencePath Include="D:\Users\bmiku\OneDrive\Documents\Kirkwood\CAPSTONE\Capstone-2023-DAY\PetNetApp\DataObjects\bin\Debug\DataObjects.dll" />
+    <ReferencePath Include="D:\Users\bmiku\OneDrive\Documents\Kirkwood\CAPSTONE\Capstone-2023-DAY\PetNetApp\LogicLayer\bin\Debug\LogicLayer.dll" />
+    <ReferencePath Include="D:\Users\bmiku\OneDrive\Documents\Kirkwood\CAPSTONE\Capstone-2023-DAY\PetNetApp\LogicLayerInterfaces\bin\Debug\LogicLayerInterfaces.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\Microsoft.CSharp.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\mscorlib.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\PresentationCore.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\PresentationFramework.Aero2.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\PresentationFramework.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Core.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Data.DataSetExtensions.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Data.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Net.Http.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Windows.Forms.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Xaml.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Xml.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Xml.Linq.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\WindowsBase.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="D:\Users\bmiku\OneDrive\Documents\Kirkwood\CAPSTONE\Capstone-2023-DAY\PetNetApp\PetNetApp\obj\Debug\Animals\AddEditAnimalDeath.g.cs" />
+    <Compile Include="D:\Users\bmiku\OneDrive\Documents\Kirkwood\CAPSTONE\Capstone-2023-DAY\PetNetApp\PetNetApp\obj\Debug\Animals\AddEditVaccinationsPage.g.cs" />
+    <Compile Include="D:\Users\bmiku\OneDrive\Documents\Kirkwood\CAPSTONE\Capstone-2023-DAY\PetNetApp\PetNetApp\obj\Debug\Community\SuspendUserPopup.g.cs" />
+    <Compile Include="D:\Users\bmiku\OneDrive\Documents\Kirkwood\CAPSTONE\Capstone-2023-DAY\PetNetApp\PetNetApp\obj\Debug\Development\Shelters\AlterShelter.g.cs" />
+    <Compile Include="D:\Users\bmiku\OneDrive\Documents\Kirkwood\CAPSTONE\Capstone-2023-DAY\PetNetApp\PetNetApp\obj\Debug\Animals\AnimalMedicalTestsPage.g.cs" />
+    <Compile Include="D:\Users\bmiku\OneDrive\Documents\Kirkwood\CAPSTONE\Capstone-2023-DAY\PetNetApp\PetNetApp\obj\Debug\Misc\AccountInfoPage.g.cs" />
+    <Compile Include="D:\Users\bmiku\OneDrive\Documents\Kirkwood\CAPSTONE\Capstone-2023-DAY\PetNetApp\PetNetApp\obj\Debug\Misc\DeactivateButtonPage.g.cs" />
+    <Compile Include="D:\Users\bmiku\OneDrive\Documents\Kirkwood\CAPSTONE\Capstone-2023-DAY\PetNetApp\PetNetApp\obj\Debug\Misc\LandingBodyLoggedInPage.g.cs" />
+    <Compile Include="D:\Users\bmiku\OneDrive\Documents\Kirkwood\CAPSTONE\Capstone-2023-DAY\PetNetApp\PetNetApp\obj\Debug\Misc\LandingBodyLoggedOutPage.g.cs" />
+    <Compile Include="D:\Users\bmiku\OneDrive\Documents\Kirkwood\CAPSTONE\Capstone-2023-DAY\PetNetApp\PetNetApp\obj\Debug\Misc\SignUp.g.cs" />
+    <Compile Include="D:\Users\bmiku\OneDrive\Documents\Kirkwood\CAPSTONE\Capstone-2023-DAY\PetNetApp\PetNetApp\obj\Debug\Development\Shelters\ShelterPage.g.cs" />
+    <Compile Include="D:\Users\bmiku\OneDrive\Documents\Kirkwood\CAPSTONE\Capstone-2023-DAY\PetNetApp\PetNetApp\obj\Debug\Development\Shelters\ShelterVMListUI.g.cs" />
+    <Compile Include="D:\Users\bmiku\OneDrive\Documents\Kirkwood\CAPSTONE\Capstone-2023-DAY\PetNetApp\PetNetApp\obj\Debug\Animals\AnimalMedicalProfile.g.cs" />
+    <Compile Include="D:\Users\bmiku\OneDrive\Documents\Kirkwood\CAPSTONE\Capstone-2023-DAY\PetNetApp\PetNetApp\obj\Debug\Animals\AnimalsPage.g.cs" />
+    <Compile Include="D:\Users\bmiku\OneDrive\Documents\Kirkwood\CAPSTONE\Capstone-2023-DAY\PetNetApp\PetNetApp\obj\Debug\Development\Animals\AddAnimalPage.g.cs" />
+    <Compile Include="D:\Users\bmiku\OneDrive\Documents\Kirkwood\CAPSTONE\Capstone-2023-DAY\PetNetApp\PetNetApp\obj\Debug\Development\Animals\AddAnimalSecondPage.g.cs" />
+    <Compile Include="D:\Users\bmiku\OneDrive\Documents\Kirkwood\CAPSTONE\Capstone-2023-DAY\PetNetApp\PetNetApp\obj\Debug\Animals\EditDetailAnimalProfile.g.cs" />
+    <Compile Include="D:\Users\bmiku\OneDrive\Documents\Kirkwood\CAPSTONE\Capstone-2023-DAY\PetNetApp\PetNetApp\obj\Debug\Animals\EditTreatment.g.cs" />
+    <Compile Include="D:\Users\bmiku\OneDrive\Documents\Kirkwood\CAPSTONE\Capstone-2023-DAY\PetNetApp\PetNetApp\obj\Debug\Animals\MedicalFilesPage.g.cs" />
+    <Compile Include="D:\Users\bmiku\OneDrive\Documents\Kirkwood\CAPSTONE\Capstone-2023-DAY\PetNetApp\PetNetApp\obj\Debug\Animals\MedicalPage.g.cs" />
+    <Compile Include="D:\Users\bmiku\OneDrive\Documents\Kirkwood\CAPSTONE\Capstone-2023-DAY\PetNetApp\PetNetApp\obj\Debug\Animals\MedicalTreatmentPage.g.cs" />
+    <Compile Include="D:\Users\bmiku\OneDrive\Documents\Kirkwood\CAPSTONE\Capstone-2023-DAY\PetNetApp\PetNetApp\obj\Debug\Development\Community\RoleManagementPopup.g.cs" />
+    <Compile Include="D:\Users\bmiku\OneDrive\Documents\Kirkwood\CAPSTONE\Capstone-2023-DAY\PetNetApp\PetNetApp\obj\Debug\Development\Community\RoleManagementTemp.g.cs" />
+    <Compile Include="D:\Users\bmiku\OneDrive\Documents\Kirkwood\CAPSTONE\Capstone-2023-DAY\PetNetApp\PetNetApp\obj\Debug\Animals\UploadAdditionalFileWindow.g.cs" />
+    <Compile Include="D:\Users\bmiku\OneDrive\Documents\Kirkwood\CAPSTONE\Capstone-2023-DAY\PetNetApp\PetNetApp\obj\Debug\Animals\VaccinationsPage.g.cs" />
+    <Compile Include="D:\Users\bmiku\OneDrive\Documents\Kirkwood\CAPSTONE\Capstone-2023-DAY\PetNetApp\PetNetApp\obj\Debug\Development\Fundraising\FundraisingPage.g.cs" />
+    <Compile Include="D:\Users\bmiku\OneDrive\Documents\Kirkwood\CAPSTONE\Capstone-2023-DAY\PetNetApp\PetNetApp\obj\Debug\UserControls\ViewCampaignsFundraisingCampaignUserControl.g.cs" />
+    <Compile Include="D:\Users\bmiku\OneDrive\Documents\Kirkwood\CAPSTONE\Capstone-2023-DAY\PetNetApp\PetNetApp\obj\Debug\Fundraising\FundraisingPage.g.cs" />
+    <Compile Include="D:\Users\bmiku\OneDrive\Documents\Kirkwood\CAPSTONE\Capstone-2023-DAY\PetNetApp\PetNetApp\obj\Debug\Fundraising\ViewCampaignsPage.g.cs" />
+    <Compile Include="D:\Users\bmiku\OneDrive\Documents\Kirkwood\CAPSTONE\Capstone-2023-DAY\PetNetApp\PetNetApp\obj\Debug\Management\KenOccupancyUpdate-333.g.cs" />
+    <Compile Include="D:\Users\bmiku\OneDrive\Documents\Kirkwood\CAPSTONE\Capstone-2023-DAY\PetNetApp\PetNetApp\obj\Debug\Management\VolunteerInfoPage.g.cs" />
+    <Compile Include="D:\Users\bmiku\OneDrive\Documents\Kirkwood\CAPSTONE\Capstone-2023-DAY\PetNetApp\PetNetApp\obj\Debug\Misc\UserDetailsPage.g.cs" />
+    <Compile Include="D:\Users\bmiku\OneDrive\Documents\Kirkwood\CAPSTONE\Capstone-2023-DAY\PetNetApp\PetNetApp\obj\Debug\Shelters\AlterShelter.g.cs" />
+    <Compile Include="D:\Users\bmiku\OneDrive\Documents\Kirkwood\CAPSTONE\Capstone-2023-DAY\PetNetApp\PetNetApp\obj\Debug\Shelters\ShelterPage.g.cs" />
+    <Compile Include="D:\Users\bmiku\OneDrive\Documents\Kirkwood\CAPSTONE\Capstone-2023-DAY\PetNetApp\PetNetApp\obj\Debug\Shelters\ShelterVMListUI.g.cs" />
+    <Compile Include="D:\Users\bmiku\OneDrive\Documents\Kirkwood\CAPSTONE\Capstone-2023-DAY\PetNetApp\PetNetApp\obj\Debug\Development\Fundraising\ViewCampaignsPage.g.cs" />
+    <Compile Include="D:\Users\bmiku\OneDrive\Documents\Kirkwood\CAPSTONE\Capstone-2023-DAY\PetNetApp\PetNetApp\obj\Debug\Management\ViewTicketList.g.cs" />
+    <Compile Include="D:\Users\bmiku\OneDrive\Documents\Kirkwood\CAPSTONE\Capstone-2023-DAY\PetNetApp\PetNetApp\obj\Debug\Community\CommunityPage.g.cs" />
+    <Compile Include="D:\Users\bmiku\OneDrive\Documents\Kirkwood\CAPSTONE\Capstone-2023-DAY\PetNetApp\PetNetApp\obj\Debug\Community\UserManagementPage.g.cs" />
+    <Compile Include="D:\Users\bmiku\OneDrive\Documents\Kirkwood\CAPSTONE\Capstone-2023-DAY\PetNetApp\PetNetApp\obj\Debug\Community\UsersControl\UCPreviewUser.g.cs" />
+    <Compile Include="D:\Users\bmiku\OneDrive\Documents\Kirkwood\CAPSTONE\Capstone-2023-DAY\PetNetApp\PetNetApp\obj\Debug\Animals\AnimalListPage.g.cs" />
+    <Compile Include="D:\Users\bmiku\OneDrive\Documents\Kirkwood\CAPSTONE\Capstone-2023-DAY\PetNetApp\PetNetApp\obj\Debug\Development\Animals\AnimalsPage.g.cs" />
+    <Compile Include="D:\Users\bmiku\OneDrive\Documents\Kirkwood\CAPSTONE\Capstone-2023-DAY\PetNetApp\PetNetApp\obj\Debug\Animals\MedicalNavigationPage.g.cs" />
+    <Compile Include="D:\Users\bmiku\OneDrive\Documents\Kirkwood\CAPSTONE\Capstone-2023-DAY\PetNetApp\PetNetApp\obj\Debug\Animals\EditProcedurePage.g.cs" />
+    <Compile Include="D:\Users\bmiku\OneDrive\Documents\Kirkwood\CAPSTONE\Capstone-2023-DAY\PetNetApp\PetNetApp\obj\Debug\Animals\MedProcedurePage.g.cs" />
+    <Compile Include="D:\Users\bmiku\OneDrive\Documents\Kirkwood\CAPSTONE\Capstone-2023-DAY\PetNetApp\PetNetApp\obj\Debug\Animals\ViewAdoptableAnimalProfile.g.cs" />
+    <Compile Include="D:\Users\bmiku\OneDrive\Documents\Kirkwood\CAPSTONE\Capstone-2023-DAY\PetNetApp\PetNetApp\obj\Debug\Development\Community\CommunityPage.g.cs" />
+    <Compile Include="D:\Users\bmiku\OneDrive\Documents\Kirkwood\CAPSTONE\Capstone-2023-DAY\PetNetApp\PetNetApp\obj\Debug\Development\MainWindow.g.cs" />
+    <Compile Include="D:\Users\bmiku\OneDrive\Documents\Kirkwood\CAPSTONE\Capstone-2023-DAY\PetNetApp\PetNetApp\obj\Debug\Management\AssignAnimalToKennel.g.cs" />
+    <Compile Include="D:\Users\bmiku\OneDrive\Documents\Kirkwood\CAPSTONE\Capstone-2023-DAY\PetNetApp\PetNetApp\obj\Debug\Development\Management\ManagementPage.g.cs" />
+    <Compile Include="D:\Users\bmiku\OneDrive\Documents\Kirkwood\CAPSTONE\Capstone-2023-DAY\PetNetApp\PetNetApp\obj\Debug\Management\ViewAnimalsForKennel.g.cs" />
+    <Compile Include="D:\Users\bmiku\OneDrive\Documents\Kirkwood\CAPSTONE\Capstone-2023-DAY\PetNetApp\PetNetApp\obj\Debug\Development\Management\SchedulePage.g.cs" />
+    <Compile Include="D:\Users\bmiku\OneDrive\Documents\Kirkwood\CAPSTONE\Capstone-2023-DAY\PetNetApp\PetNetApp\obj\Debug\Development\Management\VolunteerManagment.g.cs" />
+    <Compile Include="D:\Users\bmiku\OneDrive\Documents\Kirkwood\CAPSTONE\Capstone-2023-DAY\PetNetApp\PetNetApp\obj\Debug\Misc\AccountSettingsPage.g.cs" />
+    <Compile Include="D:\Users\bmiku\OneDrive\Documents\Kirkwood\CAPSTONE\Capstone-2023-DAY\PetNetApp\PetNetApp\obj\Debug\Misc\LandingPage.g.cs" />
+    <Compile Include="D:\Users\bmiku\OneDrive\Documents\Kirkwood\CAPSTONE\Capstone-2023-DAY\PetNetApp\PetNetApp\obj\Debug\Misc\LogInPage.g.cs" />
+    <Compile Include="D:\Users\bmiku\OneDrive\Documents\Kirkwood\CAPSTONE\Capstone-2023-DAY\PetNetApp\PetNetApp\obj\Debug\Management\AddKennelPage.g.cs" />
+    <Compile Include="D:\Users\bmiku\OneDrive\Documents\Kirkwood\CAPSTONE\Capstone-2023-DAY\PetNetApp\PetNetApp\obj\Debug\Misc\UserProfilePage.g.cs" />
+    <Compile Include="D:\Users\bmiku\OneDrive\Documents\Kirkwood\CAPSTONE\Capstone-2023-DAY\PetNetApp\PetNetApp\obj\Debug\PromptWindow.g.cs" />
+    <Compile Include="D:\Users\bmiku\OneDrive\Documents\Kirkwood\CAPSTONE\Capstone-2023-DAY\PetNetApp\PetNetApp\obj\Debug\MainWindow.g.cs" />
+    <Compile Include="D:\Users\bmiku\OneDrive\Documents\Kirkwood\CAPSTONE\Capstone-2023-DAY\PetNetApp\PetNetApp\obj\Debug\Management\ManagementPage.g.cs" />
+    <Compile Include="D:\Users\bmiku\OneDrive\Documents\Kirkwood\CAPSTONE\Capstone-2023-DAY\PetNetApp\PetNetApp\obj\Debug\Management\ViewKennelPage.g.cs" />
+    <Compile Include="D:\Users\bmiku\OneDrive\Documents\Kirkwood\CAPSTONE\Capstone-2023-DAY\PetNetApp\PetNetApp\obj\Debug\UserControls\KennelUserControl.g.cs" />
+    <Compile Include="D:\Users\bmiku\OneDrive\Documents\Kirkwood\CAPSTONE\Capstone-2023-DAY\PetNetApp\PetNetApp\obj\Debug\UserControls\AnimalListUserControl.g.cs" />
+    <Compile Include="D:\Users\bmiku\OneDrive\Documents\Kirkwood\CAPSTONE\Capstone-2023-DAY\PetNetApp\PetNetApp\obj\Debug\Development\StyleShowcase.g.cs" />
+    <Compile Include="D:\Users\bmiku\OneDrive\Documents\Kirkwood\CAPSTONE\Capstone-2023-DAY\PetNetApp\PetNetApp\obj\Debug\App.g.cs" />
+    <Compile Include="D:\Users\bmiku\OneDrive\Documents\Kirkwood\CAPSTONE\Capstone-2023-DAY\PetNetApp\PetNetApp\obj\Debug\GeneratedInternalTypeHelper.g.cs" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,82 @@
+﻿@model DataObjects.SurrenderForm
+@{
+    ViewBag.Title = "SurrenderAnimalForm";
+}
+
+
+
+@using (Html.BeginForm("SurrenderAnimalFormSubmit", "Animals"))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="container-fluid" style="height: 100%;">
+        <div class="row">
+            <div class="col mr-5 ml-5 mt-2" style="background-color: #9EC1B0; min-height: 90vh;"></div>
+            <div class="col-6 mt-2">
+                <div class="form-horizontal text-center">
+                    <div class="col-md-10">
+                        <br />
+                        <h2>Surrender Animal Form</h2>
+                        <br />
+                        <h4>Please fill out all fields.</h4>
+                        <br />
+                        <br />
+                        <div class="form">
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                            <div class="form-group">
+                                <div>
+                                    What kind of animal are you surrending?
+                                    <br />
+                                    <br />
+                                    <center> @Html.TextBoxFor(m => m.AnimalType, new { @class = "form-control" }) </center>
+                                    <br />
+                                </div>
+                                <div>
+                                    Why are you looking to rehome your pet? Some important infomation to include would be if the animal takes medication, has behavioral problems, or has recently recieved vet care.
+                                    <br />
+                                    <br />
+                                        <center> @Html.TextAreaFor(m => m.ReasonForSurrender, 5, 100, new { maxlength = 250, @class = "form-control size" }) </center>
+                                    <br />
+                                </div>
+                                <div class="checkbox">
+                                    Please select the box below if your pet HAS been spayed or neutered. If you are not sure, leave the box blank.
+                                    <br />
+                                    <br />
+                                    <center>@Html.CheckBoxFor(m => m.SpayOrNeuterStatus, new { @class = "form-control" })</center>
+                                    <br />
+                                </div>
+                                <div>
+                                    Phone Contact:
+                                    <br />
+                                    <br />
+                                    <center>@Html.TextBoxFor(m => m.ContactPhone, new { @class = "form-control" })</center>
+                                    <br />
+                                </div>
+                                <div>
+                                    Email Contact
+                                    <br />
+                                    <br />
+                                    <center>@Html.TextBoxFor(m => m.ContactEmail, new { @class = "form-control" })</center>
+                                    <br />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div>
+                                    <input type="submit" value="Submit" class="btn btn-primary" />
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col mr-5 ml-5 mt-2" style="background-color: #9EC1B0; min-height: 90vh;"></div>
+        </div>
+    </div>
+
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

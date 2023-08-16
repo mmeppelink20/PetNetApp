@@ -1,0 +1,66 @@
+﻿.size {
+    max-width: initial;
+}
+
+.flex {
+    display: flex;
+}
+
+.flexSmall {
+    flex: 1;
+}
+
+.flexLarge {
+    flex:9;
+    padding-left: 10px;
+}
+
+.image {
+    border-radius: 50%;
+    max-width: 100%;
+}
+
+.row {
+    display: table-row;
+}
+
+.userNameText {
+    color: #3d8361;
+}
+
+.communityText {
+    font-size: 18px;
+}
+
+.cell {
+    display: table-cell;
+}
+
+.deactive {
+    color: #C02825;
+}
+
+.lower {
+    margin-top: 25px;
+}
+
+.report-button {
+    background: none;
+    border: none;
+    color: var(--control-foreground-color);
+}
+
+.report-button:hover {
+    color: var(--color-light-green);
+}
+
+.report-error {
+    color: var(--color-red);
+}
+
+@media only screen and (max-width: 800px) {
+    .flexSmall {
+        flex: 3;
+    }
+}
+

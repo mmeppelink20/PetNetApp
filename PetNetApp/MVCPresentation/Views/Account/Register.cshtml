@@ -1,0 +1,93 @@
+﻿@model MVCPresentation.Models.RegisterViewModel
+
+@{
+    ViewBag.Title = "Create Account";
+
+    IEnumerable<String> genders = (IEnumerable<String>)ViewBag.Genders;
+    IEnumerable<String> pronouns = (IEnumerable<String>)ViewBag.Pronouns;
+}
+
+@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="container-fluid" style="height: 100%;">
+        <div class="row">
+            <div class="col mr-5 ml-5 mt-2" style="background-color: #9EC1B0; min-height: 90vh;"></div>
+            <div class="col-6 mt-2" width="70%">
+                <form>
+                    <br />
+                    <h3 class="text-center">Create Your New Account!</h3>
+                    <h4 class="text-center">Please fill out all fields.</h4>
+                    <h4 class="text-center text-danger">@ViewBag.Error</h4>
+
+                    <div class="row">
+                        <div class="col">
+                            Email
+                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                            <br />
+                        </div>
+                        <div class="col">
+                            Phone
+                            @Html.TextBoxFor(m => m.Phone, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            First Name
+                            @Html.TextBoxFor(m => m.GivenName, new { @class = "form-control" })
+                        </div>
+                        <div class="col">
+                            Last Name
+                            @Html.TextBoxFor(m => m.FamilyName, new { @class = "form-control" })
+                            <br />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            Zipcode
+                            @Html.TextBoxFor(m => m.Zipcode, new { @class = "form-control" })
+                            <br />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            Password
+                            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                        </div>
+                        <div class="col">
+                            Confirm Password
+                            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+                            <br />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            Gender
+                            @Html.DropDownListFor(m => m.GenderId, new SelectList(genders, "Select Gender"), new { @class = "form-control" })
+                        </div>
+                        <div class="col">
+
+                            Pronouns
+                            @Html.DropDownListFor(m => m.PronounId, new SelectList(pronouns, "Select Pronouns"), new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <br />
+                    @Html.ValidationSummary("", new { @class = "text-danger" })
+                </form>
+                <hr />
+                <div class="form-group-2">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" class="btn btn-primary" value="Register" />
+                    </div>
+                </div>
+            </div>
+            <div class="col mr-5 ml-5 mt-2" style="background-color: #9EC1B0; min-height: 90vh;"></div>
+        </div>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
